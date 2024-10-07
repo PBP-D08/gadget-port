@@ -46,12 +46,12 @@ Berikut adalah daftar modul yang diimplementasikan:
     - Pengguna dapat menambahkan produk ke wishlist untuk dibeli atau dilihat nanti.
 - 5. **Modul Frequently Asked Questions (FAQ)**
     - Kumpulan pertanyaan yang sering ditanyakan terkait penggunaan aplikasi, produk, dan layanan.
-- 6. **Modul Profile (penting)**
+- 6. **Modul Profile**
     - Terdiri dari informasi pengguna seperti nama, email, foto profil.
     - Riwayat transaksi pemesanan.
     - Pengguna dapat mengunggah atau mengubah foto profil mereka.
     - Ubah password.
-- 7. **Modul Toko Official (penting untuk toko official)**
+- 7. **Modul Toko Official**
     - Pengelolaan produk yang dijual oleh toko resmi, termasuk kategori produk dan harga.
     - Verifikasi dan label khusus untuk toko official.
 
