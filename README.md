@@ -1,6 +1,6 @@
 # Proyek Tengah Semester PBP
 ## GadgetPort📱💻🛒
-"Empowering Your World, One Gadget at a Time"
+"Empowering Your World, One Gadget at a Time"  <br>
 link APK : http://pbp.cs.ui.ac.id/muhammad.farid31/gadgetport
 
 ### Nama Anggota
