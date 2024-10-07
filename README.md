@@ -64,11 +64,11 @@ Kategori Utama : Gadget
 - Smartwatch
 - Headset/TWS
 
-Headset : Amazon Headset Specs (kaggle.com) <br>
+Headset : [Amazon Headset Specs (kaggle.com)](https://www.kaggle.com/datasets/midhundasl/amazon-headset-specs) <br>
 HP : https://www.kaggle.com/datasets/veer098/mobile-phone <br>
 HP: https://www.kaggle.com/datasets/animeshshukla44/flipkart-mobile-dataset <br>
 Laptop: https://www.kaggle.com/datasets/owm4096/laptop-prices <br>
-Amazon Electronics Products 10k items - 2023 (kaggle.com) <br>
+[Amazon Electronics Products 10k items - 2023 (kaggle.com)](https://www.kaggle.com/datasets/akeshkumarhp/electronics-products-amazon-10k-items) <br>
 
 ### Role pengguna 🙋🏻‍♀️
 - **Guest**
