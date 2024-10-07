@@ -16,11 +16,12 @@ Di tengah pesatnya perkembangan teknologi dan tingginya permintaan pasar terhada
 Sebagai solusi, kami memperkenalkan "GadgetPort", sebuah platform canggih yang dirancang khusus untuk memenuhi kebutuhan generasi modern dalam membeli produk elektronik. GadgetPort memudahkan para penjual dan pembeli elektronik untuk bertemu dalam satu tempat digital yang terorganisir. Penjual dapat dengan mudah merilis produk terbaru mereka beserta informasi rinci, sementara pembeli dapat melihat katalog produk, membandingkan harga, melihat ulasan pengguna, dan langsung membeli produk yang diinginkan secara aman dan nyaman.
 
 #### Fitur-fitur unggulan GadgetPort**
-- **Filter Produk Cerdas** – Memungkinkan pengguna untuk mencari produk sesuai kategori seperti smartphone, laptop, smartwatch, dan lainnya, serta memfilter berdasarkan harga, brand, dan spesifikasi teknis.
-- **Perbandingan Produk** – Pengguna dapat membandingkan berbagai produk dari toko yang berbeda dengan mudah, baik dari segi harga maupun kualitas.
-- **Ulasan Terpercaya** – Sebelum melakukan pembelian, pembeli dapat membaca ulasan dari pengguna lain untuk memastikan kualitas dan keandalan produk yang mereka pilih.
-- **Pembelian Real-Time** – GadgetPort memberikan pengalaman belanja yang aman, cepat, dan real-time dengan berbagai opsi pembayaran yang fleksibel.
+- **Filter Produk Cerdas** – Memungkinkan pengguna untuk mencari produk sesuai kategori seperti smartphone, laptop, smartwatch, dan lainnya, serta memfilter berdasarkan harga dan brand.
+- **Memberi dan Membaca Ulasan** – Sebelum melakukan pembelian, pembeli dapat membaca ulasan dari pengguna lain untuk memastikan kualitas dan keunggulan produk yang mereka pilih. Setelah melakukan pembelian, pembeli juga bisa memberikan ulasan produk tersebut. 
+- **Pembelian Product** – Memberikan pengalaman belanja yang aman, cepat, dan real-time dengan berbagai opsi pembayaran.
 - **Wishlist dan Notifikasi** – Fitur wishlist memudahkan pengguna menyimpan produk yang ingin dibeli nanti, serta mendapat notifikasi saat ada diskon atau promo menarik.
+- **Frequently Asked Question** - Memudahkan pengguna mencari solusi apabila terjadi kesalahan pada aplikasi secara umum yang sering dijumpai.
+- **Update profil** - Pembeli dapat memperbarui profil.
 
 Kami percaya bahwa dengan menghadirkan GadgetPort, kami tidak hanya memberikan solusi modern untuk kebutuhan belanja produk elektronik, tetapi juga membantu menghubungkan konsumen dengan toko-toko terpercaya di Batam dan seluruh Indonesia. Melalui platform ini, harapan untuk menghadirkan pengalaman belanja elektronik yang lebih mudah, transparan, dan efisien bukan lagi sekedar wacana, melainkan sebuah langkah nyata yang dapat diwujudkan bersama-sama. Dengan GadgetPort, masa depan belanja elektronik ada di genggaman Anda.
 
