@@ -27,32 +27,32 @@ Kami percaya bahwa dengan menghadirkan GadgetPort, kami tidak hanya memberikan s
 
 ### Daftar Modul 🧑🏻‍💻
 Berikut adalah daftar modul yang diimplementasikan:
-1. **Modul Authentication & User Management**
+1. **Modul Authentication & User Management** --> bersama
     - Pendaftaran pengguna, login, logout.
     - Manajemen profil pengguna (pengubahan informasi seperti nama, email, foto).
     - Verifikasi email atau nomor telepon untuk keamanan tambahan.
-2. **Modul Katalog Produk** 
+2. **Modul Katalog Produk** --> bersama
     - Daftar produk yang dijual berdasarkan kategori (smartphone, laptop, smart watch, dll).
     - Pencarian produk menggunakan filter (harga, brand, fitur).
     - Detail produk yang lengkap, termasuk spesifikasi, gambar, review pengguna, dan rating.
-3. **Modul Cart & Checkout** 
+3. **Modul Cart & Checkout** --> Nizar
     - Fitur penambahan produk ke keranjang belanja.
     - Pemilihan metode pembayaran (transfer bank, kartu kredit, e-wallet).
     - Konfirmasi pembelian dan pengaturan pengiriman produk.
-4. **Modul Review dan Rating Produk**
+4. **Modul Review dan Rating Produk** --> Fahrid
     - Pengguna dapat memberikan ulasan dan rating untuk produk yang sudah dibeli.
     - Sistem rating untuk membantu pengguna lain dalam memilih produk.
     - Pengguna dapat menambahkan produk ke wishlist untuk dibeli atau dilihat nanti.
-5. **Modul Whistlist**
+5. **Modul Whistlist dan Frequently Asked Questionn (FAQ)** --> Akhyar
     - Pengguna dapat menambahkan produk ke wishlist untuk dibeli atau dilihat nanti.
-6. **Modul Frequently Asked Questions (FAQ)**
     - Kumpulan pertanyaan yang sering ditanyakan terkait penggunaan aplikasi, produk, dan layanan.
-7. **Modul Profile**
+6. **Modul Profile** --> Micheline 
     - Terdiri dari informasi pengguna seperti nama, email, foto profil.
     - Riwayat transaksi pemesanan.
     - Pengguna dapat mengunggah atau mengubah foto profil mereka.
     - Ubah password.
-8. **Modul Toko Official**
+    - History barang yang sudah dibeli
+7. **Modul Toko Official** --> Alby
     - Pengelolaan produk yang dijual oleh toko resmi, termasuk kategori produk dan harga.
     - Verifikasi dan label khusus untuk toko official.
 
@@ -84,6 +84,9 @@ Lainnya    : [Amazon Electronics Products 10k items - 2023 (kaggle.com)](https:/
     - Menambahkan review produk yang sudah dibeli
     - Mengakses fitur sort dan filter kategori gadget
     - Mencari berdasarkan nama produk gadget
+- **Seller** (perlu login)
+    - Menambah produk yang ingin dijual
+    - Mengedit detail produk dan produk yang dijual 
 
 
 
