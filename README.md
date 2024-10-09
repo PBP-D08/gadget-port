@@ -40,6 +40,7 @@ Berikut adalah daftar modul yang diimplementasikan:
     - Pemilihan metode pembayaran (transfer bank, kartu kredit, e-wallet).
     - Konfirmasi pembelian dan pengaturan pengiriman produk.
 4. **Modul Review dan Rating Produk** --> Farid
+   
    Modul ini berfungsi untuk memberikan review dan rating terhadap suatu produk.
    
    User | Admin
@@ -85,7 +86,7 @@ Laptop     : https://www.kaggle.com/datasets/owm4096/laptop-prices <br>
     - Mencari berdasarkan nama produk gadget
 - **Admin** (perlu login)
     - Menambah produk yang ingin dijual
-    - Mengedit detail produk dan produk yang dijual 
+    - Mengedit dan menghapus detail produk dan produk yang dijual 
 
 
 
