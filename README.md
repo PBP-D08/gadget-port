@@ -42,7 +42,7 @@ Berikut adalah daftar modul yang diimplementasikan:
 4. **Modul Review dan Rating Produk** --> Farid
     - Pengguna dapat memberikan ulasan dan rating untuk produk yang sudah dibeli.
     - Sistem rating untuk membantu pengguna lain dalam memilih produk.
-5. **Modul Wishtlist dan Frequently Asked Question (FAQ)** --> Akhyar
+5. **Modul Wishlist dan Frequently Asked Question (FAQ)** --> Akhyar
     - Pengguna dapat menambahkan produk ke wishlist untuk dibeli atau dilihat nanti.
     - Kumpulan pertanyaan yang sering ditanyakan terkait penggunaan aplikasi, produk, dan layanan.
 6. **Modul Profile** --> Micheline 
