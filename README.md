@@ -41,7 +41,7 @@ Berikut adalah daftar modul yang diimplementasikan:
       Modul ini berfungsi untuk melihat detail produk serta dapat menggunakan filter untuk pencarian produk.
       
       Pelanggan | Admin
-       -|-
+      -|-
       Pelanggan dapat melihat daftar produk yang dijual berdasarkan kategori (smartphone. laptop, headset)| Admin dapat mengedit dan menghapus produk. |
       Pelanggan dapat menggunakan filter (harga, brand, dll)| - |
       Pelanggan dapat melihat detail produk yang lengkap, termasuk spesifikasi, gambar, review, pengguna, dan rating| Admin dapat mengedit detail produk. |
@@ -60,7 +60,7 @@ Berikut adalah daftar modul yang diimplementasikan:
       Modul ini berfungsi untuk memberikan review dan rating terhadap suatu produk.
       
       Pelanggan | Admin
-       -|-
+      -|-
       Pelanggan dapat memberikan ulasan dan rating untuk tiap produk.|Admin dapat menghapus review yang telah dibuat oleh Pelanggan.
 5. **Modul Wishlist dan Frequently Asked Question (FAQ)** --> Akhyar
    
