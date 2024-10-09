@@ -39,10 +39,9 @@ Berikut adalah daftar modul yang diimplementasikan:
     - Fitur penambahan produk ke keranjang belanja.
     - Pemilihan metode pembayaran (transfer bank, kartu kredit, e-wallet).
     - Konfirmasi pembelian dan pengaturan pengiriman produk.
-4. **Modul Review dan Rating Produk** --> Fahrid
+4. **Modul Review dan Rating Produk** --> Farid
     - Pengguna dapat memberikan ulasan dan rating untuk produk yang sudah dibeli.
     - Sistem rating untuk membantu pengguna lain dalam memilih produk.
-    - Pengguna dapat menambahkan produk ke wishlist untuk dibeli atau dilihat nanti.
 5. **Modul Whistlist dan Frequently Asked Questionn (FAQ)** --> Akhyar
     - Pengguna dapat menambahkan produk ke wishlist untuk dibeli atau dilihat nanti.
     - Kumpulan pertanyaan yang sering ditanyakan terkait penggunaan aplikasi, produk, dan layanan.
@@ -62,20 +61,13 @@ Kategori Utama : Gadget
 **Produk**:
 - HP
 - Laptop
-- Smartwatch
 - Headset/TWS
 
-Headset    : [Amazon Headset Specs (kaggle.com)](https://www.kaggle.com/datasets/midhundasl/amazon-headset-specs) <br>
+Headset    : https://www.kaggle.com/datasets/midhundasl/amazon-headset-specs <br>
 HP         : https://www.kaggle.com/datasets/veer098/mobile-phone <br>
-HP         : https://www.kaggle.com/datasets/animeshshukla44/flipkart-mobile-dataset <br>
 Laptop     : https://www.kaggle.com/datasets/owm4096/laptop-prices <br>
-Lainnya    : [Amazon Electronics Products 10k items - 2023 (kaggle.com)](https://www.kaggle.com/datasets/akeshkumarhp/electronics-products-amazon-10k-items) <br>
 
 ### Role pengguna 🙋🏻‍♀
-- **Guest**
-    - Melihat daftar dan detail produk gadget
-    - Mengakses fitur sort dan filter kategori gadget
-    - Mencari berdasarkan nama produk
 - **User** (perlu login)
     - Melihat daftar dan detail produk gadget
     - Memasukkan produk ke wishlist
@@ -84,7 +76,7 @@ Lainnya    : [Amazon Electronics Products 10k items - 2023 (kaggle.com)](https:/
     - Menambahkan review produk yang sudah dibeli
     - Mengakses fitur sort dan filter kategori gadget
     - Mencari berdasarkan nama produk gadget
-- **Seller** (perlu login)
+- **Admin** (perlu login)
     - Menambah produk yang ingin dijual
     - Mengedit detail produk dan produk yang dijual 
 
