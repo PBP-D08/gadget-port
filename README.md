@@ -52,10 +52,12 @@ Berikut adalah daftar modul yang diimplementasikan:
     - Ubah password.
     - History barang yang sudah dibeli
 7. **Modul Toko** --> Alby
-   
-    Modul ini berfungsi untuk mengatur pengelolaan produk yang dijual oleh toko, termasuk kategori produk dan harga.
-   - User dapat melihat tiap produk yang dijual oleh toko, termasuk kategori produk dan harga.
-   - Admin dapat menambah, mengubah, serta menghapus produk pada toko mereka.
+
+   Modul ini berfungsi untuk mengatur pengelolaan produk yang dijual oleh toko, termasuk kategori produk dan harga.
+
+   User|Admin
+   -|-
+   User dapat melihat tiap produk yang dijual oleh toko, termasuk kategori produk dan harga.|Admin dapat menambah, mengubah, serta menghapus produk pada toko mereka.
 
 ### Sumber Dataset 📊
 Kategori Utama : Gadget
