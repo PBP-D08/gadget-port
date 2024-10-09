@@ -51,9 +51,10 @@ Berikut adalah daftar modul yang diimplementasikan:
     - Pengguna dapat mengunggah atau mengubah foto profil mereka.
     - Ubah password.
     - History barang yang sudah dibeli
-7. **Modul Toko Official** --> Alby
-    - Pengelolaan produk yang dijual oleh toko resmi, termasuk kategori produk dan harga.
-    - Verifikasi dan label khusus untuk toko official.
+7. **Modul Toko** --> Alby
+   Modul ini berfungsi untuk mengatur pengelolaan produk yang dijual oleh toko, termasuk kategori produk dan harga.
+   - User dapat melihat tiap produk yang dijual oleh toko, termasuk kategori produk dan harga.
+   - Admin dapat menambah, mengubah, serta menghapus produk pada toko mereka.
 
 ### Sumber Dataset 📊
 Kategori Utama : Gadget
