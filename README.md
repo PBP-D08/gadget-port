@@ -40,9 +40,9 @@ Berikut adalah daftar modul yang diimplementasikan:
    
    Pelanggan | Admin
     -|-
-   Pelanggan dapat melihat daftar produk yang dijual berdasarkan kategori (smartphone. laptop, headset)|Admin dapat mengedit dan menghapus produk.
-   Pelanggan dapat menggunakan filter (harga, brand, dll)|
-   Pelanggan dapat melihat detail produk yang lengkap, termasuk spesifikasi, gambar, review, pengguna, dan rating|
+   Pelanggan dapat melihat daftar produk yang dijual berdasarkan kategori (smartphone. laptop, headset)| Admin dapat mengedit dan menghapus produk. |
+   Pelanggan dapat menggunakan filter (harga, brand, dll)| - |
+   Pelanggan dapat melihat detail produk yang lengkap, termasuk spesifikasi, gambar, review, pengguna, dan rating| Admin dapat mengedit detail produk. |
 
 4. **Modul Cart & Checkout** --> Nizar
    Modul ini berfungsi sebagai proses pembayaran.
@@ -69,11 +69,11 @@ Berikut adalah daftar modul yang diimplementasikan:
 8. **Modul Profile** --> Micheline 
   Modul ini berfungsi untuk mengubah data pada profil User
   
-  | Pelanggan | Admin |
-  | --------- | ----- |
-  | Pelanggan dapat mengubah nama, email, foto profil.| Admin bisa mengubah nama, email, dan foto profil|
-  | Pelanggan dapat mengubah password | Admin dapat mengubah password |
-  | Pelanggan dapat melihat history transaksi pemesanan. | -|
+     | Pelanggan | Admin |
+     | --------- | ----- |
+     | Pelanggan dapat mengubah nama, email, foto profil.| Admin bisa mengubah nama, email, dan foto profil|
+     | Pelanggan dapat mengubah password | Admin dapat mengubah password |
+     | Pelanggan dapat melihat history transaksi pemesanan. | -|
 9. **Modul Toko** --> Alby
 
    Modul ini berfungsi untuk mengatur pengelolaan produk yang dijual oleh toko, termasuk kategori produk dan harga.
