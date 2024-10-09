@@ -36,10 +36,10 @@ Berikut adalah daftar modul yang diimplementasikan:
    Modul ini berfungsi untuk melihat detail produk serta dapat menggunakan filter untuk pencarian produk.
    
    User | Admin
-   - | -
-   User dapat melihat daftar produk yang dijual berdasarkan kategori (smartphone. laptop, headset) | Admin dapat mengedit dan menghapus produk.
-   User dapat menggunakan filter (harga, brand, dll) |
-   User dapat melihat detail produk yang lengkap, termasuk spesifikasi, gambar, review, pengguna, dan rating |
+    -|-
+   User dapat melihat daftar produk yang dijual berdasarkan kategori (smartphone. laptop, headset)|Admin dapat mengedit dan menghapus produk.
+   User dapat menggunakan filter (harga, brand, dll)|
+   User dapat melihat detail produk yang lengkap, termasuk spesifikasi, gambar, review, pengguna, dan rating|
 
 4. **Modul Cart & Checkout** --> Nizar
    Modul ini berfungsi sebagai proses pembayaran.
