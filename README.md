@@ -32,30 +32,37 @@ Berikut adalah daftar modul yang diimplementasikan:
     - Manajemen profil pengguna (pengubahan informasi seperti nama, email, foto).
     - Verifikasi email atau nomor telepon untuk keamanan tambahan.
 2. **Modul Katalog Produk** --> bersama
-    - Daftar produk yang dijual berdasarkan kategori (smartphone, laptop, headset).
-    - Pencarian produk menggunakan filter (harga, brand, fitur).
-    - Detail produk yang lengkap, termasuk spesifikasi, gambar, review pengguna, dan rating.
-3. **Modul Cart & Checkout** --> Nizar
+
+   Modul ini berfungsi untuk melihat detail produk serta dapat menggunakan filter untuk pencarian produk.
+   
+   User | Admin
+   - | -
+   User dapat melihat daftar produk yang dijual berdasarkan kategori (smartphone. laptop, headset) | Admin dapat mengedit dan menghapus produk.
+   User dapat menggunakan filter (harga, brand, dll)
+   User dapat melihat detail produk yang lengkap, termasuk spesifikasi, gambar, review, pengguna, dan rating
+
+4. **Modul Cart & Checkout** --> Nizar
+   Modul ini berfungsi sebagai proses pembayaran.
     - Fitur penambahan produk ke keranjang belanja.
     - Pemilihan metode pembayaran (transfer bank, kartu kredit, e-wallet).
     - Konfirmasi pembelian dan pengaturan pengiriman produk.
-4. **Modul Review dan Rating Produk** --> Farid
+6. **Modul Review dan Rating Produk** --> Farid
    
    Modul ini berfungsi untuk memberikan review dan rating terhadap suatu produk.
    
    User | Admin
     -|-
    User dapat memberikan ulasan dan rating untuk tiap produk.|Admin dapat menghapus review yang telah dibuat oleh user.
-6. **Modul Wishlist dan Frequently Asked Question (FAQ)** --> Akhyar
+7. **Modul Wishlist dan Frequently Asked Question (FAQ)** --> Akhyar
     - Pengguna dapat menambahkan produk ke wishlist untuk dibeli atau dilihat nanti.
     - Kumpulan pertanyaan yang sering ditanyakan terkait penggunaan aplikasi, produk, dan layanan.
-7. **Modul Profile** --> Micheline 
+8. **Modul Profile** --> Micheline 
     - Terdiri dari informasi pengguna seperti nama, email, foto profil.
     - Riwayat transaksi pemesanan.
     - Pengguna dapat mengunggah atau mengubah foto profil mereka.
     - Ubah password.
     - History barang yang sudah dibeli
-8. **Modul Toko** --> Alby
+9. **Modul Toko** --> Alby
 
    Modul ini berfungsi untuk mengatur pengelolaan produk yang dijual oleh toko, termasuk kategori produk dan harga.
 
