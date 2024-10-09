@@ -16,7 +16,7 @@ Di tengah pesatnya perkembangan teknologi dan tingginya permintaan pasar terhada
 Sebagai solusi, kami memperkenalkan "GadgetPort", sebuah platform canggih yang dirancang khusus untuk memenuhi kebutuhan generasi modern dalam membeli produk elektronik. GadgetPort memudahkan para penjual dan pembeli elektronik untuk bertemu dalam satu tempat digital yang terorganisir. Penjual dapat dengan mudah merilis produk terbaru mereka beserta informasi rinci, sementara pembeli dapat melihat katalog produk, melihat ulasan pengguna, dan langsung membeli produk yang diinginkan secara aman dan nyaman.
 
 #### Fitur-fitur unggulan GadgetPort 
-- **Filter Produk Cerdas** – Memungkinkan pengguna untuk mencari produk sesuai kategori seperti smartphone, laptop, smartwatch, dan lainnya, serta memfilter berdasarkan harga dan brand.
+- **Filter Produk Cerdas** – Memungkinkan pengguna untuk mencari produk sesuai kategori seperti smartphone, laptop, dan headset, serta memfilter berdasarkan harga dan brand.
 - **Memberi dan Membaca Ulasan** – Sebelum melakukan pembelian, pembeli dapat membaca ulasan dari pengguna lain untuk memastikan kualitas dan keunggulan produk yang mereka pilih. Setelah melakukan pembelian, pembeli juga bisa memberikan ulasan produk tersebut. 
 - **Pembelian Product** – Memberikan pengalaman belanja yang aman, cepat, dan real-time dengan berbagai opsi pembayaran.
 - **Wishlist dan Notifikasi** – Fitur wishlist memudahkan pengguna menyimpan produk yang ingin dibeli nanti, serta mendapat notifikasi saat ada diskon atau promo menarik.
@@ -32,7 +32,7 @@ Berikut adalah daftar modul yang diimplementasikan:
     - Manajemen profil pengguna (pengubahan informasi seperti nama, email, foto).
     - Verifikasi email atau nomor telepon untuk keamanan tambahan.
 2. **Modul Katalog Produk** --> bersama
-    - Daftar produk yang dijual berdasarkan kategori (smartphone, laptop, smart watch, dll).
+    - Daftar produk yang dijual berdasarkan kategori (smartphone, laptop, headset).
     - Pencarian produk menggunakan filter (harga, brand, fitur).
     - Detail produk yang lengkap, termasuk spesifikasi, gambar, review pengguna, dan rating.
 3. **Modul Cart & Checkout** --> Nizar
@@ -42,7 +42,7 @@ Berikut adalah daftar modul yang diimplementasikan:
 4. **Modul Review dan Rating Produk** --> Farid
     - Pengguna dapat memberikan ulasan dan rating untuk produk yang sudah dibeli.
     - Sistem rating untuk membantu pengguna lain dalam memilih produk.
-5. **Modul Whistlist dan Frequently Asked Questionn (FAQ)** --> Akhyar
+5. **Modul Wishtlist dan Frequently Asked Question (FAQ)** --> Akhyar
     - Pengguna dapat menambahkan produk ke wishlist untuk dibeli atau dilihat nanti.
     - Kumpulan pertanyaan yang sering ditanyakan terkait penggunaan aplikasi, produk, dan layanan.
 6. **Modul Profile** --> Micheline 
