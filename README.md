@@ -32,9 +32,9 @@ Berikut adalah daftar modul yang diimplementasikan:
       Modul ini untuk autentikasi akun User (Pelanggan dan Admin)
       | Pelanggan dan Admin |
       | :------------------- |
-      |Pendaftaran pengguna, login, logout. |
-      |Manajemen profil pengguna (pengubahan informasi seperti nama,email, foto).|
-      |Verifikasi email atau nomor telepon untuk keamanan tambahan.|
+      |Pendaftaran pengguna (register), login, dan logout. |
+      |Manajemen profil pengguna (menambahkan informasi seperti nama, email, foto).|
+      |Validasi email atau nomor telepon untuk keamanan tambahan.|
 
 2. **Modul Katalog Produk** --> bersama
 
