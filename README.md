@@ -40,18 +40,21 @@ Berikut adalah daftar modul yang diimplementasikan:
     - Pemilihan metode pembayaran (transfer bank, kartu kredit, e-wallet).
     - Konfirmasi pembelian dan pengaturan pengiriman produk.
 4. **Modul Review dan Rating Produk** --> Farid
-    - Pengguna dapat memberikan ulasan dan rating untuk produk yang sudah dibeli.
-    - Sistem rating untuk membantu pengguna lain dalam memilih produk.
-5. **Modul Wishlist dan Frequently Asked Question (FAQ)** --> Akhyar
+   Modul ini berfungsi untuk memberikan review dan rating terhadap suatu produk.
+   
+   User | Admin
+    -|-
+   User dapat memberikan ulasan dan rating untuk tiap produk.|Admin dapat menghapus review yang telah dibuat oleh user.
+6. **Modul Wishlist dan Frequently Asked Question (FAQ)** --> Akhyar
     - Pengguna dapat menambahkan produk ke wishlist untuk dibeli atau dilihat nanti.
     - Kumpulan pertanyaan yang sering ditanyakan terkait penggunaan aplikasi, produk, dan layanan.
-6. **Modul Profile** --> Micheline 
+7. **Modul Profile** --> Micheline 
     - Terdiri dari informasi pengguna seperti nama, email, foto profil.
     - Riwayat transaksi pemesanan.
     - Pengguna dapat mengunggah atau mengubah foto profil mereka.
     - Ubah password.
     - History barang yang sudah dibeli
-7. **Modul Toko** --> Alby
+8. **Modul Toko** --> Alby
 
    Modul ini berfungsi untuk mengatur pengelolaan produk yang dijual oleh toko, termasuk kategori produk dan harga.
 
