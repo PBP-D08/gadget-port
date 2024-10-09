@@ -28,47 +28,59 @@ Kami percaya bahwa dengan menghadirkan GadgetPort, kami tidak hanya memberikan s
 ### Daftar Modul 🧑🏻‍💻
 Berikut adalah daftar modul yang diimplementasikan:
 1. **Modul Authentication & User Management** --> bersama
-    - Pendaftaran pengguna, login, logout.
-    - Manajemen profil pengguna (pengubahan informasi seperti nama, email, foto).
-    - Verifikasi email atau nomor telepon untuk keamanan tambahan.
-2. **Modul Katalog Produk** --> bersama
+   Modul ini untuk autentikasi akun User (Pelanggan dan Admin)
+   | Pelanggan dan Admin |
+   | :------------------- |
+   |Pendaftaran pengguna, login, logout. |
+   |Manajemen profil pengguna (pengubahan informasi seperti nama,email, foto).|
+   |Verifikasi email atau nomor telepon untuk keamanan tambahan.|
+3. **Modul Katalog Produk** --> bersama
 
    Modul ini berfungsi untuk melihat detail produk serta dapat menggunakan filter untuk pencarian produk.
    
-   User | Admin
+   Pelanggan | Admin
     -|-
-   User dapat melihat daftar produk yang dijual berdasarkan kategori (smartphone. laptop, headset)|Admin dapat mengedit dan menghapus produk.
-   User dapat menggunakan filter (harga, brand, dll)|
-   User dapat melihat detail produk yang lengkap, termasuk spesifikasi, gambar, review, pengguna, dan rating|
+   Pelanggan dapat melihat daftar produk yang dijual berdasarkan kategori (smartphone. laptop, headset)|Admin dapat mengedit dan menghapus produk.
+   Pelanggan dapat menggunakan filter (harga, brand, dll)|
+   Pelanggan dapat melihat detail produk yang lengkap, termasuk spesifikasi, gambar, review, pengguna, dan rating|
 
 4. **Modul Cart & Checkout** --> Nizar
    Modul ini berfungsi sebagai proses pembayaran.
-    - Fitur penambahan produk ke keranjang belanja.
-    - Pemilihan metode pembayaran (transfer bank, kartu kredit, e-wallet).
-    - Konfirmasi pembelian dan pengaturan pengiriman produk.
+
+   | Pelanggan |
+   | -------   |
+   |Pelanggan dapat menambahkan produk ke keranjang belanja. |
+   |Pelanggan dapat memilih metode pembayaran (transfer bank, kartu kredit, e-wallet).|
+   | Pelanggan dapat konfirmasi pembelian dan pengaturan pengiriman produk |
 6. **Modul Review dan Rating Produk** --> Farid
    
    Modul ini berfungsi untuk memberikan review dan rating terhadap suatu produk.
    
-   User | Admin
+   Pelanggan | Admin
     -|-
-   User dapat memberikan ulasan dan rating untuk tiap produk.|Admin dapat menghapus review yang telah dibuat oleh user.
+   Pelanggan dapat memberikan ulasan dan rating untuk tiap produk.|Admin dapat menghapus review yang telah dibuat oleh Pelanggan.
 7. **Modul Wishlist dan Frequently Asked Question (FAQ)** --> Akhyar
-    - Pengguna dapat menambahkan produk ke wishlist untuk dibeli atau dilihat nanti.
-    - Kumpulan pertanyaan yang sering ditanyakan terkait penggunaan aplikasi, produk, dan layanan.
+      Modul ini berfungsi untuk melihat daftar wishlist dan Frequently Asked Question (F.A.Q)
+    
+      | Pelanggan | Admin |
+      | --------- | ----- |
+      | Pengguna dapat melihat kumpulan pertanyaan yang sering ditanyakan terkait penggunaan aplikasi, produk, dan layanan. .| Admin dapat menambah, mengedit, dan menghapus daftar Frequently Asked Question |
+      | Pengguna dapat menambahkan produk ke wishlist untuk dibeli atau dilihat nanti.| -  | 
 8. **Modul Profile** --> Micheline 
-    - Terdiri dari informasi pengguna seperti nama, email, foto profil.
-    - Riwayat transaksi pemesanan.
-    - Pengguna dapat mengunggah atau mengubah foto profil mereka.
-    - Ubah password.
-    - History barang yang sudah dibeli
+  Modul ini berfungsi untuk mengubah data pada profil User
+  
+  | Pelanggan | Admin |
+  | --------- | ----- |
+  | Pelanggan dapat mengubah nama, email, foto profil.| Admin bisa mengubah nama, email, dan foto profil|
+  | Pelanggan dapat mengubah password | Admin dapat mengubah password |
+  | Pelanggan dapat melihat history transaksi pemesanan. | -|
 9. **Modul Toko** --> Alby
 
    Modul ini berfungsi untuk mengatur pengelolaan produk yang dijual oleh toko, termasuk kategori produk dan harga.
 
-   User|Admin
+   Pelanggan|Admin
    -|-
-   User dapat melihat tiap produk yang dijual oleh toko, termasuk kategori produk dan harga.|Admin dapat menambah, mengubah, serta menghapus produk pada toko mereka.
+   Pelanggan dapat melihat tiap produk yang dijual oleh toko, termasuk kategori produk dan harga.|Admin dapat menambah, mengubah, serta menghapus produk pada toko mereka.
 
 ### Sumber Dataset 📊
 Kategori Utama : Gadget
@@ -83,7 +95,7 @@ HP         : https://www.kaggle.com/datasets/veer098/mobile-phone <br>
 Laptop     : https://www.kaggle.com/datasets/owm4096/laptop-prices <br>
 
 ### Role pengguna 🙋🏻‍♀
-- **User** (perlu login)
+- **Pelanggan** (perlu login)
     - Melihat daftar dan detail produk gadget
     - Memasukkan produk ke wishlist
     - Memasukkan produk ke keranjang
