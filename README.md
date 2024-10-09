@@ -1,7 +1,7 @@
 # Proyek Tengah Semester PBP
 ## GadgetPort📱💻🛒
 _"Empowering Your World, One Gadget at a Time"_  <br>
-link APK : [GadgetPort](http://pbp.cs.ui.ac.id/muhammad.farid31/gadgetport)
+link APK : [GadgetPort](http://muhammad-farid31-gadgetport.pbp.cs.ui.ac.id/)
 
 ### Nama Anggota 🧑‍🎓👩‍🎓👨‍🎓🧑‍🎓👨‍🎓
 1. Akhyar Rasyid Asy syifa (2306241682)
