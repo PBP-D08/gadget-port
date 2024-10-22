@@ -15,7 +15,6 @@ Di tengah pesatnya perkembangan teknologi dan tingginya permintaan pasar terhada
 
 Sebagai solusi, kami memperkenalkan "GadgetPort", sebuah platform canggih yang dirancang khusus untuk memenuhi kebutuhan generasi modern dalam membeli produk elektronik. GadgetPort memudahkan para penjual dan pembeli elektronik untuk bertemu dalam satu tempat digital yang terorganisir. Penjual dapat dengan mudah merilis produk terbaru mereka beserta informasi rinci, sementara pembeli dapat melihat katalog produk, melihat ulasan pengguna, dan langsung membeli produk yang diinginkan secara aman dan nyaman.
 
-#### **Fitur-fitur unggulan GadgetPort**
 #### Fitur-fitur unggulan GadgetPort 
 - **Filter Produk Cerdas** – Memungkinkan pengguna untuk mencari produk sesuai kategori seperti smartphone, laptop, smartwatch, dan lainnya, serta memfilter berdasarkan harga dan brand.
 - **Memberi dan Membaca Ulasan** – Sebelum melakukan pembelian, pembeli dapat membaca ulasan dari pengguna lain untuk memastikan kualitas dan keunggulan produk yang mereka pilih. Setelah melakukan pembelian, pembeli juga bisa memberikan ulasan produk tersebut. 
@@ -40,7 +39,7 @@ Berikut adalah daftar modul yang diimplementasikan:
     - Fitur penambahan produk ke keranjang belanja.
     - Pemilihan metode pembayaran (transfer bank, kartu kredit, e-wallet).
     - Konfirmasi pembelian dan pengaturan pengiriman produk.
-4. **Modul Review dan Rating Produk** --> Fahrid
+4. **Modul Review dan Rating Produk** --> Farid
     - Pengguna dapat memberikan ulasan dan rating untuk produk yang sudah dibeli.
     - Sistem rating untuk membantu pengguna lain dalam memilih produk.
     - Pengguna dapat menambahkan produk ke wishlist untuk dibeli atau dilihat nanti.
