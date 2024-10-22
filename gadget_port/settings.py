@@ -55,13 +55,7 @@ ROOT_URLCONF = 'gadget_port.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-<<<<<<< HEAD
-        'DIRS': [
-            BASE_DIR / 'templates',
-        ],
-=======
         'DIRS': [BASE_DIR / 'templates'],
->>>>>>> 0c5a246f8520adb78d961c4a79d5d6a761a164f1
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,23 +116,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-<<<<<<< HEAD
 STATIC_URL = 'static/'
-=======
-# Dokumentasi: https://docs.djangoproject.com/en/5.1/howto/static-files/
-STATIC_URL = '/static/'
->>>>>>> 0c5a246f8520adb78d961c4a79d5d6a761a164f1
 if DEBUG:
     STATICFILES_DIRS = [
         BASE_DIR / 'static' # merujuk ke /static root project pada mode development
     ]
 else:
     STATIC_ROOT = BASE_DIR / 'static' # merujuk ke /static root project pada mode production
-<<<<<<< HEAD
     
-=======
-
->>>>>>> 0c5a246f8520adb78d961c4a79d5d6a761a164f1
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
