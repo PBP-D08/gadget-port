@@ -27,34 +27,68 @@ Kami percaya bahwa dengan menghadirkan GadgetPort, kami tidak hanya memberikan s
 
 ### Daftar Modul 🧑🏻‍💻
 Berikut adalah daftar modul yang diimplementasikan:
-1. **Modul Authentication & User Management** --> bersama
-    - Pendaftaran pengguna, login, logout.
-    - Manajemen profil pengguna (pengubahan informasi seperti nama, email, foto).
-    - Verifikasi email atau nomor telepon untuk keamanan tambahan.
-2. **Modul Katalog Produk** --> bersama
-    - Daftar produk yang dijual berdasarkan kategori (smartphone, laptop, smart watch, dll).
-    - Pencarian produk menggunakan filter (harga, brand, fitur).
-    - Detail produk yang lengkap, termasuk spesifikasi, gambar, review pengguna, dan rating.
-3. **Modul Cart & Checkout** --> Nizar
-    - Fitur penambahan produk ke keranjang belanja.
-    - Pemilihan metode pembayaran (transfer bank, kartu kredit, e-wallet).
-    - Konfirmasi pembelian dan pengaturan pengiriman produk.
-4. **Modul Review dan Rating Produk** --> Fahrid
-    - Pengguna dapat memberikan ulasan dan rating untuk produk yang sudah dibeli.
-    - Sistem rating untuk membantu pengguna lain dalam memilih produk.
-    - Pengguna dapat menambahkan produk ke wishlist untuk dibeli atau dilihat nanti.
-5. **Modul Whistlist dan Frequently Asked Questionn (FAQ)** --> Akhyar
-    - Pengguna dapat menambahkan produk ke wishlist untuk dibeli atau dilihat nanti.
-    - Kumpulan pertanyaan yang sering ditanyakan terkait penggunaan aplikasi, produk, dan layanan.
-6. **Modul Profile** --> Micheline 
-    - Terdiri dari informasi pengguna seperti nama, email, foto profil.
-    - Riwayat transaksi pemesanan.
-    - Pengguna dapat mengunggah atau mengubah foto profil mereka.
-    - Ubah password.
-    - History barang yang sudah dibeli
-7. **Modul Toko Official** --> Alby
-    - Pengelolaan produk yang dijual oleh toko resmi, termasuk kategori produk dan harga.
-    - Verifikasi dan label khusus untuk toko official.
+1. **Modul Authentication & User Management — Bersama** 
+   
+      Modul ini untuk autentikasi akun User (Pelanggan dan Admin).
+   
+      | Pelanggan dan Admin |
+      | :------------------- |
+      |Pendaftaran pengguna (register), login, dan logout. |
+      |Manajemen profil pengguna (menambahkan informasi seperti nama, email, foto).|
+      |Validasi email atau nomor telepon untuk keamanan tambahan.|
+
+3. **Modul Katalog Produk — Bersama** 
+
+      Modul ini berfungsi untuk melihat detail produk serta dapat menggunakan filter untuk pencarian produk.
+      
+      Pelanggan | Admin
+      -|-
+      Pelanggan dapat melihat daftar produk yang dijual berdasarkan kategori (smartphone. laptop, headset)| Admin dapat menambah dan menghapus produk. |
+      Pelanggan dapat menggunakan filter (harga, brand, dll).| Admin dapat menggunakan filter pencarian. |
+      Pelanggan dapat melihat detail produk yang lengkap, termasuk spesifikasi, gambar, review, pengguna, dan rating| Admin dapat mengedit detail produk. |
+
+4. **Modul Cart & Checkout — Ahmad Nizar Sauki**
+      
+      Modul ini berfungsi sebagai proses pembayaran.
+   
+      | Pelanggan |
+      | -------   |
+      |Pelanggan dapat menambahkan produk ke keranjang belanja. |
+      |Pelanggan dapat memilih metode pembayaran (transfer bank, kartu kredit, e-wallet).|
+      | Pelanggan dapat konfirmasi pembelian dan pengaturan pengiriman produk. |
+5. **Modul Review dan Rating Produk — Muhammad Farid Hasabi** 
+   
+      Modul ini berfungsi untuk memberikan review dan rating terhadap suatu produk.
+      
+      Pelanggan | Admin
+      -|-
+      Pelanggan dapat memberikan ulasan dan rating untuk tiap produk.|Admin dapat menghapus review yang telah dibuat oleh Pelanggan.
+6. **Modul Wishlist dan Frequently Asked Question (FAQ) — Akhyar Rasyid Asy syifa** 
+   
+      Modul ini berfungsi untuk melihat daftar wishlist dan Frequently Asked Question (F.A.Q).
+    
+      | Pelanggan | Admin |
+      | --------- | ----- |
+      | Pengguna dapat melihat kumpulan pertanyaan yang sering ditanyakan terkait penggunaan aplikasi, produk, dan layanan.| Admin dapat menambah, mengedit, dan menghapus daftar Frequently Asked Question. |
+      | Pengguna dapat menambahkan produk ke wishlist untuk dibeli atau dilihat nanti.| -  |
+   
+7. **Modul Profile — Micheline Wijaya Limbergh**
+    
+     Modul ini berfungsi untuk mengubah data pada profil User.
+     
+     | Pelanggan | Admin |
+     | --------- | ----- |
+     | Pelanggan dapat mengubah nama, email, foto profil.| Admin bisa mengubah nama, email, dan foto profil|
+     | Pelanggan dapat mengubah password | Admin dapat mengubah password |
+     | Pelanggan dapat melihat history transaksi pemesanan. | -|
+   
+8. **Modul Toko — Muhammad Albyarto Ghazali**
+
+      Modul ini berfungsi untuk mengatur pengelolaan produk yang dijual oleh toko, termasuk kategori produk dan harga.
+   
+      Pelanggan|Admin
+      -|-
+      Pelanggan dapat melihat tiap produk yang dijual oleh toko, termasuk kategori produk dan harga.|Admin dapat menambah, mengubah, serta menghapus produk pada toko mereka.
 
 ### Sumber Dataset 📊
 Kategori Utama : Gadget
