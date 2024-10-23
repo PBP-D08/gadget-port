@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,7 +23,7 @@
     <!-- Navbar -->
     <nav class="w-auto h-20 flex items-center justify-between m-10 shadow-xl bg-blue-200 rounded-full mb-10">
         <div class="flex items-center">
-            <!-- <img src="" class="w-16 h-16 mr-4" alt="Logo"/> -->
+            <img src="{% static 'image/Logo.png' %}" class="w-44 mx-10" alt="Logo"/>
             
         </div>
         <div class="md:hidden">
@@ -67,7 +67,7 @@
                 {% if user.is_authenticated %}
                     <a href="user/profile/" class="text-gray-800 hover:text-blue-600 bg-gray-100 p-3 rounded-full font-semibold transition duration-200">Welcome, {{ user.username }}</a>
                 {% else %}
-                    <a href="{% url 'authentication:login' %}" class="text-gray-800 hover:text-blue-600 bg-gray-100 p-3 rounded-full font-semibold transition duration-200">Sign In</a>
+                    <a href="signin/login" class="text-gray-800 hover:text-blue-600 bg-gray-100 p-3 rounded-full font-semibold transition duration-200">Sign In</a>
                 {% endif %}
             </li>
         </ul>
