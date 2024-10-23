@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 
 <head>
     <meta charset="UTF-8">
@@ -11,21 +12,20 @@
 </script>
     <style>
         /* Custom background image using a class */
-        .custom-bg {
-            background-image: url('https://wallpapers.com/images/hd/aesthetic-laptop-drawing-kzs2xmyje63oewbt.jpg');
+        /* .custom-bg {
+            background-image: url('https://i.ibb.co/c8ZtWhm/Mask-group-7.png');
             background-size: cover;
             background-position: center;
-        }
+        } */
     </style>
 </head>
 
-<body class="bg-white font-sans flex flex-col min-h-screen">
+<body class="bg-white font-sans flex flex-col min-h-screen custom-bg">
 
     <!-- Navbar -->
     <nav class="w-auto h-20 flex items-center justify-between m-10 shadow-xl bg-blue-200 rounded-full mb-10">
         <div class="flex items-center">
-            <!-- <img src="" class="w-16 h-16 mr-4" alt="Logo"/> -->
-            
+            <img src="{% static 'image/logo.png' %}" class="w-44 mx-10 mr-4" alt="Logo"/>
         </div>
         <div class="md:hidden">
             <button id="mobile-menu-button" class="focus:outline-none p-2 mx-5 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition duration-300">
@@ -44,8 +44,8 @@
 
     <!-- Main Content Block -->
     <div class="flex-grow container mx-auto mb-10">
-        {% block content %}
-        {% endblock content %}
+        {% block contents %}
+        {% endblock contents %}
     </div>
 
     <!-- Footer -->
