@@ -1,14 +1,19 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block contents %}
-<h1>Mental Health Tracker</h1>
 
-<h5>NPM: </h5>
-<p>{{ npm }}<p>
-
-<h5>Name:</h5>
-<p>{{ name }}</p>
-
-<h5>Class:</h5>
-<p>{{ class }}</p>
+<!-- Image dan search bar -->
+<div class="grid grid-cols-3 items-center">
+    <!-- Image -->
+    <div class="col-span-2">
+        <img src="{% static 'image/hero.png' %}" alt="Hero" class="w-auto"/>
+    </div>
+    <!-- Search Bar -->
+    <div class="m-10 text-center">
+        <p class="font-bold text-4xl text-blue-400">Cari kebutuhanmu Di Sini!</p>
+        <!-- Search bar -->
+        <input type="text" placeholder="Search..." class="border rounded-lg p-2 mt-2 w-full"/>
+    </div>
+</div>
 
 {% endblock contents %}
