@@ -34,10 +34,42 @@
             </button>
         </div>
         <ul class="hidden md:flex space-x-20 p-5">
+            <!-- Cara connectin modul kalian ke navbar : 
+            1. Buat startapp dulu sesuai modul
+            2. Buat folder tmplates, file html di aplikasi kalian, jangan lupa kasih:
+            extends 'base.html'
+            load static
+
+            {% block content(s) %}
+            <h1>Hai</h1>
+            {% endblock content(s) %}
+            3. Buat juga views.py dan model.py
+            4. Buat urls.py di aplikasi kalian, isi : 
+            from django.urls import path
+            from . import views
+
+            app_name = "user" // "user" ganti jadi nama apps kalian
+
+            urlpatterns = [
+                path('profile/', views.user_profile_view, name='user_profile'),
+            ]
+            5. Connectin ke urls.py di gadget port 
+               path('user/', include('user.urls')),  
+               
+               6. Nah di base ini href dari tag <a></a> sisa kalian ganti. misal
+                tadi gw app user, definisiin url di gadgetport dengan "user/" lalu
+                definisiin url di user dengan "profile/", maka tulis di hrefnya "user/profile/"
+            -->
             <li><a href="{% url 'main:show_main' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200">Home</a></li>
             <li><a href="{% url 'main:show_main' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200">Products</a></li>
             <li><a href="{% url 'main:show_main' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200">Cart</a></li>
-            <li><a href="{% url 'main:show_main' %}" class="text-gray-800 hover:text-blue-600 bg-gray-100 p-3 rounded-full font-semibold transition duration-200">Sign In</a></li>
+            <li>
+                {% if user.is_authenticated %}
+                    <a href="user/profile/" class="text-gray-800 hover:text-blue-600 bg-gray-100 p-3 rounded-full font-semibold transition duration-200">Welcome, {{ user.username }}</a>
+                {% else %}
+                    <a href="{% url 'main:show_main' %}" class="text-gray-800 hover:text-blue-600 bg-gray-100 p-3 rounded-full font-semibold transition duration-200">Sign In</a>
+                {% endif %}
+            </li>
         </ul>
     </nav>
 
