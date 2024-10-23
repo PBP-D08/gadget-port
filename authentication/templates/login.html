@@ -10,22 +10,22 @@
     </div>
     <div class="md:basis-5/12 my-auto mx-auto">
         {% comment %} <a class="z-10" href="/"><img class="mx-auto -mt-24 mb-12" src="{% static 'img/Logo.png' %}" width="220px" alt="Logo GadgetPort"/></a> {% endcomment %}
-        <div class="bg-white px-10 pt-8 pb-12 rounded-lg shadow-xl w-96 md:w-auto max-w-sm md:max-w-2xl">
-            <p class="font-bold text-3xl text-[#6499E9] text-center mb-4 md:mb-32">Login</p>
+        <div class="bg-white px-10 pt-8 pb-12 rounded-lg shadow-2xl w-96 md:w-auto max-w-sm md:max-w-2xl">
+            <p class="font-bold text-3xl text-[#6499E9] text-center font-extrabold mt-10 mb-4 md:mb-32">Login</p>
             <form id="reg-form" method="POST">
                 {% csrf_token %}
                 <div class="grid grid-cols-1 gap-y-5 gap-x-4">
                     <div>
                         <p class="text-sm font-medium">Username:</p>
                         <div>
-                            <input class="border w-full rounded-lg text-sm px-3 py-2" type="text" name="username" placeholder="username123"/>
+                            <input class="border w-full rounded-lg text-sm px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300" type="text" name="username" placeholder="username"/>
                         </div>
                         <p class="absolute text-xs text-blue-500 pt-1" id="username-msg"></p>
                     </div>
                     <div>
                         <p class="text-sm font-medium">Password:</p>
                         <div>
-                            <input class="block border w-full rounded-lg text-sm px-3 py-2" type="password" name="password" autocomplete="new-password" required id="id_password1">
+                            <input class="block border w-full rounded-lg text-sm px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300" type="password" name="password" autocomplete="new-password" required id="id_password1">
                             <p id="pass1-msg" class="text-xs leading-tight pt-1"></p>
                         </div>
                     </div>
@@ -40,8 +40,8 @@
             {% else %}
                 <div class="messages mt-12 md:mt-32 mb-4"></div>
             {% endif %}
-            <button id="submit-btn" form="reg-form" class="w-full bg-[#6499E9] text-white disabled:bg-gray-300 transition duration-200 hover:bg-[#9EDDFF] rounded-lg py-2" type="submit" value="Register">Login</button>
-            <p class="text-sm pt-6 text-center">Don't have an account yet? <a class="text-[#247FB8] hover:text-[#6499E9]" href="{% url 'authentication:register' %}">Register</a></p>
+            <button id="submit-btn" form="reg-form" class="w-full bg-[#6499E9] text-white disabled:bg-gray-300 transition duration-200 hover:bg-[#83B4FF] rounded-lg py-2" type="submit" value="Register">Login</button>
+            <p class="text-sm pt-6 text-center">Don't have an account yet? <a class="text-[#83B4FF] hover:text-[#6499E9]" href="{% url 'authentication:register' %}">Register</a></p>
         </div>
     </div>
 </div>

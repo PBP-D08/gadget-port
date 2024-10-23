@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
 
 <head>
     <meta charset="UTF-8">
@@ -8,24 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gadget Port Store</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com">
-</script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Custom background image using a class */
-        /* .custom-bg {
-            background-image: url('https://i.ibb.co/c8ZtWhm/Mask-group-7.png');
+        .custom-bg {
+            background-image: url('https://wallpapers.com/images/hd/aesthetic-laptop-drawing-kzs2xmyje63oewbt.jpg');
             background-size: cover;
             background-position: center;
-        } */
+        }
     </style>
 </head>
 
-<body class="bg-white font-sans flex flex-col min-h-screen custom-bg">
+<body class="bg-white font-sans flex flex-col min-h-screen">
 
     <!-- Navbar -->
     <nav class="w-auto h-20 flex items-center justify-between m-10 shadow-xl bg-blue-200 rounded-full mb-10">
         <div class="flex items-center">
-            <img src="{% static 'image/logo.png' %}" class="w-44 mx-10 mr-4" alt="Logo"/>
+            <!-- <img src="" class="w-16 h-16 mr-4" alt="Logo"/> -->
+            
         </div>
         <div class="md:hidden">
             <button id="mobile-menu-button" class="focus:outline-none p-2 mx-5 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition duration-300">
@@ -44,8 +43,8 @@
 
     <!-- Main Content Block -->
     <div class="flex-grow container mx-auto mb-10">
-        {% block contents %}
-        {% endblock contents %}
+        {% block content %}
+        {% endblock content %}
     </div>
 
     <!-- Footer -->
