@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+<head>
+    {% block meta %}
+        <title>Sign Up</title>
+    {% endblock meta %}
+</head>
+
+<body>
+    {% block content %}
+    <link rel="stylesheet">
+
+    <div class="container">
+        <div class="signup">
+            <form method="POST" action="">
+                <h1>Sign Up GadgetPort</h1>
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.as_p }}
+                    <button class="signup-btn" type="submit">Sign Up</button>
+                </div>
+            </form>
+
+            {% if messages %}
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+            {% endif %} 
+            <br>
+            <p>Already have an account?
+                <a href="{% url 'authentication:login' %}"> Log in</a>
+            </p>
+        </div>
+    </div>
+    {% endblock content %}
+</body>
