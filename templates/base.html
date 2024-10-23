@@ -36,12 +36,12 @@
             <!-- Cara connectin modul kalian ke navbar : 
             1. Buat startapp dulu sesuai modul
             2. Buat folder tmplates, file html di aplikasi kalian, jangan lupa kasih:
-            {% extends 'base.html' %}
-            {% load static %}
+            extends 'base.html'
+            load static
 
-            {% block contents %}
+            {% block content(s) %}
             <h1>Hai</h1>
-            {% endblock contents %}
+            {% endblock content(s) %}
             3. Buat juga views.py dan model.py
             4. Buat urls.py di aplikasi kalian, isi : 
             from django.urls import path
