@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<h1>Cart</h1>
+<div>
+    <ul>
+        {% for item in cart %}
+        <li>
+            {{item.product.name}}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
