@@ -6,8 +6,8 @@ class Profile(models.Model):
     # ROLE_CHOICES = [('admin','Admin'), ('auyer','Buyer')]
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     role = models.CharField(max_length=5)
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
+    username = models.CharField(max_length=30)
+    full_name = models.CharField(max_length=30)
     email = models.EmailField(max_length=200)
     alamat = models.CharField(max_length=255)
 

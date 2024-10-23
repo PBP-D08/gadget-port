@@ -4,25 +4,32 @@ from authentication.models import Profile
 from django.contrib.auth.models import User
 
 class RegisterForm(UserCreationForm):
-    user_type = forms.ChoiceField(
-        choices = (("admin", "Admin"), ("buyer", "Buyer")),
-        label="Choose your user type:",
+    role = forms.ChoiceField(
+        choices = (("Admin", "Admin"), ("Buyer", "Buyer")),
+        label="Choose your role",
         required=True
     )
-    email = forms.EmailField(label = "Email", required=True)
-    full_name = forms.CharField(label = "Name", required=True)
+    email = forms.EmailField(label="Email", required=True)
+    full_name = forms.CharField(label="Name", required=True)
 
     class Meta:
         model = User
-        fields = ("user_type", "username", "full_name","email","password1", "password2")
+        fields = ("role", "username", "full_name", "email", "password1", "password2")
 
     def save(self, commit=True):
         user = super(RegisterForm, self).save(commit=False)
+        user.email = self.cleaned_data["email"]  # Save email to the User model
+
         if commit:
             user.save()
-        Profile.objects.create(
-            user = user,
-            full_name = self.cleaned_data["full_name"],
-            user_type = self.cleaned_data["user_type"]
+
+        # Check if Profile already exists for the user to avoid duplication
+        profile, created = Profile.objects.get_or_create(
+            user=user,
+            defaults={
+                "full_name": self.cleaned_data["full_name"],
+                "role": self.cleaned_data["role"],
+            }
         )
+
         return user
