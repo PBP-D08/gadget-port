@@ -2,9 +2,13 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+# ============================================================
+#                       Cart Functions
+# ============================================================
+
 class Store(models.Model):
     name = models.CharField(max_length=100)
-    logo = models.ImageField(upload_to='store_logos/')
+    # logo = models.ImageField(upload_to='store_logos/')
     is_official = models.BooleanField(default=False)
 
     def __str__(self):
@@ -17,7 +21,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     original_price = models.DecimalField(max_digits=10, decimal_places=2)
     discount_percentage = models.IntegerField(default=0)
-    image = models.ImageField(upload_to='products/')
+    # image = models.ImageField(upload_to='products/')
     
     def __str__(self):
         return self.name
@@ -60,3 +64,42 @@ def update_cart(request):
             'quantity': cart_item.quantity,
             'total': float(cart_item.get_total())
         })
+    
+# ==================================================================
+#                           Checkout
+# ==================================================================
+
+class Address(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    recipient_name = models.CharField(max_length=100)
+    full_address = models.TextField()
+    rt_rw = models.CharField(max_length=50)
+    district = models.CharField(max_length=100)
+    city = models.CharField(max_length=100)
+    province = models.CharField(max_length=100)
+    postal_code = models.CharField(max_length=10)
+    is_default = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.recipient_name} - {self.district}"
+
+class ShippingMethod(models.Model):
+    name = models.CharField(max_length=100)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    estimated_days = models.CharField(max_length=50)
+    
+    def __str__(self):
+        return self.name
+
+class Order(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    address = models.ForeignKey(Address, on_delete=models.SET_NULL, null=True)
+    shipping_method = models.ForeignKey(ShippingMethod, on_delete=models.SET_NULL, null=True)
+    items_total = models.DecimalField(max_digits=10, decimal_places=2)
+    shipping_total = models.DecimalField(max_digits=10, decimal_places=2)
+    donation = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    grand_total = models.DecimalField(max_digits=10, decimal_places=2)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return f"Order #{self.id} - {self.user.username}"
