@@ -34,36 +34,6 @@ class CartItem(models.Model):
 
     def get_total(self):
         return self.product.price * self.quantity
-
-# views.py
-from django.shortcuts import render
-from django.http import JsonResponse
-from .models import CartItem, Product
-
-def cart_view(request):
-    cart_items = CartItem.objects.filter(user=request.user).select_related('product', 'product__store')
-    return render(request, 'cart.html', {'cart_items': cart_items})
-
-def update_cart(request):
-    if request.method == 'POST':
-        item_id = request.POST.get('item_id')
-        action = request.POST.get('action')
-        cart_item = CartItem.objects.get(id=item_id, user=request.user)
-        
-        if action == 'increment':
-            cart_item.quantity += 1
-        elif action == 'decrement' and cart_item.quantity > 1:
-            cart_item.quantity -= 1
-        elif action == 'remove':
-            cart_item.delete()
-            return JsonResponse({'status': 'removed'})
-        
-        cart_item.save()
-        return JsonResponse({
-            'status': 'updated',
-            'quantity': cart_item.quantity,
-            'total': float(cart_item.get_total())
-        })
     
 # ==================================================================
 #                           Checkout
