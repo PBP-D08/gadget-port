@@ -2,21 +2,28 @@
 
 <!-- templates/cart.html -->
 {% load static %}
-
-<head>
+{% block content %}
+<!-- <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100">
+</head> -->
+<!-- <body class="bg-gray-100"> -->
     <div class="container mx-auto px-4 py-8">
         <div class="flex flex-col md:flex-row gap-8">
             <!-- Cart Items -->
             <div class="w-full md:w-2/3">
                 <h2 class="text-2xl font-bold">Keranjang</h2>
+                {% if not cart_items %}
+                <div class="flex flex-col items-center justify-center min-h-[24rem] p-6">
+                    <img src="{% static 'image/Pesanan_Kosong.jpg' %}" alt="order_now" class="w-40 h-32 mb-4"/>
+                    <h5></h5>
+                    <p class="text-center text-gray-600 mt-4">Belum ada daftar pesanan.</p>
+                </div>
+                {% else %}
+                {% for item in cart_items %}
                 <div class="bg-white rounded-lg shadow p-6">
-                    {% for item in cart_items %}
                     <div class="flex justify-between items-center mb-6">
                         <button class="text-red-500 hover:text-red-600">Hapus</button>
                     </div>
@@ -66,8 +73,9 @@
                             </div>
                         </div>
                     </div>
-                    {% endfor %}
                 </div>
+                {% endfor %}
+                {% endif %}
             </div>
             
             <!-- Order Summary -->
@@ -166,5 +174,5 @@
         });
     });
 </script>
-</body>
-</html>
+{% endblock content %}
+<!-- </body> -->
