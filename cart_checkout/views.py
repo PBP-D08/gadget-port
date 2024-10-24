@@ -17,7 +17,7 @@ def checkout(request):
 
 @login_required
 def payment(request):
-    return render(request, 'payment.html')
+    return render(request, 'payments.html')
 
 # @login_required
 # def confirm_order(request):
