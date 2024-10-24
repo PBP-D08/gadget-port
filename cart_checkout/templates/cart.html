@@ -1,0 +1,178 @@
+{% extends 'base.html' %}
+
+<!-- templates/cart.html -->
+{% load static %}
+{% block content %}
+<!-- <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head> -->
+<!-- <body class="bg-gray-100"> -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="flex flex-col md:flex-row gap-8">
+            <!-- Cart Items -->
+            <div class="w-full md:w-2/3">
+                <h2 class="text-2xl font-bold">Keranjang</h2>
+                {% if not cart_items %}
+                <div class="flex flex-col items-center justify-center min-h-[24rem] p-6">
+                    <img src="{% static 'image/Pesanan_Kosong.jpg' %}" alt="order_now" class="w-40 h-32 mb-4"/>
+                    <h5></h5>
+                    <p class="text-center text-gray-600 mt-4">Belum ada daftar pesanan.</p>
+                </div>
+                {% else %}
+                {% for item in cart_items %}
+                <div class="bg-white rounded-lg shadow p-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <button class="text-red-500 hover:text-red-600">Hapus</button>
+                    </div>
+                    
+                    <div class="border-b pb-6 mb-6 cart-item" data-id="{{ item.id }}">
+                        <div class="flex items-start gap-4">
+                            <input type="checkbox" class="mt-2" {% if item.selected %}checked{% endif %}>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <!-- <img src="{{ item.product.store.logo.url }}" class="w-6 h-6 rounded-full"> perlu perbaikan gambar -->
+                                    <span class="font-semibold">{{ item.product.store.name }}</span>
+                                    {% if item.product.store.is_official %}
+                                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Official</span>
+                                    {% endif %}
+                                </div>
+                                
+                                <div class="flex gap-4">
+                                    <!-- <img src="{{ item.product.image.url }}" class="w-24 h-24 object-cover rounded"> perlu perbaikan gambar -->
+                                    <div class="flex-1">
+                                        <h3 class="font-medium">{{ item.product.name }}</h3>
+                                        <div class="mt-2">
+                                            <span class="text-lg font-bold">Rp{{ item.product.price|floatformat:0 }}</span>
+                                            {% if item.product.discount_percentage > 0 %}
+                                            <span class="text-sm text-gray-500 line-through ml-2">
+                                                Rp{{ item.product.original_price|floatformat:0 }}
+                                            </span>
+                                            <span class="text-sm text-red-500 ml-2">
+                                                {{ item.product.discount_percentage }}%
+                                            </span>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-4">
+                                <div class="flex items-center border rounded">
+                                    <button class="px-3 py-1 decrement">-</button>
+                                    <span class="px-3 quantity">{{ item.quantity }}</span>
+                                    <button class="px-3 py-1 increment">+</button>
+                                </div>
+                                <button class="text-gray-400 hover:text-gray-600 remove">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% endif %}
+            </div>
+            
+            <!-- Order Summary -->
+            <div class="w-full md:w-1/3">
+                <div class="bg-white rounded-lg shadow p-6 sticky top-4">
+                    <h3 class="text-lg font-bold mb-4">Ringkasan belanja</h3>
+                    <div class="flex justify-between mb-4">
+                        <span>Total</span>
+                        <span class="font-bold cart-total">Rp{{ total|floatformat:0 }}</span>
+                    </div>
+                    <button class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600">
+                        Beli ({{ cart_items.count }})
+                    </button>
+                    <div class="mt-4 p-4 bg-blue-50 rounded-lg flex items-center gap-2">
+                        <span class="text-yellow-500">🏷️</span>
+                        <span class="text-sm">Makin hemat pakai promo</span>
+                        <span class="text-blue-500 ml-auto">›</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    // javascript
+    document.addEventListener('DOMContentLoaded', function() {
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        const csrftoken = getCookie('csrftoken');
+
+        function updateCartItem(itemId, action) {
+            fetch('/cart/update/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'X-CSRFToken': csrftoken,
+                },
+                body: `item_id=${itemId}&action=${action}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'updated') {
+                    const cartItem = document.querySelector(`.cart-item[data-id="${itemId}"]`);
+                    cartItem.querySelector('.quantity').textContent = data.quantity;
+                    updateTotal();
+                } else if (data.status === 'removed') {
+                    const cartItem = document.querySelector(`.cart-item[data-id="${itemId}"]`);
+                    cartItem.remove();
+                    updateTotal();
+                }
+            });
+        }
+
+        function updateTotal() {
+            const cartItems = document.querySelectorAll('.cart-item');
+            let total = 0;
+            cartItems.forEach(item => {
+                const price = parseFloat(item.querySelector('.price').textContent.replace('Rp', '').replace(',', ''));
+                const quantity = parseInt(item.querySelector('.quantity').textContent);
+                total += price * quantity;
+            });
+            document.querySelector('.cart-total').textContent = `Rp${total.toLocaleString()}`;
+        }
+
+        // Event Listeners
+        document.querySelectorAll('.increment').forEach(button => {
+            button.addEventListener('click', function() {
+                const itemId = this.closest('.cart-item').dataset.id;
+                updateCartItem(itemId, 'increment');
+            });
+        });
+
+        document.querySelectorAll('.decrement').forEach(button => {
+            button.addEventListener('click', function() {
+                const itemId = this.closest('.cart-item').dataset.id;
+                updateCartItem(itemId, 'decrement');
+            });
+        });
+
+        document.querySelectorAll('.remove').forEach(button => {
+            button.addEventListener('click', function() {
+                const itemId = this.closest('.cart-item').dataset.id;
+                updateCartItem(itemId, 'remove');
+            });
+        });
+    });
+</script>
+{% endblock content %}
+<!-- </body> -->
