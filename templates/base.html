@@ -62,7 +62,7 @@
             -->
             <li><a href="{% url 'main:show_main' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200">Home</a></li>
             <li><a href="{% url 'main:show_main' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200">Products</a></li>
-            <li><a href="{% url 'main:show_main' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200">Cart</a></li>
+            <li><a href="{% url 'cart_checkout:cart' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200">Cart</a></li>
             <li>
                 {% if user.is_authenticated %}
                     <a href="user/profile/" class="text-gray-800 hover:text-blue-600 bg-gray-100 p-3 rounded-full font-semibold transition duration-200">Welcome, {{ user.username }}</a>

@@ -2,8 +2,7 @@
 
 <!-- templates/cart.html -->
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +26,7 @@
                             <input type="checkbox" class="mt-2" {% if item.selected %}checked{% endif %}>
                             <div class="flex-1">
                                 <div class="flex items-center gap-2 mb-2">
-                                    <img src="{{ item.product.store.logo.url }}" class="w-6 h-6 rounded-full">
+                                    <!-- <img src="{{ item.product.store.logo.url }}" class="w-6 h-6 rounded-full"> perlu perbaikan gambar -->
                                     <span class="font-semibold">{{ item.product.store.name }}</span>
                                     {% if item.product.store.is_official %}
                                     <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Official</span>
@@ -35,7 +34,7 @@
                                 </div>
                                 
                                 <div class="flex gap-4">
-                                    <img src="{{ item.product.image.url }}" class="w-24 h-24 object-cover rounded">
+                                    <!-- <img src="{{ item.product.image.url }}" class="w-24 h-24 object-cover rounded"> perlu perbaikan gambar -->
                                     <div class="flex-1">
                                         <h3 class="font-medium">{{ item.product.name }}</h3>
                                         <div class="mt-2">
