@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block meta %}
-<title>Login | GadgetPort</title>
 {% endblock meta %}
 {% block content %}
 <div class="flex items-center container mx-auto h-screen font-inter">
@@ -34,12 +33,13 @@
             {% if messages %}
                 <div class="messages mt-2 md:mt-32 mb-4">
                     {% for message in messages %}
-                    <p class="text-xs md:text-sm text-blue-500 text-center">{{message}}</p>
+                    <p class="text-xs md:text-sm {% if message.level == 40 %}text-red-500{% else %}text-blue-500{% endif %} text-center">{{ message }}</p>
                     {% endfor %}
                 </div>
             {% else %}
                 <div class="messages mt-12 md:mt-32 mb-4"></div>
             {% endif %}
+
             <button id="submit-btn" form="reg-form" class="w-full bg-[#6499E9] text-white disabled:bg-gray-300 transition duration-200 hover:bg-[#83B4FF] rounded-lg py-2" type="submit" value="Register">Login</button>
             <p class="text-sm pt-6 text-center">Don't have an account yet? <a class="text-[#83B4FF] hover:text-[#6499E9]" href="{% url 'authentication:register' %}">Register</a></p>
         </div>

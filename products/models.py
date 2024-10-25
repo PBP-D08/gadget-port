@@ -7,5 +7,5 @@ class Katalog(models.Model):
     category = models.CharField(max_length=255)
     brand = models.CharField(max_length=255)
     price = models.IntegerField()
-    # image_link = models.ImageField()
-    spec = models.CharField(max_length=255)
+    image_link = models.ImageField()
+    spec = models.CharField(max_length=512)
