@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import authenticate, logout, login as auth_login
+from django.contrib.auth import authenticate, logout as auth_logout, login as auth_login
 from django.views.decorators.csrf import csrf_exempt
 from authentication.forms import RegisterForm
 
@@ -20,8 +20,7 @@ def login(request):
             response.set_cookie("user_logged_in", user)
             return response
         else:
-            messages.info(
-                request, "Sorry, incorrect username or password. Please try again.")
+            messages.error(request, "Sorry, incorrect username or password. Please try again.")
     context = {}
     if request.user.is_authenticated:
         return redirect('main:show_main')
@@ -41,7 +40,7 @@ def register(request):
     return render(request, 'register.html', context)
 
 def logout(request):
-    logout(request)
+    auth_logout(request)
     response = redirect("main:show_main")
     response.delete_cookie('user_logged_in')
     return response
