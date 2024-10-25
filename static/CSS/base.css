@@ -1,0 +1,22 @@
+:root{
+    --gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+body {
+    background-image: var(--gradient);
+    background-size: 300%;
+    animation: gradient-animation 5s infinite alternate;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: right;
+    }
+}
+
+p#intro {
+    font-family: "Chakra Petch", sans-serif;
+}

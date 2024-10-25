@@ -37,25 +37,8 @@ def add_to_cart(request, product_id):
 @login_required
 @csrf_exempt
 def cart_view(request):
-    """Display the user's shopping cart"""
-    try:
-        cart_items = CartItem.objects.filter(user=request.user).select_related(
-            'product', 'product__store'
-        )
-        
-        subtotal = sum(item.get_total() for item in cart_items)
-        
-        context = {
-            'cart_items': cart_items,
-            'subtotal': subtotal,
-            'total_items': cart_items.count()
-        }
-        
-        return render(request, 'cart.html', context)
-        
-    except Exception as e:
-        messages.error(request, 'Error loading cart')
-        return redirect('home')
+    cart_items = CartItem.objects.filter(user=request.user).select_related('product', 'product__store')
+    return render(request, 'cart.html', {'cart_items': cart_items})
 
 @login_required
 @csrf_exempt
