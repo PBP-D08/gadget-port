@@ -11,8 +11,8 @@
                 <h2 class="text-2xl font-bold">Keranjang</h2>
                 {% if not cart_items %}
                 <div class="flex flex-col items-center justify-center min-h-[24rem] p-6">
-                    <img src="{% static 'image/Pesanan_Kosong.jpg' %}" alt="order_now" class="w-40 h-32 mb-4"/>
-                    <h5></h5>
+                    <img src="{% static 'image/cart_empty.png' %}" alt="order_now" class="w-40 h-36 mb-4"/>
+                    <h5> </h5>
                     <p class="text-center text-gray-600 mt-4">Belum ada daftar pesanan.</p>
                 </div>
                 {% else %}
