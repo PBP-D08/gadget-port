@@ -1,0 +1,106 @@
+/* style.css */
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+.add-store-button {
+    background-color: #005b9c;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    transition: background-color 0.3s;
+}
+
+.add-store-button:hover {
+    background-color: #0077b3;
+}
+
+.store-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.store-card:hover {
+    transform: scale(1.05);
+}
+
+.store-logo {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.store-info {
+    padding: 1rem;
+}
+
+.store-name {
+    font-size: 1.25rem;
+    color: #005b9c;
+    font-weight: bold;
+}
+
+.store-address,
+.store-hours,
+.store-phone {
+    font-size: 0.9rem;
+    color: #6b7280; /* gray */
+}
+
+.see-details-button {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: #3992C6;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.see-details-button:hover {
+    background-color: #247FB8;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.confirm-button {
+    background-color: #3992C6;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.cancel-button {
+    background-color: white;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

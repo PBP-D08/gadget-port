@@ -21,7 +21,7 @@ def show_product_reviews(request, id):
 
     # Tambahkan logging untuk debug
     print(f"Product: {product.name}, Reviews Count: {reviews.count()}")
-
+    print(request.user, " " ,product," ", request.POST.get('rating')," ", request.POST.get('review_text'))
     context = {
         'product': product,
         'reviews': reviews,
@@ -29,90 +29,47 @@ def show_product_reviews(request, id):
 
     return render(request, 'review.html', context)
 
-# def show_review(request, id):
-#     try:
-#         review = Review.objects.get(id=id)
-#         context = {
-#             "review": review
-#         }
-#         return render(request, 'review_detail.html', context)
-#     except Review.DoesNotExist:
-#         return HttpResponseNotFound()
-    
-# @login_required(login_url='/login')
-# @csrf_exempt
-# def add_review(request, id):
-#     form = ReviewForm(request.POST or None)
-#     product = get_object_or_404(Katalog, pk=id)
-    
-#     if form.is_valid() and request.method == "POST":
-#         review = form.save(commit=False)
-#         review.product = product
-#         review.user = request.user
-#         review.timestamp = datetime.datetime.now()
-#         review.save()
-#         product.update_rating()
-#         return HttpResponseRedirect(reverse('main:show_main'))
-    
-#     last_login = request.COOKIES.get('last_login', 'Not available')
 
-#     context = {
-#         'form': form,
-#         'product': product,
-#         'last_login': last_login
-#     }
-
-#     return render(request, 'review.html', context)
-
-
-# @login_required(login_url='/login')
-# @csrf_exempt
-# def add_review(request, id):
-#     if request.method == "POST":
-#         user = request.user
-#         product_review = Katalog.objects.get(pk=request.POST.get("id"))
-#         rating = request.POST.get("rating")
-#         review_message = request.POST.get("review_text")
-
-#         new_review = Review(user=user, product = product_review, rating = rating, review_text = review_message)
-#         new_review.save()
-
-#         return HttpResponse(b"ADDED", status=201)
-#     return HttpResponseNotFound()
-@login_required(login_url='authentication:login')
 @csrf_exempt
 def add_review(request, id):
     """ View to add review """
-    print("testest")
+    
     if request.method == 'POST':
-        data = json.loads(request.body)  # Mengambil data dari body request
-        rating = request.POST.get('rating')
-        review_text = request.POST.get('review_text')
         user = request.user
         product = Katalog.objects.get(pk=id)
+        rating = request.POST.get('rating')
+        review_text = request.POST.get('review_text')
         print("testest")
-        if not rating or not review_text:
-            return JsonResponse({'error': 'Rating and review text are required.'}, status=400)
-        try:
-            # Create the review
-            review = Review(
-                user=user,
-                product=product,
-                rating=int(rating),
-                review_text=review_text,
-                timestamp=datetime.datetime.now()
-            )
-            # Update the product's average rating
-            product.update_rating()
-            review.save()
-            print("berhasil bnag")
-            return HttpResponse(b"CREATED", status=201)
 
-        except Exception as e:
-            return JsonResponse({'error': str(e)}, status=500)
+        review = Review(
+            user=user,
+            product=product,
+            rating=rating,
+            review_text=review_text,
+            timestamp=datetime.datetime.now()
+        )
+        # Update the product's average rating
+        # review.update_rating()
+        print(user, product, rating, review_text)
+        review.save()
+        print("berhasil bnag")
+        return JsonResponse({'Success':''}, status=201)
 
     return JsonResponse({'error': 'Invalid request method'}, status=400)
 
+# @csrf_exempt
+# @login_required(login_url='/login')
+# def add_review(request, id):
+#     if request.method == 'POST':
+#         rating = request.POST.get("rating")
+#         review = request.POST.get("review")
+#         user = request.user
+#         product = Katalog.objects.get(pk = id)
+#         new_review = Review(rating=rating, review=review, user=user, product=product)
+#         new_review.save()
+
+#         return HttpResponse(b"CREATED", 201)
+#     return HttpResponseNotFound()
 
 def show_json(request):
     data = Review.objects.all()
