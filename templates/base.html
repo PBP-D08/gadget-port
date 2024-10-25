@@ -20,6 +20,7 @@
         }
     </style>
     <link rel="stylesheet" href="{% static 'CSS/base.css' %}"/>
+    <link rel="stylesheet" href="{% static 'CSS/store.css' %}"/>
 </head>
 
 <body class="bg-white font-sans flex flex-col min-h-screen">
@@ -64,9 +65,10 @@
                 tadi gw app user, definisiin url di gadgetport dengan "user/" lalu
                 definisiin url di user dengan "profile/", maka tulis di hrefnya "user/profile/"
             -->
-            <li><a href="{% url 'main:show_main' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200 align-middle">Home</a></li>
-            <li><a href="{% url 'main:show_main' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200 align-middle">Products</a></li>
-            <li><a href="{% url 'cart_checkout:cart' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200 align-middle">Cart</a></li>
+            <li><a href="{% url 'main:show_main' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200">Home</a></li>
+            <li><a href="{% url 'products:show_products' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200">Products</a></li>
+            <li><a href="{% url 'store:list_store' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200">Store</a></li>
+            <li><a href="{% url 'cart_checkout:cart' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200">Cart</a></li>
             <li>
                 {% if user.is_authenticated %}
                     {% comment %} <a href="user/profile/" class="text-gray-800 hover:text-blue-600 bg-gray-100 p-3 rounded-full font-semibold transition duration-200">Welcome, {{ user.username }}</a> {% endcomment %}
