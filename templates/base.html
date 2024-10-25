@@ -82,13 +82,13 @@
                             <div id="dropdown-menu" class="absolute hidden bg-white border border-black rounded-md mt-2 w-full z-50">
                                 <ul class="py-2">
                                     <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer">Profile</li>
-                                    <a href="signin/logout"><li class="px-4 py-2 hover:bg-gray-200 cursor-pointer">Logout</li></a>
+                                    <a href="{% url 'authentication:logout' %}"><li class="px-4 py-2 hover:bg-gray-200 cursor-pointer">Logout</li></a>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 {% else %}
-                    <a href="signin/login/" class="text-gray-800 hover:text-blue-600 bg-gray-100 p-3 rounded-full font-semibold transition duration-200">Sign In</a>
+                    <a href="{% url 'authentication:login' %}" class="text-gray-800 hover:text-blue-600 bg-gray-100 p-3 rounded-full font-semibold transition duration-200">Sign In</a>
                 {% endif %}
             </li>
         </ul>
