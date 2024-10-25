@@ -135,9 +135,4 @@ else:
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-<<<<<<< HEAD
-
-LOGIN_URL = 'authentication:login'
-=======
 LOGIN_URL = '/signin/login/'
->>>>>>> 7a39658b2c697b6f5725b914c01901d91d110696
