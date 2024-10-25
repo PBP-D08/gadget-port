@@ -1,4 +1,4 @@
-import datetime
+import datetime, json
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
@@ -13,17 +13,20 @@ from products.models import Katalog
 
 
 # Create your views here.
-@login_required(login_url="authentication:login")
-def show_main(request, id):
-    form = ReviewForm(request.POST or None)
+@login_required(login_url='authentication:login')
+def show_product_reviews(request, id):
+    """ View to show product detail with all reviews """
     product = get_object_or_404(Katalog, pk=id)
-    last_login = request.COOKIES.get('last_login', 'Not available')
+    reviews = Review.objects.filter(product=product)
+
+    # Tambahkan logging untuk debug
+    print(f"Product: {product.name}, Reviews Count: {reviews.count()}")
 
     context = {
-        'form': form,
         'product': product,
-        'last_login': last_login
+        'reviews': reviews,
     }
+
     return render(request, 'review.html', context)
 
 # def show_review(request, id):
@@ -76,54 +79,83 @@ def show_main(request, id):
 
 #         return HttpResponse(b"ADDED", status=201)
 #     return HttpResponseNotFound()
+@login_required(login_url='authentication:login')
 @csrf_exempt
-@login_required(login_url='/login')
 def add_review(request, id):
+    """ View to add review """
+    print("testest")
     if request.method == 'POST':
-        rating = request.POST.get("rating")
-        review_text = request.POST.get("review_text")
+        data = json.loads(request.body)  # Mengambil data dari body request
+        rating = request.POST.get('rating')
+        review_text = request.POST.get('review_text')
         user = request.user
-        product = get_object_or_404(Katalog, pk=id)
-
-        # Validasi input
+        product = Katalog.objects.get(pk=id)
+        print("testest")
         if not rating or not review_text:
-            return JsonResponse({"error": "Rating and review text are required."}, status=400)
-
+            return JsonResponse({'error': 'Rating and review text are required.'}, status=400)
         try:
-            new_review = Review.objects.create(
-                rating=rating,  # Ensure rating is integer
-                review_text=review_text,
+            # Create the review
+            review = Review(
                 user=user,
                 product=product,
+                rating=int(rating),
+                review_text=review_text,
                 timestamp=datetime.datetime.now()
             )
-            return JsonResponse({"message": "Review successfully added!"}, status=201)
-        except Exception as e:
-            return JsonResponse({"error": str(e)}, status=500)
+            # Update the product's average rating
+            product.update_rating()
+            review.save()
+            print("berhasil bnag")
+            return HttpResponse(b"CREATED", status=201)
 
-    return JsonResponse({"error": "Invalid request"}, status=400)
+        except Exception as e:
+            return JsonResponse({'error': str(e)}, status=500)
+
+    return JsonResponse({'error': 'Invalid request method'}, status=400)
 
 
 def show_json(request):
     data = Review.objects.all()
     return HttpResponse(serializers.serialize("json", data), content_type="application/json")
 
-def get_product_review(request):
-    data = Katalog.objects.all()
-    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+@login_required(login_url='authentication:login')
+def get_product_reviews(request, id):
+    """ View to get all reviews for a product """
+    reviews = Review.objects.filter(pk=id)
+    review_data = [{
+        'id': review.id,
+        'user': {
+            'username': review.user.username,
+        },
+        'rating': review.rating,
+        'review_text': review.review_text,
+        'timestamp': review.timestamp.strftime('%Y-%m-%d %H:%M:%S')
+    } for review in reviews]
+
+    return JsonResponse({'reviews': review_data})
 
 
 def get_product_review_by_id(request, id):
     data = Katalog.objects.filter(pk=id)
     return HttpResponse(serializers.serialize("json", data), content_type="application/json")
 
+@login_required(login_url='authentication:login')
 @csrf_exempt
 def delete_review(request, id):
+    """ View for admin to delete a review """
     if request.method == 'DELETE':
-        review = Review.objects.filter(user=request.user).get(book=id)
-        review.delete()
-        return HttpResponse(b"DELETED", status=200)
-    return HttpResponseNotFound()
+        try:
+            # Only allow admins to delete reviews
+            if request.user.is_superuser:
+                review = Review.objects.get(pk=id)
+                review.delete()
+                return JsonResponse({'message': 'Review successfully deleted!'}, status=200)
+            else:
+                return JsonResponse({'error': 'You are not authorized to delete this review.'}, status=403)
+        except Review.DoesNotExist:
+            return JsonResponse({'error': 'Review not found.'}, status=404)
+
+    return JsonResponse({'error': 'Invalid request method'}, status=400)
 
 def get_product_review_json(request, id):
     product = Katalog.objects.get(pk = id)
