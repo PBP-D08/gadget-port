@@ -4,7 +4,6 @@ from django.shortcuts import redirect, render, get_object_or_404
 from .models import  Katalog
 from authentication.models import Profile
 from django.contrib.auth.decorators import login_required
-# from .forms import BookFilterForm
 from django.core import serializers
 from django.views.decorators.csrf import csrf_exempt
 

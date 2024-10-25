@@ -44,8 +44,8 @@ INSTALLED_APPS = [
     'products',
     'authentication',
     'user',
-    'store'
-    'review'
+    'store',
+    'review',
 ]
 
 MIDDLEWARE = [
@@ -138,3 +138,6 @@ else:
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = '/signin/login/'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

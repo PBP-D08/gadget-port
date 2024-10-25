@@ -1,14 +1,14 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
-from django.utils import timezone
 from django.urls import reverse
 from .forms import StoreForm
 from .models import Store
 from authentication.models import Profile
 from django.core import serializers
-from django.http import HttpResponse, HttpResponseNotFound, JsonResponse
+from django.http import HttpResponse, HttpResponseNotFound
 
+@login_required(login_url="authentication:login")
 def list_store(request):
     user = request.user
     user_profile = Profile.objects.get(user=user)
@@ -36,10 +36,10 @@ def add_store(request):
         jam_buka = request.POST.get('jam_buka')
         jam_tutup = request.POST.get('jam_tutup')
         nomor_telepon = request.POST.get('nomor_telepon')
-        logo = request.POST.get('logo')
+        logo = request.FILES.get("logo")
 
         new_store = Store(nama=nama, alamat=alamat,jam_buka=jam_buka, 
-                           jam_tutup=jam_tutup, nomor_telepon=nomor_telepon, logo=logo)
+                           jam_tutup=jam_tutup, nomor_telepon=nomor_telepon, logo=logo, user=request.user)
         new_store.save()
         return HttpResponse(b"CREATED", status=201)
     return HttpResponseNotFound()
