@@ -23,5 +23,9 @@ urlpatterns = [
     path('', include('main.urls')),
     path('signin/', include('authentication.urls')),
     # path('review/', include('review.urls')),
+<<<<<<< HEAD
     path('wishlist/', include('wishlist.urls')),
+=======
+    path('cart/', include('cart_checkout.urls')),
+>>>>>>> 7a39658b2c697b6f5725b914c01901d91d110696
 ]
