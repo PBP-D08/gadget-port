@@ -1,102 +1,104 @@
 import json
-from django.shortcuts import get_object_or_404, render, redirect
-
-from products.models import Katalog
-from .models import Wishlist, WishlistItem
+from django.shortcuts import get_object_or_404, render
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse, HttpResponseNotFound
 from django.views.decorators.csrf import csrf_exempt
-from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect, JsonResponse
-from django.core import serializers
-from django.urls import reverse
-from django.views.decorators.http import require_POST
-from django.views.decorators.csrf import csrf_protect
-from authentication.models import Profile  # Import Profile model
-
-def roler(request):
-    # Mengambil profile dari user yang terotentikasi
-    user = request.user
-    profile = get_object_or_404(Profile, user=user)
-    role = 'none'
-    if profile.role == "Buyer":
-        role = 'buyer'
-    elif profile.role == "Admin":
-        role = 'admin'
-    return role
+from .models import Wishlist, WishlistItem
+from products.models import Katalog
+from cart_checkout.models import CartItem
 
 @login_required
 def user_wishlist(request):
-    user = request.user
-    user_wishlisted = None
-    role = None
+    wishlist_items = WishlistItem.objects.filter(wishlist__user=request.user).select_related('katalog')
 
-    if user.is_authenticated:
-        # Ambil profile user
-        profile = get_object_or_404(Profile, user=user)
-        user_wishlisted = Wishlist.objects.filter(user=user)
-        # Filter item yang belum dibeli
-        wishlist_items = WishlistItem.objects.filter(wishlist__in=user_wishlisted, is_purchased=False)
-        role = roler(request)  # Tentukan role berdasarkan profile user
-    return render(request, 'wishlist.html', {'wishlist_items': wishlist_items, 'role': role})
+    query = request.GET.get('q')
+    categories = request.GET.getlist('category')
+    sort_option = request.GET.get('sort')
 
-def get_wishlist_json(request):
-    wishlist_item = Wishlist.objects.all()
-    return HttpResponse(serializers.serialize('json', wishlist_item))
+    # Handle search by product name
+    if query:
+        wishlist_items = wishlist_items.filter(katalog__name__icontains=query)
 
-@login_required
-@csrf_exempt  # Disable CSRF only if necessary (we use CSRF token in JS)
-def add_wishlist(request):
-    if request.method == 'POST':
-        user = request.user
-        try:
-            data = json.loads(request.body)
-            product_name = data.get("name")
+    # Filter by categories if specified
+    if categories:
+        wishlist_items = wishlist_items.filter(katalog__category__in=categories)
 
-            # Cek apakah produk sudah ada di wishlist
-            existing_wishlist = Wishlist.objects.filter(user=user, name=product_name)
-            if existing_wishlist.exists():
-                return JsonResponse({'message': 'Item already in wishlist.'}, status=409)
+    # Handle sorting
+    if sort_option == 'price_asc':
+        wishlist_items = wishlist_items.order_by('katalog__price')
+    elif sort_option == 'price_desc':
+        wishlist_items = wishlist_items.order_by('-katalog__price')
 
-            # Tambahkan produk ke wishlist
-            Wishlist.objects.create(user=user, name=product_name)
-            return JsonResponse({'message': 'Item added to wishlist.'}, status=201)
-
-        except (json.JSONDecodeError, KeyError):
-            return JsonResponse({'error': 'Invalid data'}, status=400)
-    return JsonResponse({'error': 'Method not allowed'}, status=405)
+    context = {
+        'wishlist_items': [item.katalog for item in wishlist_items],
+        'selected_categories': categories,
+        'selected_sort': sort_option,
+    }
+    return render(request, 'wishlist.html', context)
 
 @login_required
-@require_POST
-@csrf_protect
-def delete_wishlist(request, katalog_id):
+@csrf_exempt
+def toggle_wishlist(request, katalog_id):
+    katalog = get_object_or_404(Katalog, id=katalog_id)
+    wishlist, created = WishlistItem.objects.get_or_create(wishlist__user=request.user, katalog=katalog)
+
+    if created:
+        message = 'Product added to wishlist.'
+        status = 'added'
+    else:
+        wishlist.delete()
+        message = 'Product removed from wishlist.'
+        status = 'removed'
+
+    return JsonResponse({'message': message, 'status': status})
+
+@login_required
+@csrf_exempt
+def add_to_wishlist(request, katalog_id):
+    katalog = get_object_or_404(Katalog, id=katalog_id)
+    wishlist, created = WishlistItem.objects.get_or_create(wishlist__user=request.user, katalog=katalog)
+
+    if created:
+        return JsonResponse({'message': 'Product added to wishlist.'}, status=201)
+    return JsonResponse({'message': 'Product is already in wishlist.'}, status=200)
+
+@login_required
+@csrf_exempt
+def remove_from_wishlist(request, katalog_id):
+    katalog = get_object_or_404(Katalog, id=katalog_id)
+    wishlist_item = WishlistItem.objects.filter(wishlist__user=request.user, katalog=katalog).first()
+
+    if wishlist_item:
+        wishlist_item.delete()
+        return JsonResponse({'message': 'Product removed from wishlist.'}, status=200)
+    return JsonResponse({'message': 'Product not found in wishlist.'}, status=404)
+
+@login_required
+@csrf_exempt
+def move_to_cart(request, wishlist_item_id):
     try:
-        katalog = WishlistItem.objects.get(id=katalog_id)
+        # Ambil item wishlist
+        wishlist_item = get_object_or_404(WishlistItem, id=wishlist_item_id, wishlist__user=request.user)
 
-        # Hanya izinkan user yang membuat wishlist untuk menghapus itemnya
-        if katalog.wishlist.user == request.user:
-            katalog.delete()
-            return JsonResponse({'message': 'Item successfully removed from wishlist.'}, status=200)
-        else:
-            return JsonResponse({'error': 'Permission denied.'}, status=403)
+        # Ambil produk yang ada di wishlist item
+        katalog = wishlist_item.katalog
+
+        # Tambahkan produk ke keranjang, jika sudah ada tambahkan jumlahnya
+        cart_item, created = CartItem.objects.get_or_create(
+            user=request.user,
+            katalog=katalog,
+            defaults={'quantity': 1}
+        )
+        
+        if not created:
+            # Jika sudah ada di keranjang, tambahkan jumlahnya
+            cart_item.quantity += 1
+            cart_item.save()
+
+        # Hapus item dari wishlist setelah dipindahkan
+        wishlist_item.delete()
+
+        return JsonResponse({'message': 'Item successfully moved to cart.'}, status=200)
 
     except WishlistItem.DoesNotExist:
-        return JsonResponse({'error': 'Item not found.'}, status=404)
-
-def view_json_wishlist(request):
-    user = request.user
-    data = Wishlist.objects.filter(user=user)
-    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
-
-def view_json_wishlist_katalog(request):
-    user = request.user
-    user_wishlisted = Wishlist.objects.filter(user=user)
-    data = WishlistItem.objects.filter(wishlist__in=user_wishlisted)
-    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
-
-def view_json_wishlist_katalog_id(request, id):
-    user = request.user
-    try:
-        wishlist = Wishlist.objects.get(user=user, id=id)
-        data = WishlistItem.objects.filter(wishlist=wishlist)
-        return HttpResponse(serializers.serialize("json", data), content_type="application/json")
-    except Wishlist.DoesNotExist:
-        return HttpResponseNotFound("Wishlist not found")
+        return JsonResponse({'error': 'Item not found in wishlist.'}, status=404)

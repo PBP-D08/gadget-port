@@ -25,4 +25,5 @@ urlpatterns = [
     # path('review/', include('review.urls')),
     path('wishlist/', include('wishlist.urls')),
     path('cart/', include('cart_checkout.urls')),
+    path('faq_page/', include('faq_page.urls')),
 ]

@@ -108,5 +108,27 @@
         alert("An error occurred. Please try again.");
       });
   }
+
+  function moveToCart(itemId, itemName) {
+    fetch(`{% url 'wishlist:move_to_cart' 0 %}`.replace(0, itemId), {
+        method: "POST",
+        headers: {
+            "X-CSRFToken": "{{ csrf_token }}",
+            "Content-Type": "application/json",
+        },
+    })
+    .then((response) => {
+        if (response.ok) {
+            alert(`${itemName} berhasil dipindahkan ke keranjang.`);
+            document.getElementById(`wishlist-item-${itemId}`).remove();
+        } else {
+            alert(`Gagal memindahkan item. Silakan coba lagi.`);
+        }
+    })
+    .catch((error) => {
+        console.error("Error:", error);
+        alert("Terjadi kesalahan. Silakan coba lagi.");
+    });
+}
 </script>
 {% endblock %}
