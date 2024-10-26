@@ -1,35 +1,57 @@
 {% extends "base.html" %}
-
+{% load humanize %}
 {% block meta %}
-<title>product | GadgetPort</title>
+<title>Products | GadgetPort</title>
 {% endblock meta %}
 
 {% block content %}
-<div class="container mx-auto">
-    <div class="flex justify-end mt-12">
-        <button onclick="showAddProductModal()" class="add-store-button">
+<div class="container mx-auto px-4 py-6">
+    <div class="flex justify-between items-center mb-8">
+        <h1 class="text-2xl font-bold text-gray-800">Latest Products</h1>
+        <button onclick="showAddProductModal()" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg flex items-center gap-2 transition-all duration-300 shadow-md hover:shadow-lg">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
                 <path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
             </svg>
-            <p>Add product</p>
+            <span>Add Product</span>
         </button>
     </div>
-</div>
 
-<div class="flex container items-center align-center mx-auto flex-col"> 
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4 md:px-0">
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
         {% for product in products %}
-            <div class="store-card">
-                <img class="store-logo" src="{{ product.image_link }}" alt="{{ product.name }}">
+        <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden group">
+            <!-- Image Container with aspect ratio -->
+            <div class="bg-gray-100 relative aspect-square">
+                <br>
+                <img class="w-full h-full object-contain " 
+                     src="{{ product.image_link }}" 
+                     alt="{{ product.name }}"
+                     onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'">
                 
-                <div class="product-info">
-                    <div class="store-name">{{ product.name }}</div>
-                    <div class="store-phone">{{ product.category }}</div>
-                    <div class="store-phone">{{ product.brand }}</div>
-                    <div class="store-phone">{{ product.price }}</div>
-                    <div class="store-phone">{{ product.spec }}</div>
+                <!-- Gradient Overlay on Hover -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                <!-- Quick View Button (Optional) -->
+                <button class="absolute bottom-2 left-1/2 -translate-x-1/2 bg-white/90 text-gray-800 px-4 py-1 rounded-full text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white">
+                    Quick View
+                </button>
+            </div>
+
+            <!-- Product Info -->
+            <div class="p-3">
+                <!-- Brand Badge -->
+                <span class="inline-block bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full mb-2">
+                    {{ product.brand }}
+                </span>
+
+                <!-- Product Name -->
+                <h3 class="font-medium text-gray-800 mb-1 truncate">{{ product.name }}</h3>
+
+                <!-- Price -->
+                <div class="text-blue-600 font-semibold">
+                    Rp{{ product.price|floatformat:0|intcomma }}
                 </div>
             </div>
+        </div>
         {% endfor %}
     </div>
 </div>
@@ -83,6 +105,18 @@
                                             <input class="border w-full px-3 py-2" type="url" id="image_link" maxlength="200" name="image_link">
                                         </div>
                                     </div>
+                                    <div>
+                                        <label for="store">Store:</label>
+                                        <select name="store" required="" id="store"
+                                            class="w-full mt-2 bg-gray-100 rounded px-4 py-3.5 placeholder:text-[#808080] focus-visible:outline-[#4f9da6]">
+                                            <option value="" selected="">Choose Store</option>
+                                            {% if store %}
+                                                {% for item in store %}
+                                                    <option value="{{ item.id }}">{{ item.nama }}</option>
+                                                {% endfor %}
+                                            {% endif %}
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="bg-gray-50 px-4 py-4 sm:flex sm:flex-row-reverse sm:px-8">
                                     <button id="confirm-modal" type="submit" class="inline-flex w-full justify-center rounded-md bg-[#3992C6] hover-bg-[#247FB8] px-3 py-2 text-sm font-semibold text-white shadow-sm sm:ml-3 sm:w-auto">Add Product</button>
@@ -127,15 +161,6 @@
       throw new Error("Failed to add product");
     }
     return false;
-  }
-  
-  
-  function submitFilterForm() {
-    var form = document.getElementById('filterForm');
-    form.addEventListener('submit', function() {
-      form.reset();
-    });
-    form.submit();
   }
   
   function returnToproductList(){
