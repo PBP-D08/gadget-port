@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8 max-w-2xl">
+    <h1 class="text-2xl font-bold mb-6">Edit Store</h1>
+    <form id="form" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="grid grid-cols-1 gap-y-3 gap-x-4 font-inter">
+            <div>
+                <label for="nama">Nama:</label>
+                <div class="py-2">
+                    <input class="border w-full px-3 py-2" type="text" name="nama" maxlength="255" id="nama">
+                </div>
+            </div>
+            <div>
+                <label for="alamat">Alamat:</label>
+                <div class="py-2">
+                    <input class="border w-full px-3 py-2" type="text" name="alamat" maxlength="255" id="alamat">
+                </div>
+                </div>
+            </div>
+            <div>
+                <label for="nomor_telepon">Nomor Telepon:</label>
+                <div class="py-2">
+                    <input class="border w-full px-3 py-2" type="text" name="nomor_telepon" maxlength="15" id="nomor_telepon">
+                </div>
+            </div>
+            <div>
+                <label for="jam_buka">Jam Buka:</label>
+                <div class="py-2">
+                    <input class="border w-full px-3 py-2" type="time" name="jam_buka" maxlength="4" id="jam_buka">
+                </div>
+            </div>
+            <div>
+                <label for="jam_tutup">Jam Tutup:</label>
+                <div class="py-2">
+                    <input class="border w-full px-3 py-2" type="time" name="jam_tutup" maxlength="4" id="jam_tutup">
+                </div>
+            </div>
+            <div>
+                <label for="logo">Logo:</label>
+                <div class="py-2">
+                    <input class="border w-full px-3 py-2" type="file" id="logo" name="logo" accept="logo/*">
+                </div>
+            </div>
+        </div>
+        
+        <button type="submit"
+            class="w-full py-3 bg-[#4f9da6] hover:bg-[#3b747a] text-white font-bold rounded-md transition duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-green-300">
+            Save
+        </button>
+        
+    </form>
+    <div class="mt-6 text-center">
+        <a href="{% url 'store:list_store' %}"
+            class="text-lg text-[#d04848] hover:text-[#ff5757] transition-all duration-200">
+            Back to stores
+        </a>
+    </div>
+</div>
+{% endblock %}
