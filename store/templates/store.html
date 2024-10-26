@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block meta %}
+<title>Store | GadgetPort</title>
+{% endblock meta %}
+
+{% block content %}
+
+<div class="flex container items-center align-center mx-auto flex-col"> 
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4 md:px-0">
+        {% for store in store_list %}
+            <div class="store-card">
+                <img class="store-logo" src="{{ store.logo.url }}" alt="{{ store.nama }}">
+                <div class="store-info">
+                    <div class="store-name">{{ store.nama }}</div>
+                    <div class="store-address">{{ store.alamat }}</div>
+                    <div class="store-hours">Jam Buka: {{ store.jam_buka }} - {{ store.jam_tutup }}</div>
+                    <div class="store-phone">{{ store.nomor_telepon }}</div>
+                    <a href="{% url 'store:store_detail' store.id %}" class="see-details-button">
+                        See Details
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% block script %}
+<script>
+  function closeModal() {
+    document.querySelector("#form").reset();
+    window.location.href="{% url 'store:list_store' %}";
+    document.querySelector("#modal").classList.add("hidden");
+  }
+  
+  function submitFilterForm() {
+    var form = document.getElementById('filterForm');
+    form.addEventListener('submit', function() {
+      form.reset();
+    });
+    form.submit();
+  }
+  
+  function returnToStoreList(){
+    window.location.href="{% url 'store:list_store' %}";
+  }
+  
+  document.getElementById("cancel-modal").addEventListener("click", closeModal);
+</script>
+{% endblock script %}
+{% endblock content %}
