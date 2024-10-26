@@ -6,6 +6,8 @@ from authentication.models import Profile
 from django.contrib.auth.decorators import login_required
 from django.core import serializers
 from django.views.decorators.csrf import csrf_exempt
+from store.models import Store
+from products.forms import ProductEntryForm
 
 
 # Create your views here.
@@ -13,20 +15,16 @@ from django.views.decorators.csrf import csrf_exempt
 def show_products(request):
     user = request.user
     user_profile = Profile.objects.get(user=user)
+    stores = Store.objects.all()
 
     if user_profile.role.casefold() == "admin":
-        katalog_list = serializers.serialize('json', Katalog.objects.all())
-        katalog_list = serializers.deserialize('json', katalog_list)
-        katalog_list = [product.object for product in katalog_list]
+        products = serializers.serialize('json', Katalog.objects.all())
+        products = serializers.deserialize('json', products)
+        products = [product.object for product in products]
 
-        return render(request, 'admin_products.html', {'products': katalog_list})
+        return render(request, 'admin_products.html', {'products': products, 'store':stores})
 
-    products = Katalog.objects.all()
-    context = {
-        'products': products,
-    }
-
-    return render(request, 'products.html', context)
+    return render(request, 'products.html', {'products': products, 'store':stores})
 
 @csrf_exempt
 def add_product(request):
@@ -37,12 +35,39 @@ def add_product(request):
         price = request.POST.get('price')
         spec = request.POST.get('spec')
         image_link = request.POST.get('image_link')
+        store_id = request.POST.get('store')
+        store = Store.objects.get(id=store_id)
 
         new_product = Katalog(category=category, name=name, brand=brand,
-                           price=price, spec=spec, image_link=image_link)
+                           price=price, spec=spec, image_link=image_link, store=store)
         new_product.save()
         return HttpResponse(b"CREATED", status=201)
     return HttpResponseNotFound()
+
+@login_required(login_url="authentication:login")
+def edit_product(request, id):
+    product = Katalog.objects.get(pk=id)
+    store = Store.objects.filter(user=request.user)
+    if request.method == "POST":
+        form = ProductEntryForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            return redirect("products:show_products")
+    else:
+        form = ProductEntryForm(instance=product)
+
+    context = {
+        "form": form,
+        "product": product,
+        "store": store,
+    }
+    return render(request, "edit_product.html", context)
+
+@login_required(login_url="login")
+def delete_product(request, id):
+    product = Katalog.objects.get(pk=id)
+    product.delete()
+    return redirect("products:show_products")
 
 def get_product(request):
     data = Katalog.objects.all()
