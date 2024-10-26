@@ -8,7 +8,7 @@
             "brand": "Apple",
             "price": 13225650.0,
             "image_link": "https://cdn1.smartprix.com/rx-iWLT056zS-w280-h280/apple-iphone-15.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Bionic  A16, Hexa Core, 3.46GHz Processor<br>Storage : 6GB RAM, 128GB inbuilt<br>Battery : 3349mAh Battery with Fast Charging<br>Display : 6.1 inches, 1179x2556px Display with Dynamic Island<br>Camera : 48MP + 12MP Dual Rear & 12MP Front Camera<br>Memory : Memory Card Not Supported<br>OS : iOS v17<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Bionic  A16, Hexa Core, 3.46GHz <br>Storage : 6GB RAM, 128GB inbuilt<br>Battery : 3349mAh Battery with Fast Charging<br>Display : 6.1 inches, 1179x2556px Display with Dynamic Island<br>Camera : 48MP + 12MP Dual Rear & 12MP Front Camera<br>Memory : Memory Card Not Supported<br>OS : iOS v17<br>"
         }
     },
     {
@@ -20,7 +20,7 @@
             "brand": "Vivo",
             "price": 4439815.0,
             "image_link": "https://cdn1.smartprix.com/rx-iU8jVEFYT-w280-h280/vivo-t2-pro-5g.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Dimensity 7200, Octa Core, 2.8GHz Processor<br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 4600mAh Battery with 66W Fast Charging<br>Display : 6.78 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 64MP + 2MP Dual Rear & 16MP Front Camera<br>Memory : Android v13<br>OS : No FM Radio<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Dimensity 7200, Octa Core, 2.8GHz <br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 4600mAh Battery with 66W Fast Charging<br>Display : 6.78 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 64MP + 2MP Dual Rear & 16MP Front Camera<br>Memory : Android v13<br>OS : No FM Radio<br>"
         }
     },
     {
@@ -32,7 +32,7 @@
             "brand": "Vivo",
             "price": 5918150.0,
             "image_link": "https://cdn1.smartprix.com/rx-i6VP9mIfo-w280-h280/vivo-t3-pro.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Vo5G, Wi-Fi<br>Processor : Snapdragon 782G, Octa Core, 2.7GHz Processor<br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 4700mAh Battery with 80W Fast Charging<br>Display : 6.67 inches, 1080x2408px, 120 Hz Display with Water Drop Notch<br>Camera : 64MP + 8MP + 2MP Triple Rear & 32MP Front Camera<br>Memory : Memory Card (Hybrid), upto 1TB<br>OS : Android v13<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Vo5G, Wi-Fi<br>Processor : Snapdragon 782G, Octa Core, 2.7GHz <br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 4700mAh Battery with 80W Fast Charging<br>Display : 6.67 inches, 1080x2408px, 120 Hz Display with Water Drop Notch<br>Camera : 64MP + 8MP + 2MP Triple Rear & 32MP Front Camera<br>Memory : Memory Card (Hybrid), upto 1TB<br>OS : Android v13<br>"
         }
     },
     {
@@ -44,7 +44,7 @@
             "brand": "Samsung",
             "price": 2260145.0,
             "image_link": "https://cdn1.smartprix.com/rx-iSLHUYeot-w280-h280/samsung-galaxy-m14-6.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Exynos 1330, Octa Core, 2.4GHz Processor<br>Storage : 6GB RAM, 128GB inbuilt<br>Battery : 6000mAh Battery with 25W Fast Charging<br>Display : 6.6 inches, 1080x2408px, 90 Hz Display with Water Drop Notch<br>Camera : 50MP + 2MP + 2MP Triple Rear & 13MP Front Camera<br>Memory : Memory Card Supported, upto 1TB<br>OS : Android v13<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Exynos 1330, Octa Core, 2.4GHz <br>Storage : 6GB RAM, 128GB inbuilt<br>Battery : 6000mAh Battery with 25W Fast Charging<br>Display : 6.6 inches, 1080x2408px, 90 Hz Display with Water Drop Notch<br>Camera : 50MP + 2MP + 2MP Triple Rear & 13MP Front Camera<br>Memory : Memory Card Supported, upto 1TB<br>OS : Android v13<br>"
         }
     },
     {
@@ -56,7 +56,7 @@
             "brand": "Poco",
             "price": 4809815.0,
             "image_link": "https://cdn1.smartprix.com/rx-iAdmzTljq-w280-h280/poco-x6-pro-5g.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC, IR Blaster<br>Processor : Dimensity 8300 Ultra, Octa Core, 3.35GHz Processor<br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 67W Fast Charging<br>Display : 6.67 inches, 1220x2712px, 120 Hz Display with Punch Hole<br>Camera : 64MP + 8MP + 2MP Triple Rear & 16MP Front Camera<br>Memory : Android v14<br>OS : No FM Radio<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC, IR Blaster<br>Processor : Dimensity 8300 Ultra, Octa Core, 3.35GHz <br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 67W Fast Charging<br>Display : 6.67 inches, 1220x2712px, 120 Hz Display with Punch Hole<br>Camera : 64MP + 8MP + 2MP Triple Rear & 16MP Front Camera<br>Memory : Android v14<br>OS : No FM Radio<br>"
         }
     },
     {
@@ -68,7 +68,7 @@
             "brand": "Motorola",
             "price": 4994815.0,
             "image_link": "https://cdn1.smartprix.com/rx-i5k8kTQcK-w280-h280/motorola-edge-40-5g.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Dimensity 8020, Octa Core, 2.6GHz Processor<br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 4400mAh Battery with 68W Fast Charging<br>Display : 6.55 inches, 1080x2400px, 144 Hz Display<br>Camera : 50MP + 13MP Dual Rear & 32MP Front Camera<br>Memory : Android v13<br>OS : Bluetooth<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Dimensity 8020, Octa Core, 2.6GHz <br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 4400mAh Battery with 68W Fast Charging<br>Display : 6.55 inches, 1080x2400px, 144 Hz Display<br>Camera : 50MP + 13MP Dual Rear & 32MP Front Camera<br>Memory : Android v13<br>OS : Bluetooth<br>"
         }
     },
     {
@@ -80,7 +80,7 @@
             "brand": "Nothing",
             "price": 8508150.0,
             "image_link": "https://cdn1.smartprix.com/rx-iz4D1blDK-w280-h280/nothing-phone-3.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Snapdragon 8s Gen3, Octa Core, 3GHz Processor<br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 100W Fast Charging<br>Display : 6.67 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 64MP + 50MP + 32MP Triple Rear & 32MP Front Camera<br>Memory : Android v14<br>OS : No FM Radio<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Snapdragon 8s Gen3, Octa Core, 3GHz <br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 100W Fast Charging<br>Display : 6.67 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 64MP + 50MP + 32MP Triple Rear & 32MP Front Camera<br>Memory : Android v14<br>OS : No FM Radio<br>"
         }
     },
     {
@@ -92,7 +92,7 @@
             "brand": "Vivo",
             "price": 4069815.0,
             "image_link": "https://cdn1.smartprix.com/rx-iJgJnXY13-w280-h280/vivo-t3-5g-8gb-ram-2.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Dimensity 7200, Octa Core, 2.8GHz Processor<br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 44W Fast Charging<br>Display : 6.67 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 2MP Triple Rear & 16MP Front Camera<br>Memory : Memory Card (Hybrid), upto 1TB<br>OS : Android v14<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Dimensity 7200, Octa Core, 2.8GHz <br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 44W Fast Charging<br>Display : 6.67 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 2MP Triple Rear & 16MP Front Camera<br>Memory : Memory Card (Hybrid), upto 1TB<br>OS : Android v14<br>"
         }
     },
     {
@@ -104,7 +104,7 @@
             "brand": "Samsung",
             "price": 6937500.0,
             "image_link": "https://cdn1.smartprix.com/rx-ipXHkEAIk-w280-h280/samsung-galaxy-s22-5.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Vo5G, Wi-Fi, NFC<br>Processor : Snapdragon  8 Gen1, Octa Core, 3GHz Processor<br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 3700mAh Battery with 25W Fast Charging<br>Display : 6.1 inches, 1080x2340px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 12MP + 10MP Triple Rear & 10MP Front Camera<br>Memory : Android v12<br>OS : Bluetooth<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Vo5G, Wi-Fi, NFC<br>Processor : Snapdragon  8 Gen1, Octa Core, 3GHz <br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 3700mAh Battery with 25W Fast Charging<br>Display : 6.1 inches, 1080x2340px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 12MP + 10MP Triple Rear & 10MP Front Camera<br>Memory : Android v12<br>OS : Bluetooth<br>"
         }
     },
     {
@@ -116,7 +116,7 @@
             "brand": "Poco",
             "price": 2959815.0,
             "image_link": "https://cdn1.smartprix.com/rx-iU7jemD5T-w280-h280/poco-x6-neo.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, IR Blaster<br>Processor : Dimensity 6080, Octa Core, 2.4GHz Processor<br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 33W Fast Charging<br>Display : 6.67 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 108MP + 2MP Dual Rear & 16MP Front Camera<br>Memory : Memory Card (Hybrid), upto 1TB<br>OS : Android v13<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, IR Blaster<br>Processor : Dimensity 6080, Octa Core, 2.4GHz <br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 33W Fast Charging<br>Display : 6.67 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 108MP + 2MP Dual Rear & 16MP Front Camera<br>Memory : Memory Card (Hybrid), upto 1TB<br>OS : Android v13<br>"
         }
     },
     {
@@ -128,7 +128,7 @@
             "brand": "OnePlus",
             "price": 11663695.0,
             "image_link": "https://cdn1.smartprix.com/rx-ioNeUvJVN-w280-h280/oneplus-12-5g.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Vo5G, Wi-Fi, NFC, IR Blaster<br>Processor : Snapdragon 8 Gen3, Octa Core, 3.3GHz Processor<br>Storage : 12GB RAM, 256GB inbuilt<br>Battery : 5400mAh Battery with 100W Fast Charging<br>Display : 6.82 inches, 1440x3168px, 120 Hz Display with Punch Hole<br>Camera : 64MP + 50MP + 48MP Triple Rear & 32MP Front Camera<br>Memory : Memory Card Not Supported<br>OS : Android v14<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Vo5G, Wi-Fi, NFC, IR Blaster<br>Processor : Snapdragon 8 Gen3, Octa Core, 3.3GHz <br>Storage : 12GB RAM, 256GB inbuilt<br>Battery : 5400mAh Battery with 100W Fast Charging<br>Display : 6.82 inches, 1440x3168px, 120 Hz Display with Punch Hole<br>Camera : 64MP + 50MP + 48MP Triple Rear & 32MP Front Camera<br>Memory : Memory Card Not Supported<br>OS : Android v14<br>"
         }
     },
     {
@@ -140,7 +140,7 @@
             "brand": "Samsung",
             "price": 23309815.0,
             "image_link": "https://cdn1.smartprix.com/rx-iz5ZKOGY0-w280-h280/samsung-galaxy-s24-u.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Vo5G, Wi-Fi, NFC<br>Processor : Snapdragon 8 Gen3, Octa Core, 3.3GHz Processor<br>Storage : 12GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 45W Fast Charging<br>Display : 6.8 inches, 1440x3120px, 120 Hz Display with Punch Hole<br>Camera : 200MP Quad Rear & 12MP Front Camera<br>Memory : Memory Card Not Supported<br>OS : Android v14<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Vo5G, Wi-Fi, NFC<br>Processor : Snapdragon 8 Gen3, Octa Core, 3.3GHz <br>Storage : 12GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 45W Fast Charging<br>Display : 6.8 inches, 1440x3120px, 120 Hz Display with Punch Hole<br>Camera : 200MP Quad Rear & 12MP Front Camera<br>Memory : Memory Card Not Supported<br>OS : Android v14<br>"
         }
     },
     {
@@ -152,7 +152,7 @@
             "brand": "Infinix",
             "price": 2959815.0,
             "image_link": "https://cdn1.smartprix.com/rx-iJLJt5wUQ-w280-h280/infinix-note-40.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, VoLTE, Wi-Fi, NFC, IR Blaster<br>Processor : Helio G99 Ultimate, Octa Core, 2.2GHz Processor<br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 45W Fast Charging<br>Display : 6.78 inches, 1080x2436px, 120 Hz Display with Punch Hole<br>Camera : 108MP + 2MP Triple Rear & 32MP Front Camera<br>Memory : Memory Card Supported<br>OS : Android v14<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, VoLTE, Wi-Fi, NFC, IR Blaster<br>Processor : Helio G99 Ultimate, Octa Core, 2.2GHz <br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 45W Fast Charging<br>Display : 6.78 inches, 1080x2436px, 120 Hz Display with Punch Hole<br>Camera : 108MP + 2MP Triple Rear & 32MP Front Camera<br>Memory : Memory Card Supported<br>OS : Android v14<br>"
         }
     },
     {
@@ -164,7 +164,7 @@
             "brand": "Realme",
             "price": 5549815.0,
             "image_link": "https://cdn1.smartprix.com/rx-iPJfc3hvY-w280-h280/realme-12-pro-plus.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Snapdragon 7s Gen2, Octa Core, 2.4GHz Processor<br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 67W Fast Charging<br>Display : 6.7 inches, 1080x2412px, 120 Hz Display with Punch Hole<br>Camera : 64MP + 50MP + 8MP Triple Rear & 32MP Front Camera<br>Memory : Memory Card Not Supported<br>OS : Android v14<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Snapdragon 7s Gen2, Octa Core, 2.4GHz <br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 67W Fast Charging<br>Display : 6.7 inches, 1080x2412px, 120 Hz Display with Punch Hole<br>Camera : 64MP + 50MP + 8MP Triple Rear & 32MP Front Camera<br>Memory : Memory Card Not Supported<br>OS : Android v14<br>"
         }
     },
     {
@@ -176,7 +176,7 @@
             "brand": "Xiaomi",
             "price": 2740405.0,
             "image_link": "https://cdn1.smartprix.com/rx-it7Ho0Flf-w280-h280/xiaomi-redmi-12-5g-8.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, IR Blaster<br>Processor : Snapdragon 4 Gen2, Octa Core, 2.2GHz Processor<br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 18W Fast Charging<br>Display : 6.79 inches, 1080x2460px, 90 Hz Display with Punch Hole<br>Camera : 50MP + 2MP Dual Rear & 8MP Front Camera<br>Memory : Memory Card (Hybrid), upto 1TB<br>OS : Android v13<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, IR Blaster<br>Processor : Snapdragon 4 Gen2, Octa Core, 2.2GHz <br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 18W Fast Charging<br>Display : 6.79 inches, 1080x2460px, 90 Hz Display with Punch Hole<br>Camera : 50MP + 2MP Dual Rear & 8MP Front Camera<br>Memory : Memory Card (Hybrid), upto 1TB<br>OS : Android v13<br>"
         }
     },
     {
@@ -188,7 +188,7 @@
             "brand": "Samsung",
             "price": 2682315.0,
             "image_link": "https://cdn1.smartprix.com/rx-iwUujWfwg-w280-h280/samsung-galaxy-f15-5.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Dimensity 6100 Plus, Octa Core, 2.2GHz Processor<br>Storage : 6GB RAM, 128GB inbuilt<br>Battery : 6000mAh Battery with 25W Fast Charging<br>Display : 6.45 inches, 1080x2340px, 90 Hz Display with Water Drop Notch<br>Camera : 50MP + 5MP + 2MP Triple Rear & 13MP Front Camera<br>Memory : Memory Card (Hybrid), upto 1TB<br>OS : Android v14<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Dimensity 6100 Plus, Octa Core, 2.2GHz <br>Storage : 6GB RAM, 128GB inbuilt<br>Battery : 6000mAh Battery with 25W Fast Charging<br>Display : 6.45 inches, 1080x2340px, 90 Hz Display with Water Drop Notch<br>Camera : 50MP + 5MP + 2MP Triple Rear & 13MP Front Camera<br>Memory : Memory Card (Hybrid), upto 1TB<br>OS : Android v14<br>"
         }
     },
     {
@@ -200,7 +200,7 @@
             "brand": "OnePlus",
             "price": 3690195.0,
             "image_link": "https://cdn1.smartprix.com/rx-icoGLev3N-w280-h280/oneplus-nord-ce-3-li.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Snapdragon 695 5G, Octa Core, 2.2GHz Processor<br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 67W Fast Charging<br>Display : 6.72 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 108MP + 2MP + 2MP Triple Rear & 16MP Front Camera<br>Memory : Memory Card (Hybrid), upto 1TB<br>OS : Android v13<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Snapdragon 695 5G, Octa Core, 2.2GHz <br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 67W Fast Charging<br>Display : 6.72 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 108MP + 2MP + 2MP Triple Rear & 16MP Front Camera<br>Memory : Memory Card (Hybrid), upto 1TB<br>OS : Android v13<br>"
         }
     },
     {
@@ -212,7 +212,7 @@
             "brand": "iQOO",
             "price": 6844815.0,
             "image_link": "https://cdn1.smartprix.com/rx-iaRsF1EHH-w280-h280/iqoo-neo-9-pro-5g.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, IR Blaster<br>Processor : Snapdragon 8 Gen2, Octa Core, 3.2GHz Processor<br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 5160mAh Battery with 120W Fast Charging<br>Display : 6.78 inches, 1260x2800px, 144 Hz Display with Punch Hole<br>Camera : 50MP + 8MP Dual Rear & 16MP Front Camera<br>Memory : Android v14<br>OS : No FM Radio<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, IR Blaster<br>Processor : Snapdragon 8 Gen2, Octa Core, 3.2GHz <br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 5160mAh Battery with 120W Fast Charging<br>Display : 6.78 inches, 1260x2800px, 144 Hz Display with Punch Hole<br>Camera : 50MP + 8MP Dual Rear & 16MP Front Camera<br>Memory : Android v14<br>OS : No FM Radio<br>"
         }
     },
     {
@@ -224,7 +224,7 @@
             "brand": "Poco",
             "price": 2034630.0,
             "image_link": "https://cdn1.smartprix.com/rx-iQexkhhyf-w280-h280/poco-m6-pro-5g-6gb-r.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, IR Blaster<br>Processor : Snapdragon 4 Gen2, Octa Core, 2.2GHz Processor<br>Storage : 6GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 18W Fast Charging<br>Display : 6.79 inches, 1080x2460px, 90 Hz Display with Punch Hole<br>Camera : 50MP + 2MP Dual Rear & 8MP Front Camera<br>Memory : Memory Card (Hybrid), upto 1TB<br>OS : Android v13<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, IR Blaster<br>Processor : Snapdragon 4 Gen2, Octa Core, 2.2GHz <br>Storage : 6GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 18W Fast Charging<br>Display : 6.79 inches, 1080x2460px, 90 Hz Display with Punch Hole<br>Camera : 50MP + 2MP Dual Rear & 8MP Front Camera<br>Memory : Memory Card (Hybrid), upto 1TB<br>OS : Android v13<br>"
         }
     },
     {
@@ -236,7 +236,7 @@
             "brand": "Poco",
             "price": 1202315.0,
             "image_link": "https://cdn1.smartprix.com/rx-i3RhIr8TS-w280-h280/poco-c55-6gb-ram-128.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, VoLTE, Wi-Fi<br>Processor : Helio  G85, Octa Core, 2GHz Processor<br>Storage : 6GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 10W Fast Charging<br>Display : 6.71 inches, 720x1650px Display with Water Drop Notch<br>Camera : 50MP Dual Rear & 5MP Front Camera<br>Memory : Memory Card Supported, upto 1TB<br>OS : Android v12<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, VoLTE, Wi-Fi<br>Processor : Helio  G85, Octa Core, 2GHz <br>Storage : 6GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 10W Fast Charging<br>Display : 6.71 inches, 720x1650px Display with Water Drop Notch<br>Camera : 50MP Dual Rear & 5MP Front Camera<br>Memory : Memory Card Supported, upto 1TB<br>OS : Android v12<br>"
         }
     },
     {
@@ -248,7 +248,7 @@
             "brand": "Vivo",
             "price": 5814365.0,
             "image_link": "https://cdn1.smartprix.com/rx-irqswbtJA-w280-h280/vivo-v29.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Snapdragon 778G, Octa Core, 2.4GHz Processor<br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 4600mAh Battery with 80W Fast Charging<br>Display : 6.78 inches, 1260x2800px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 8MP + 2MP Triple Rear & 50MP Front Camera<br>Memory : Android v13<br>OS : No FM Radio<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Snapdragon 778G, Octa Core, 2.4GHz <br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 4600mAh Battery with 80W Fast Charging<br>Display : 6.78 inches, 1260x2800px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 8MP + 2MP Triple Rear & 50MP Front Camera<br>Memory : Android v13<br>OS : No FM Radio<br>"
         }
     },
     {
@@ -260,7 +260,7 @@
             "brand": "Motorola",
             "price": 4624815.0,
             "image_link": "https://cdn1.smartprix.com/rx-ipPM7JWu7-w280-h280/motorola-edge-40-neo.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Dimensity 7030, Octa Core, 2.5GHz Processor<br>Storage : 12GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 68W Fast Charging<br>Display : 6.55 inches, 1080x2400px, 144 Hz Display with Punch Hole<br>Camera : 50MP + 13MP Dual Rear & 32MP Front Camera<br>Memory : Android v13<br>OS : No FM Radio<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Dimensity 7030, Octa Core, 2.5GHz <br>Storage : 12GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 68W Fast Charging<br>Display : 6.55 inches, 1080x2400px, 144 Hz Display with Punch Hole<br>Camera : 50MP + 13MP Dual Rear & 32MP Front Camera<br>Memory : Android v13<br>OS : No FM Radio<br>"
         }
     },
     {
@@ -272,7 +272,7 @@
             "brand": "Samsung",
             "price": 11099815.0,
             "image_link": "https://cdn1.smartprix.com/rx-isnZ8GnYZ-w280-h280/samsung-galaxy-s24-f.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Vo5G, Wi-Fi, NFC<br>Processor : Snapdragon 8 Gen3, Octa Core, 3.3GHz Processor<br>Storage : 12GB RAM, 256GB inbuilt<br>Battery : 4500mAh Battery with Fast Charging<br>Display : 6.1 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 108MP Quad Rear & 32MP Front Camera<br>Memory : Memory Card Not Supported<br>OS : Android v14<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Vo5G, Wi-Fi, NFC<br>Processor : Snapdragon 8 Gen3, Octa Core, 3.3GHz <br>Storage : 12GB RAM, 256GB inbuilt<br>Battery : 4500mAh Battery with Fast Charging<br>Display : 6.1 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 108MP Quad Rear & 32MP Front Camera<br>Memory : Memory Card Not Supported<br>OS : Android v14<br>"
         }
     },
     {
@@ -284,7 +284,7 @@
             "brand": "OnePlus",
             "price": 4624815.0,
             "image_link": "https://cdn1.smartprix.com/rx-iJIRhERgV-w280-h280/oneplus-nord-ce-4-5g.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Snapdragon 7 Gen3, Octa Core, 2.63GHz Processor<br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5500mAh Battery with 100W Fast Charging<br>Display : 6.7 inches, 1080x2412px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 8MP Dual Rear & 16MP Front Camera<br>Memory : Memory Card (Hybrid), upto 1TB<br>OS : Android v14<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Snapdragon 7 Gen3, Octa Core, 2.63GHz <br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5500mAh Battery with 100W Fast Charging<br>Display : 6.7 inches, 1080x2412px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 8MP Dual Rear & 16MP Front Camera<br>Memory : Memory Card (Hybrid), upto 1TB<br>OS : Android v14<br>"
         }
     },
     {
@@ -296,7 +296,7 @@
             "brand": "Motorola",
             "price": 5919815.0,
             "image_link": "https://cdn1.smartprix.com/rx-iuRWmtC7U-w280-h280/motorola-edge-50-pro.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Vo5G, Wi-Fi, NFC<br>Processor : Snapdragon 7 Gen3, Octa Core, 2.63GHz Processor<br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 4500mAh Battery with 68W Fast Charging<br>Display : 6.7 inches, 1220x2712px, 144 Hz Display with Punch Hole<br>Camera : 50MP + 13MP + 10MP Triple Rear & 50MP Front Camera<br>Memory : Android v14<br>OS : No FM Radio<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Vo5G, Wi-Fi, NFC<br>Processor : Snapdragon 7 Gen3, Octa Core, 2.63GHz <br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 4500mAh Battery with 68W Fast Charging<br>Display : 6.7 inches, 1220x2712px, 144 Hz Display with Punch Hole<br>Camera : 50MP + 13MP + 10MP Triple Rear & 50MP Front Camera<br>Memory : Android v14<br>OS : No FM Radio<br>"
         }
     },
     {
@@ -308,7 +308,7 @@
             "brand": "OnePlus",
             "price": 6104815.0,
             "image_link": "https://cdn1.smartprix.com/rx-ifiExSfnT-w280-h280/oneplus-nord-4-5g.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC, IR Blaster<br>Processor : Snapdragon 7+ Gen3, Octa Core, 2.8GHz Processor<br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 120W Fast Charging<br>Display : 6.78 inches, 1240x2772px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 13MP + 5MP Triple Rear & 32MP Front Camera<br>Memory : Android v14<br>OS : No FM Radio<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC, IR Blaster<br>Processor : Snapdragon 7+ Gen3, Octa Core, 2.8GHz <br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 120W Fast Charging<br>Display : 6.78 inches, 1240x2772px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 13MP + 5MP Triple Rear & 32MP Front Camera<br>Memory : Android v14<br>OS : No FM Radio<br>"
         }
     },
     {
@@ -320,7 +320,7 @@
             "brand": "Vivo",
             "price": 3699815.0,
             "image_link": "https://cdn1.smartprix.com/rx-iJgJnXY13-w280-h280/vivo-t3-5g.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Dimensity 7200, Octa Core, 2.8GHz Processor<br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 44W Fast Charging<br>Display : 6.67 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 2MP Triple Rear & 16MP Front Camera<br>Memory : Memory Card (Hybrid), upto 1TB<br>OS : Android v14<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Dimensity 7200, Octa Core, 2.8GHz <br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 44W Fast Charging<br>Display : 6.67 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 2MP Triple Rear & 16MP Front Camera<br>Memory : Memory Card (Hybrid), upto 1TB<br>OS : Android v14<br>"
         }
     },
     {
@@ -332,7 +332,7 @@
             "brand": "OnePlus",
             "price": 3883150.0,
             "image_link": "https://cdn1.smartprix.com/rx-iCRSPVbTB-w280-h280/oneplus-nord-ce-4-li.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Snapdragon 7 Gen1, Octa Core, 2.4GHz Processor<br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 80W Fast Charging<br>Display : 6.74 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 108MP + 2MP + 2MP Triple Rear & 16MP Front Camera<br>Memory : Memory Card (Hybrid), upto 1TB<br>OS : Android v14<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Snapdragon 7 Gen1, Octa Core, 2.4GHz <br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 80W Fast Charging<br>Display : 6.74 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 108MP + 2MP + 2MP Triple Rear & 16MP Front Camera<br>Memory : Memory Card (Hybrid), upto 1TB<br>OS : Android v14<br>"
         }
     },
     {
@@ -344,7 +344,7 @@
             "brand": "Nothing",
             "price": 4439815.0,
             "image_link": "https://cdn1.smartprix.com/rx-iX1TaPGbE-w280-h280/nothing-phone-2a.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Dimensity 7200 Pro, Octa Core, 2.8GHz Processor<br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 45W Fast Charging<br>Display : 6.7 inches, 1084x2412px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 50MP Dual Rear & 32MP Front Camera<br>Memory : Android v14<br>OS : No FM Radio<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Dimensity 7200 Pro, Octa Core, 2.8GHz <br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 45W Fast Charging<br>Display : 6.7 inches, 1084x2412px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 50MP Dual Rear & 32MP Front Camera<br>Memory : Android v14<br>OS : No FM Radio<br>"
         }
     },
     {
@@ -356,7 +356,7 @@
             "brand": "Motorola",
             "price": 6659815.0,
             "image_link": "https://cdn1.smartprix.com/rx-iCsyxMh2M-w280-h280/motorola-edge-50-pro.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Vo5G, Wi-Fi, NFC<br>Processor : Snapdragon 7 Gen3, Octa Core, 2.63GHz Processor<br>Storage : 12GB RAM, 256GB inbuilt<br>Battery : 4500mAh Battery with 125W Fast Charging<br>Display : 6.7 inches, 1220x2712px, 144 Hz Display with Punch Hole<br>Camera : 50MP + 13MP + 10MP Triple Rear & 50MP Front Camera<br>Memory : Android v14<br>OS : No FM Radio<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Vo5G, Wi-Fi, NFC<br>Processor : Snapdragon 7 Gen3, Octa Core, 2.63GHz <br>Storage : 12GB RAM, 256GB inbuilt<br>Battery : 4500mAh Battery with 125W Fast Charging<br>Display : 6.7 inches, 1220x2712px, 144 Hz Display with Punch Hole<br>Camera : 50MP + 13MP + 10MP Triple Rear & 50MP Front Camera<br>Memory : Android v14<br>OS : No FM Radio<br>"
         }
     },
     {
@@ -368,7 +368,7 @@
             "brand": "OnePlus",
             "price": 4994815.0,
             "image_link": "https://cdn1.smartprix.com/rx-i7zgwRqdk-w280-h280/oneplus-nord-ce-4-5g.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Snapdragon 7 Gen3, Octa Core, 2.63GHz Processor<br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 5500mAh Battery with 100W Fast Charging<br>Display : 6.7 inches, 1080x2412px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 8MP Dual Rear & 16MP Front Camera<br>Memory : Memory Card (Hybrid), upto 1TB<br>OS : Android v14<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Snapdragon 7 Gen3, Octa Core, 2.63GHz <br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 5500mAh Battery with 100W Fast Charging<br>Display : 6.7 inches, 1080x2412px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 8MP Dual Rear & 16MP Front Camera<br>Memory : Memory Card (Hybrid), upto 1TB<br>OS : Android v14<br>"
         }
     },
     {
@@ -380,7 +380,7 @@
             "brand": "Motorola",
             "price": 2219815.0,
             "image_link": "https://cdn1.smartprix.com/rx-iYaMlTUun-w280-h280/motorola-moto-g34-5g.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Vo5G, Wi-Fi<br>Processor : Snapdragon 695, Octa Core, 2.2GHz Processor<br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 18W Fast Charging<br>Display : 6.5 inches, 720x1600px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 2MP Dual Rear & 16MP Front Camera<br>Memory : Memory Card (Hybrid), upto 1TB<br>OS : Android v14<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Vo5G, Wi-Fi<br>Processor : Snapdragon 695, Octa Core, 2.2GHz <br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 18W Fast Charging<br>Display : 6.5 inches, 720x1600px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 2MP Dual Rear & 16MP Front Camera<br>Memory : Memory Card (Hybrid), upto 1TB<br>OS : Android v14<br>"
         }
     },
     {
@@ -392,7 +392,7 @@
             "brand": "OnePlus",
             "price": 4439815.0,
             "image_link": "https://cdn1.smartprix.com/rx-iBNUwcePR-w280-h280/oneplus-ace-3v.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC, IR Blaster<br>Processor : Snapdragon 7+ Gen3, Octa Core, 2.8GHz Processor<br>Storage : 12GB RAM, 256GB inbuilt<br>Battery : 5500mAh Battery with 100W Fast Charging<br>Display : 6.74 inches, 1240x2772px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 8MP Dual Rear & 16MP Front Camera<br>Memory : Android v14<br>OS : No FM Radio<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC, IR Blaster<br>Processor : Snapdragon 7+ Gen3, Octa Core, 2.8GHz <br>Storage : 12GB RAM, 256GB inbuilt<br>Battery : 5500mAh Battery with 100W Fast Charging<br>Display : 6.74 inches, 1240x2772px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 8MP Dual Rear & 16MP Front Camera<br>Memory : Android v14<br>OS : No FM Radio<br>"
         }
     },
     {
@@ -404,7 +404,7 @@
             "brand": "OnePlus",
             "price": 7259400.0,
             "image_link": "https://cdn1.smartprix.com/rx-iakzXgVAH-w280-h280/oneplus-12r.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC, IR Blaster<br>Processor : Snapdragon 8 Gen2, Octa Core, 3.2GHz Processor<br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5500mAh Battery with 100W Fast Charging<br>Display : 6.78 inches, 1264x2780px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 8MP + 2MP Triple Rear & 16MP Front Camera<br>Memory : Android v14<br>OS : No FM Radio<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC, IR Blaster<br>Processor : Snapdragon 8 Gen2, Octa Core, 3.2GHz <br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5500mAh Battery with 100W Fast Charging<br>Display : 6.78 inches, 1264x2780px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 8MP + 2MP Triple Rear & 16MP Front Camera<br>Memory : Android v14<br>OS : No FM Radio<br>"
         }
     },
     {
@@ -416,7 +416,7 @@
             "brand": "Vivo",
             "price": 5988450.0,
             "image_link": "https://cdn1.smartprix.com/rx-iVNbyRECY-w280-h280/vivo-v30-5g.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Snapdragon 7 Gen3, Octa Core, 2.63GHz Processor<br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 80W Fast Charging<br>Display : 6.78 inches, 1260x2800px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 50MP Dual Rear & 50MP Front Camera<br>Memory : Memory Card Supported<br>OS : Android v14<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Snapdragon 7 Gen3, Octa Core, 2.63GHz <br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 80W Fast Charging<br>Display : 6.78 inches, 1260x2800px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 50MP Dual Rear & 50MP Front Camera<br>Memory : Memory Card Supported<br>OS : Android v14<br>"
         }
     },
     {
@@ -428,7 +428,7 @@
             "brand": "Xiaomi",
             "price": 4421315.0,
             "image_link": "https://cdn1.smartprix.com/rx-iG0eh46lf-w280-h280/xiaomi-redmi-note-13.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, IR Blaster<br>Processor : Snapdragon 7s Gen 2, Octa Core, 2.4GHz Processor<br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5100mAh Battery with 67W Fast Charging<br>Display : 6.67 inches, 1220x2712px, 120 Hz Display with Punch Hole<br>Camera : 200MP + 8MP + 2MP Triple Rear & 16MP Front Camera<br>Memory : Android v13<br>OS : No FM Radio<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, IR Blaster<br>Processor : Snapdragon 7s Gen 2, Octa Core, 2.4GHz <br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5100mAh Battery with 67W Fast Charging<br>Display : 6.67 inches, 1220x2712px, 120 Hz Display with Punch Hole<br>Camera : 200MP + 8MP + 2MP Triple Rear & 16MP Front Camera<br>Memory : Android v13<br>OS : No FM Radio<br>"
         }
     },
     {
@@ -440,7 +440,7 @@
             "brand": "Xiaomi",
             "price": 3134825.0,
             "image_link": "https://cdn1.smartprix.com/rx-ivCJW3bce-w280-h280/xiaomi-redmi-note-13.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Vo5G, Wi-Fi, IR Blaster<br>Processor : Dimensity 6080, Octa Core, 2.4GHz Processor<br>Storage : 6GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 33W Fast Charging<br>Display : 6.67 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 108MP + 8MP + 2MP Triple Rear & 16MP Front Camera<br>Memory : Memory Card Supported, upto 1TB<br>OS : Android v13<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Vo5G, Wi-Fi, IR Blaster<br>Processor : Dimensity 6080, Octa Core, 2.4GHz <br>Storage : 6GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 33W Fast Charging<br>Display : 6.67 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 108MP + 8MP + 2MP Triple Rear & 16MP Front Camera<br>Memory : Memory Card Supported, upto 1TB<br>OS : Android v13<br>"
         }
     },
     {
@@ -452,7 +452,7 @@
             "brand": "iQOO",
             "price": 3699815.0,
             "image_link": "https://cdn1.smartprix.com/rx-iM93IMTdh-w280-h280/iqoo-z9-5g.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Dimensity 7200, Octa Core, 2.8GHz Processor<br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 44W Fast Charging<br>Display : 6.67 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 2MP Dual Rear & 16MP Front Camera<br>Memory : Memory Card (Hybrid), upto 1TB<br>OS : Android v14<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Dimensity 7200, Octa Core, 2.8GHz <br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 44W Fast Charging<br>Display : 6.67 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 2MP Dual Rear & 16MP Front Camera<br>Memory : Memory Card (Hybrid), upto 1TB<br>OS : Android v14<br>"
         }
     },
     {
@@ -464,7 +464,7 @@
             "brand": "Tecno",
             "price": 3699815.0,
             "image_link": "https://cdn1.smartprix.com/rx-ilf0u56p4-w280-h280/tecno-pova-6-pro.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Vo5G, Wi-Fi, NFC, IR Blaster<br>Processor : Dimensity 6080, Octa Core, 2.4GHz Processor<br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 6000mAh Battery with 70W Fast Charging<br>Display : 6.78 inches, 1080x2436px, 120 Hz Display with Punch Hole<br>Camera : 108MP + 2MP + 0.08MP Triple Rear & 32MP Front Camera<br>Memory : Memory Card Supported, upto 1TB<br>OS : Android v14<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Vo5G, Wi-Fi, NFC, IR Blaster<br>Processor : Dimensity 6080, Octa Core, 2.4GHz <br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 6000mAh Battery with 70W Fast Charging<br>Display : 6.78 inches, 1080x2436px, 120 Hz Display with Punch Hole<br>Camera : 108MP + 2MP + 0.08MP Triple Rear & 32MP Front Camera<br>Memory : Memory Card Supported, upto 1TB<br>OS : Android v14<br>"
         }
     },
     {
@@ -476,7 +476,7 @@
             "brand": "Samsung",
             "price": 23123150.0,
             "image_link": "https://cdn1.smartprix.com/rx-irL2QXDwz-w280-h280/samsung-galaxy-s25-u.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Vo5G, Wi-Fi<br>Processor : Snapdragon 8 Gen4, Octa Core Processor<br>Storage : 12GB RAM, 256GB inbuilt<br>Battery : 5100mAh Battery with 65W Fast Charging<br>Display : 6.83 inches, 1800x3440px, 144 Hz Display with Punch Hole<br>Camera : 200MP Quad Rear & 60MP Front Camera<br>Memory : Memory Card Not Supported<br>OS : Android v14<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Vo5G, Wi-Fi<br>Processor : Snapdragon 8 Gen4, Octa Core <br>Storage : 12GB RAM, 256GB inbuilt<br>Battery : 5100mAh Battery with 65W Fast Charging<br>Display : 6.83 inches, 1800x3440px, 144 Hz Display with Punch Hole<br>Camera : 200MP Quad Rear & 60MP Front Camera<br>Memory : Memory Card Not Supported<br>OS : Android v14<br>"
         }
     },
     {
@@ -488,7 +488,7 @@
             "brand": "Vivo",
             "price": 7677500.0,
             "image_link": "https://cdn1.smartprix.com/rx-ihCwhkEQ6-w280-h280/vivo-v30-pro-5g.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Dimensity 8200, Octa Core, 3.1GHz Processor<br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 80W Fast Charging<br>Display : 6.78 inches, 1260x2800px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 50MP + 50MP Triple Rear & 50MP Front Camera<br>Memory : Memory Card Not Supported<br>OS : Android v14<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Dimensity 8200, Octa Core, 3.1GHz <br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 80W Fast Charging<br>Display : 6.78 inches, 1260x2800px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 50MP + 50MP Triple Rear & 50MP Front Camera<br>Memory : Memory Card Not Supported<br>OS : Android v14<br>"
         }
     },
     {
@@ -500,7 +500,7 @@
             "brand": "Motorola",
             "price": 4254815.0,
             "image_link": "https://cdn1.smartprix.com/rx-i3TEsGJHe-w280-h280/motorola-edge-40-neo.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Dimensity 7030, Octa Core, 2.5GHz Processor<br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 68W Fast Charging<br>Display : 6.55 inches, 1080x2400px, 144 Hz Display with Punch Hole<br>Camera : 50MP + 13MP Dual Rear & 32MP Front Camera<br>Memory : Memory Card Not Supported<br>OS : Android v13<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Dimensity 7030, Octa Core, 2.5GHz <br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 68W Fast Charging<br>Display : 6.55 inches, 1080x2400px, 144 Hz Display with Punch Hole<br>Camera : 50MP + 13MP Dual Rear & 32MP Front Camera<br>Memory : Memory Card Not Supported<br>OS : Android v13<br>"
         }
     },
     {
@@ -512,7 +512,7 @@
             "brand": "Samsung",
             "price": 4994815.0,
             "image_link": "https://cdn1.smartprix.com/rx-iNheAKwJ4-w280-h280/samsung-galaxy-m55.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Snapdragon 7 Gen1, Octa Core, 2.4GHz Processor<br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 45W Fast Charging<br>Display : 6.7 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 8MP + 2MP Triple Rear & 50MP Front Camera<br>Memory : Memory Card (Hybrid), upto 1TB<br>OS : Android v14<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Snapdragon 7 Gen1, Octa Core, 2.4GHz <br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 45W Fast Charging<br>Display : 6.7 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 8MP + 2MP Triple Rear & 50MP Front Camera<br>Memory : Memory Card (Hybrid), upto 1TB<br>OS : Android v14<br>"
         }
     },
     {
@@ -524,7 +524,7 @@
             "brand": "OPPO",
             "price": 5548150.0,
             "image_link": "https://cdn1.smartprix.com/rx-iEcKNyxrc-w280-h280/oppo-f19-pro-plus-5g.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Dimensity 800U , Octa Core, 2.4GHz Processor<br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 4310mAh Battery with 50W Fast Charging<br>Display : 6.43 inches, 1080x2400px Display with Punch Hole<br>Camera : 48MP Quad Rear & 16MP Front Camera<br>Memory : Memory Card Supported, upto 256GB<br>OS : Android v11<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Dimensity 800U , Octa Core, 2.4GHz <br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 4310mAh Battery with 50W Fast Charging<br>Display : 6.43 inches, 1080x2400px Display with Punch Hole<br>Camera : 48MP Quad Rear & 16MP Front Camera<br>Memory : Memory Card Supported, upto 256GB<br>OS : Android v11<br>"
         }
     },
     {
@@ -536,7 +536,7 @@
             "brand": "Poco",
             "price": 3237130.0,
             "image_link": "https://cdn1.smartprix.com/rx-iTAboexuy-w280-h280/poco-x3-pro.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, VoLTE, Wi-Fi, IR Blaster<br>Processor : Snapdragon 860, Octa Core, 2.96GHz Processor<br>Storage : 6GB RAM, 128GB inbuilt<br>Battery : 5160mAh Battery with 33W Fast Charging<br>Display : 6.67 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 48MP Quad Rear & 20MP Front Camera<br>Memory : Memory Card (Hybrid)<br>OS : Android v11<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, VoLTE, Wi-Fi, IR Blaster<br>Processor : Snapdragon 860, Octa Core, 2.96GHz <br>Storage : 6GB RAM, 128GB inbuilt<br>Battery : 5160mAh Battery with 33W Fast Charging<br>Display : 6.67 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 48MP Quad Rear & 20MP Front Camera<br>Memory : Memory Card (Hybrid)<br>OS : Android v11<br>"
         }
     },
     {
@@ -548,7 +548,7 @@
             "brand": "OPPO",
             "price": 24974815.0,
             "image_link": "https://cdn1.smartprix.com/rx-ituVJAfe4-w280-h280/oppo-x-2021.webp",
-            "spec": "Network : Single Sim, 3G, 4G, VoLTE, Wi-Fi<br>Processor : Snapdragon 865, Octa Core, 2.84GHz Processor<br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 4000mAh Battery with 45W Fast Charging<br>Display : 7.4 inches, 1440x3200px Display<br>Camera : Dual Display<br>Memory : 64MP + 16MP + 12MP Triple Rear & 16MP Front Camera<br>OS : Android v11<br>"
+            "spec": "Network : Single Sim, 3G, 4G, VoLTE, Wi-Fi<br>Processor : Snapdragon 865, Octa Core, 2.84GHz <br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 4000mAh Battery with 45W Fast Charging<br>Display : 7.4 inches, 1440x3200px Display<br>Camera : Dual Display<br>Memory : 64MP + 16MP + 12MP Triple Rear & 16MP Front Camera<br>OS : Android v11<br>"
         }
     },
     {
@@ -560,7 +560,7 @@
             "brand": "Xiaomi",
             "price": 4069815.0,
             "image_link": "https://cdn1.smartprix.com/rx-i02ZQvRvI-w280-h280/xiaomi-mi-10t-5g.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Snapdragon 865, Octa Core, 2.84GHz Processor<br>Storage : 6GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 33W Fast Charging<br>Display : 6.67 inches, 2400x1080px, 144 Hz Display with Punch Hole<br>Camera : 64MP + 13MP + 5MP Triple Rear & 20MP Front Camera<br>Memory : Android v10<br>OS : No FM Radio<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Snapdragon 865, Octa Core, 2.84GHz <br>Storage : 6GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 33W Fast Charging<br>Display : 6.67 inches, 2400x1080px, 144 Hz Display with Punch Hole<br>Camera : 64MP + 13MP + 5MP Triple Rear & 20MP Front Camera<br>Memory : Android v10<br>OS : No FM Radio<br>"
         }
     },
     {
@@ -572,7 +572,7 @@
             "brand": "Realme",
             "price": 2978500.0,
             "image_link": "https://cdn1.smartprix.com/rx-iH0KuYu8I-w280-h280/realme-7-pro-8gb-ram.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, VoLTE, Wi-Fi<br>Processor : Snapdragon 720G , Octa Core, 2.3GHz Processor<br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 4500mAh Battery with 65W Fast Charging<br>Display : 6.4 inches, 1080x2400px Display with Punch Hole<br>Camera : 64MP Quad Rear & 32MP Front Camera<br>Memory : Memory Card Supported, upto 256GB<br>OS : Android v10<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, VoLTE, Wi-Fi<br>Processor : Snapdragon 720G , Octa Core, 2.3GHz <br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 4500mAh Battery with 65W Fast Charging<br>Display : 6.4 inches, 1080x2400px Display with Punch Hole<br>Camera : 64MP Quad Rear & 32MP Front Camera<br>Memory : Memory Card Supported, upto 256GB<br>OS : Android v10<br>"
         }
     },
     {
@@ -584,7 +584,7 @@
             "brand": "Huawei",
             "price": 39773150.0,
             "image_link": "https://cdn1.smartprix.com/rx-iFnSqd5LI-w280-h280/huawei-mate-30-rs-po.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC, IR Blaster<br>Processor : Kirin  990, Octa Core, 2.86GHz Processor<br>Storage : 12GB RAM, 512GB inbuilt<br>Battery : 4500mAh Battery with Fast Charging<br>Display : 6.53 inches, 1176x2400px Display with Large Notch<br>Camera : 40MP Quad Rear & 32MP Dual Front Camera<br>Memory : Memory Card (Hybrid), upto 256GB<br>OS : Android v10<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC, IR Blaster<br>Processor : Kirin  990, Octa Core, 2.86GHz <br>Storage : 12GB RAM, 512GB inbuilt<br>Battery : 4500mAh Battery with Fast Charging<br>Display : 6.53 inches, 1176x2400px Display with Large Notch<br>Camera : 40MP Quad Rear & 32MP Dual Front Camera<br>Memory : Memory Card (Hybrid), upto 256GB<br>OS : Android v10<br>"
         }
     },
     {
@@ -596,7 +596,7 @@
             "brand": "Nubia",
             "price": 3513150.0,
             "image_link": "https://cdn1.smartprix.com/rx-igELCwcpW-w280-h280/nubia-neo-2.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Unisoc T820, Octa Core, 2.7GHz Processor<br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 5200mAh Battery<br>Display : 6.72 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 2MP Dual Rear & Main Front Camera<br>Memory : Android v14<br>OS : No FM Radio<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Unisoc T820, Octa Core, 2.7GHz <br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 5200mAh Battery<br>Display : 6.72 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 2MP Dual Rear & Main Front Camera<br>Memory : Android v14<br>OS : No FM Radio<br>"
         }
     },
     {
@@ -608,7 +608,7 @@
             "brand": "Sony",
             "price": 18498150.0,
             "image_link": "https://cdn1.smartprix.com/rx-izWx9hO5x-w280-h280/sony-xperia-5-vi.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Snapdragon 8 Gen3, Octa Core, 3.3GHz Processor<br>Storage : 12GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 44W Fast Charging<br>Display : 6.5 inches, 1080x2520px, 120 Hz Display<br>Camera : 50MP + 32MP Dual Rear & 12MP Front Camera<br>Memory : Memory Card (Hybrid)<br>OS : Android v13<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Snapdragon 8 Gen3, Octa Core, 3.3GHz <br>Storage : 12GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 44W Fast Charging<br>Display : 6.5 inches, 1080x2520px, 120 Hz Display<br>Camera : 50MP + 32MP Dual Rear & 12MP Front Camera<br>Memory : Memory Card (Hybrid)<br>OS : Android v13<br>"
         }
     },
     {
@@ -620,7 +620,7 @@
             "brand": "Google",
             "price": 29598150.0,
             "image_link": "https://cdn1.smartprix.com/rx-iovMLHr03-w280-h280/google-pixel-fold-2.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Google Tensor G4, Deca Core Processor<br>Storage : 12GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 45W Fast Charging<br>Display : 8.02 inches, 1840x2208px, 120 Hz Display with Punch Hole<br>Camera : Foldable Display, Dual Display<br>Memory : 50MP + 10.8MP + 10.8MP Triple Rear & 12MP + 12MP Dual Front Camera<br>OS : Android v14<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Google Tensor G4, Deca Core <br>Storage : 12GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 45W Fast Charging<br>Display : 8.02 inches, 1840x2208px, 120 Hz Display with Punch Hole<br>Camera : Foldable Display, Dual Display<br>Memory : 50MP + 10.8MP + 10.8MP Triple Rear & 12MP + 12MP Dual Front Camera<br>OS : Android v14<br>"
         }
     },
     {
@@ -632,7 +632,7 @@
             "brand": "Vivo",
             "price": 4623150.0,
             "image_link": "https://cdn1.smartprix.com/rx-irqswbtJA-w280-h280/vivo-v30-se.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Dimensity 6080, Octa Core, 2.4GHz Processor<br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 18W Fast Charging<br>Display : 6.7 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 2MP Dual Rear & 16MP Front Camera<br>Memory : Memory Card (Hybrid)<br>OS : Android v14<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Dimensity 6080, Octa Core, 2.4GHz <br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 18W Fast Charging<br>Display : 6.7 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 2MP Dual Rear & 16MP Front Camera<br>Memory : Memory Card (Hybrid)<br>OS : Android v14<br>"
         }
     },
     {
@@ -644,7 +644,7 @@
             "brand": "Samsung",
             "price": 16649815.0,
             "image_link": "https://cdn1.smartprix.com/rx-iTOKaQQA8-w280-h280/samsung-galaxy-s24-8.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Vo5G, Wi-Fi, NFC<br>Processor : Exynos 2400, Deca Core, 3.2GHz Processor<br>Storage : 8GB RAM, 512GB inbuilt<br>Battery : 4000mAh Battery with 25W Fast Charging<br>Display : 6.2 inches, 1080x2340px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 12MP + 10MP Triple Rear & 12MP Front Camera<br>Memory : Android v14<br>OS : No FM Radio<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Vo5G, Wi-Fi, NFC<br>Processor : Exynos 2400, Deca Core, 3.2GHz <br>Storage : 8GB RAM, 512GB inbuilt<br>Battery : 4000mAh Battery with 25W Fast Charging<br>Display : 6.2 inches, 1080x2340px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 12MP + 10MP Triple Rear & 12MP Front Camera<br>Memory : Android v14<br>OS : No FM Radio<br>"
         }
     },
     {
@@ -656,7 +656,7 @@
             "brand": "Xiaomi",
             "price": 4438150.0,
             "image_link": "https://cdn1.smartprix.com/rx-iUAQFw6vW-w280-h280/xiaomi-redmi-note-13.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, VoLTE, Wi-Fi, NFC, IR Blaster<br>Processor : Helio G99 Ultra, Octa Core, 2.2GHz Processor<br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 67W Fast Charging<br>Display : 6.67 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 200MP + 8MP + 2MP Triple Rear & 16MP Front Camera<br>Memory : Memory Card (Hybrid)<br>OS : Android v13<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, VoLTE, Wi-Fi, NFC, IR Blaster<br>Processor : Helio G99 Ultra, Octa Core, 2.2GHz <br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 67W Fast Charging<br>Display : 6.67 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 200MP + 8MP + 2MP Triple Rear & 16MP Front Camera<br>Memory : Memory Card (Hybrid)<br>OS : Android v13<br>"
         }
     },
     {
@@ -668,7 +668,7 @@
             "brand": "Samsung",
             "price": 1905315.0,
             "image_link": "https://cdn1.smartprix.com/rx-ijGgFA4gW-w280-h280/samsung-galaxy-a05-6.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, VoLTE, Wi-Fi<br>Processor : Helio G85, Octa Core, 2GHz Processor<br>Storage : 6GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 25W Fast Charging<br>Display : 6.7 inches, 720x1600px Display with Water Drop Notch<br>Camera : 50MP + 2MP Dual Rear & 8MP Front Camera<br>Memory : Memory Card Supported, upto 1TB<br>OS : Android v13<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, VoLTE, Wi-Fi<br>Processor : Helio G85, Octa Core, 2GHz <br>Storage : 6GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 25W Fast Charging<br>Display : 6.7 inches, 720x1600px Display with Water Drop Notch<br>Camera : 50MP + 2MP Dual Rear & 8MP Front Camera<br>Memory : Memory Card Supported, upto 1TB<br>OS : Android v13<br>"
         }
     },
     {
@@ -680,7 +680,7 @@
             "brand": "Vivo",
             "price": 2403150.0,
             "image_link": "https://cdn1.smartprix.com/rx-iSFZTQfMJ-w280-h280/vivo-y27s.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, VoLTE, Wi-Fi, NFC<br>Processor : Snapdragon  680, Octa Core, 2.4GHz Processor<br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 44W Fast Charging<br>Display : 6.64 inches, 1080x2388px, 90 Hz Display with Water Drop Notch<br>Camera : 50MP + 2MP Dual Rear & 8MP Front Camera<br>Memory : Memory Card Supported<br>OS : Android v13<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, VoLTE, Wi-Fi, NFC<br>Processor : Snapdragon  680, Octa Core, 2.4GHz <br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 44W Fast Charging<br>Display : 6.64 inches, 1080x2388px, 90 Hz Display with Water Drop Notch<br>Camera : 50MP + 2MP Dual Rear & 8MP Front Camera<br>Memory : Memory Card Supported<br>OS : Android v13<br>"
         }
     },
     {
@@ -692,7 +692,7 @@
             "brand": "Apple",
             "price": 28988575.0,
             "image_link": "https://cdn1.smartprix.com/rx-ixnWrWjGI-w280-h280/apple-iphone-15-pro.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Bionic  A17 Pro, Hexa Core, 3.78GHz Processor<br>Storage : 8GB RAM, 1TB inbuilt<br>Battery : 3274mAh Battery with Fast Charging<br>Display : 6.1 inches, 1179x2556px, 120 Hz Display with Dynamic Island<br>Camera : 48MP + 12MP + 12MP Triple Rear & 12MP Front Camera<br>Memory : Memory Card Not Supported<br>OS : iOS v17<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Bionic  A17 Pro, Hexa Core, 3.78GHz <br>Storage : 8GB RAM, 1TB inbuilt<br>Battery : 3274mAh Battery with Fast Charging<br>Display : 6.1 inches, 1179x2556px, 120 Hz Display with Dynamic Island<br>Camera : 48MP + 12MP + 12MP Triple Rear & 12MP Front Camera<br>Memory : Memory Card Not Supported<br>OS : iOS v17<br>"
         }
     },
     {
@@ -704,7 +704,7 @@
             "brand": "Infinix",
             "price": 4808150.0,
             "image_link": "https://cdn1.smartprix.com/rx-i0Zooc8VW-w280-h280/infinix-note-30-vip.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Dimensity 8050, Octa Core, 3GHz Processor<br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 68W Fast Charging<br>Display : 6.67 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 108MP + 2MP + 2MP Triple Rear & 32MP Front Camera<br>Memory : Memory Card Supported, upto 2TB<br>OS : Android v13<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Dimensity 8050, Octa Core, 3GHz <br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 68W Fast Charging<br>Display : 6.67 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 108MP + 2MP + 2MP Triple Rear & 32MP Front Camera<br>Memory : Memory Card Supported, upto 2TB<br>OS : Android v13<br>"
         }
     },
     {
@@ -716,7 +716,7 @@
             "brand": "Xiaomi",
             "price": 3422315.0,
             "image_link": "https://cdn1.smartprix.com/rx-iaJ71T5xX-w280-h280/xiaomi-redmi-note-12.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC, IR Blaster<br>Processor : Dimensity 8200 Ultra , Octa Core, 3.1GHz Processor<br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5080mAh Battery with 67W Fast Charging<br>Display : 6.51 inches, 1080x2460px, 144 Hz Display with Punch Hole<br>Camera : 64MP + 8MP + 2MP Triple Rear & 16MP Front Camera<br>Memory : Memory Card (Hybrid), upto 1TB<br>OS : Android v13<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC, IR Blaster<br>Processor : Dimensity 8200 Ultra , Octa Core, 3.1GHz <br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5080mAh Battery with 67W Fast Charging<br>Display : 6.51 inches, 1080x2460px, 144 Hz Display with Punch Hole<br>Camera : 64MP + 8MP + 2MP Triple Rear & 16MP Front Camera<br>Memory : Memory Card (Hybrid), upto 1TB<br>OS : Android v13<br>"
         }
     },
     {
@@ -728,7 +728,7 @@
             "brand": "Google",
             "price": 9248150.0,
             "image_link": "https://cdn1.smartprix.com/rx-iXnvnSBl7-w280-h280/google-pixel-9a.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Tensor G3, Octa Core Processor<br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 4700mAh Battery with 44W Fast Charging<br>Display : 6.3 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 108MP + 13MP Dual Rear & 13MP Front Camera<br>Memory : Memory Card Not Supported<br>OS : Android v15<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Tensor G3, Octa Core <br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 4700mAh Battery with 44W Fast Charging<br>Display : 6.3 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 108MP + 13MP Dual Rear & 13MP Front Camera<br>Memory : Memory Card Not Supported<br>OS : Android v15<br>"
         }
     },
     {
@@ -740,7 +740,7 @@
             "brand": "OnePlus",
             "price": 4623150.0,
             "image_link": "https://cdn1.smartprix.com/rx-ioNTxoqs0-w280-h280/oneplus-nord-n40-se.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Snapdragon 778G, Octa Core, 2.4GHz Processor<br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 40W Fast Charging<br>Display : 6.78 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 108MP + 2MP + 2MP Triple Rear & 16MP Front Camera<br>Memory : Memory Card Supported<br>OS : Android v14<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Snapdragon 778G, Octa Core, 2.4GHz <br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 40W Fast Charging<br>Display : 6.78 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 108MP + 2MP + 2MP Triple Rear & 16MP Front Camera<br>Memory : Memory Card Supported<br>OS : Android v14<br>"
         }
     },
     {
@@ -752,7 +752,7 @@
             "brand": "Vivo",
             "price": 6843150.0,
             "image_link": "https://cdn1.smartprix.com/rx-imbgDLLyI-w280-h280/vivo-s18-pro.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Dimensity 9200 Plus, Octa Core, 3.35GHz Processor<br>Storage : 12GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 80W Fast Charging<br>Display : 6.78 inches, 1260x2800px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 50MP + 12MP Triple Rear & 50MP Front Camera<br>Memory : Android v14<br>OS : No FM Radio<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Dimensity 9200 Plus, Octa Core, 3.35GHz <br>Storage : 12GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 80W Fast Charging<br>Display : 6.78 inches, 1260x2800px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 50MP + 12MP Triple Rear & 50MP Front Camera<br>Memory : Android v14<br>OS : No FM Radio<br>"
         }
     },
     {
@@ -764,7 +764,7 @@
             "brand": "Nothing",
             "price": 9248150.0,
             "image_link": "https://cdn1.smartprix.com/rx-iumknHIck-w280-h280/nothing-phone-4.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Octa Core Processor<br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 150W Fast Charging<br>Display : 6.73 inches, 1800x3440px, 144 Hz Display with Punch Hole<br>Camera : 108MP + 50MP + 32MP Triple Rear & 32MP Front Camera<br>Memory : Android v15<br>OS : No FM Radio<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Octa Core <br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 150W Fast Charging<br>Display : 6.73 inches, 1800x3440px, 144 Hz Display with Punch Hole<br>Camera : 108MP + 50MP + 32MP Triple Rear & 32MP Front Camera<br>Memory : Android v15<br>OS : No FM Radio<br>"
         }
     },
     {
@@ -776,7 +776,7 @@
             "brand": "Nothing",
             "price": 9248150.0,
             "image_link": "https://cdn1.smartprix.com/rx-iumknHIck-w280-h280/nothing-phone-4.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Octa Core Processor<br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 150W Fast Charging<br>Display : 6.73 inches, 1800x3440px, 144 Hz Display with Punch Hole<br>Camera : 108MP + 50MP + 32MP Triple Rear & 32MP Front Camera<br>Memory : Android v15<br>OS : No FM Radio<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Octa Core <br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 150W Fast Charging<br>Display : 6.73 inches, 1800x3440px, 144 Hz Display with Punch Hole<br>Camera : 108MP + 50MP + 32MP Triple Rear & 32MP Front Camera<br>Memory : Android v15<br>OS : No FM Radio<br>"
         }
     },
     {
@@ -788,7 +788,7 @@
             "brand": "Tecno",
             "price": 2588150.0,
             "image_link": "https://cdn1.smartprix.com/rx-iRib1W0Kd-w280-h280/tecno-spark-11-pro.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, VoLTE, Wi-Fi, NFC<br>Processor : Helio G99, Octa Core, 2.2GHz Processor<br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 33W Fast Charging<br>Display : 6.82 inches, 1080x2460px, 120 Hz Display with Punch Hole<br>Camera : 64MP Dual Rear & 32MP Front Camera<br>Memory : Memory Card Supported<br>OS : Android v13<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, VoLTE, Wi-Fi, NFC<br>Processor : Helio G99, Octa Core, 2.2GHz <br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 33W Fast Charging<br>Display : 6.82 inches, 1080x2460px, 120 Hz Display with Punch Hole<br>Camera : 64MP Dual Rear & 32MP Front Camera<br>Memory : Memory Card Supported<br>OS : Android v13<br>"
         }
     },
     {
@@ -800,7 +800,7 @@
             "brand": "OPPO",
             "price": 17574815.0,
             "image_link": "https://cdn1.smartprix.com/rx-iKOX9MPGM-w280-h280/oppo-find-n3-flip.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Dimensity 9200, Octa Core, 3.05GHz Processor<br>Storage : 12GB RAM, 256GB inbuilt<br>Battery : 4300mAh Battery with 44W Fast Charging<br>Display : 6.8 inches, 1080x2520px, 120 Hz Display with Punch Hole<br>Camera : Foldable Display, Dual Display<br>Memory : 50MP + 48MP + 32MP Triple Rear & 32MP Front Camera<br>OS : Memory Card Not Supported<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Dimensity 9200, Octa Core, 3.05GHz <br>Storage : 12GB RAM, 256GB inbuilt<br>Battery : 4300mAh Battery with 44W Fast Charging<br>Display : 6.8 inches, 1080x2520px, 120 Hz Display with Punch Hole<br>Camera : Foldable Display, Dual Display<br>Memory : 50MP + 48MP + 32MP Triple Rear & 32MP Front Camera<br>OS : Memory Card Not Supported<br>"
         }
     },
     {
@@ -812,7 +812,7 @@
             "brand": "OPPO",
             "price": 3328150.0,
             "image_link": "https://cdn1.smartprix.com/rx-idHY9jDy4-w280-h280/oppo-f24-4g.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, VoLTE, Wi-Fi<br>Processor : Snapdragon 685, Octa Core, 2.8GHz Processor<br>Storage : 6GB RAM, 64GB inbuilt<br>Battery : 5000mAh Battery with 33W Fast Charging<br>Display : 6.41 inches, 1080x2400px, 90 Hz Display with Punch Hole<br>Camera : 50MP + 8MP + 2MP Triple Rear & 16MP Front Camera<br>Memory : Memory Card Supported, upto 512GB<br>OS : Android v13<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, VoLTE, Wi-Fi<br>Processor : Snapdragon 685, Octa Core, 2.8GHz <br>Storage : 6GB RAM, 64GB inbuilt<br>Battery : 5000mAh Battery with 33W Fast Charging<br>Display : 6.41 inches, 1080x2400px, 90 Hz Display with Punch Hole<br>Camera : 50MP + 8MP + 2MP Triple Rear & 16MP Front Camera<br>Memory : Memory Card Supported, upto 512GB<br>OS : Android v13<br>"
         }
     },
     {
@@ -824,7 +824,7 @@
             "brand": "Tecno",
             "price": 1606910.0,
             "image_link": "https://cdn1.smartprix.com/rx-iehz88Z8l-w280-h280/tecno-spark-10.webp",
-            "spec": "Network : Dual Sim, 3G, 4G, VoLTE, Wi-Fi<br>Processor : Helio G37, Octa Core, 2.3GHz Processor<br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 18W Fast Charging<br>Display : 6.56 inches, 720x1612px, 90 Hz Display with Water Drop Notch<br>Camera : 50MP Dual Rear & 8MP Front Camera<br>Memory : Memory Card Supported<br>OS : Android v13<br>"
+            "spec": "Network : Dual Sim, 3G, 4G, VoLTE, Wi-Fi<br>Processor : Helio G37, Octa Core, 2.3GHz <br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 18W Fast Charging<br>Display : 6.56 inches, 720x1612px, 90 Hz Display with Water Drop Notch<br>Camera : 50MP Dual Rear & 8MP Front Camera<br>Memory : Memory Card Supported<br>OS : Android v13<br>"
         }
     },
     {
@@ -1255,7 +1255,7 @@
             "name": "ZEBRONICS Zeb-Sound Bomb N1 True Wireless in Ear Earbuds with Mic ENC, Gaming Mode (up to 50ms), up to 18H Playback, BT V5.2, Fidget Case, Voice Assistant, Splash Proof, Type C (Midnight Black)",
             "brand": "ZEBRONICS",
             "price": 1559435.0,
-            "image_link": "",
+            "image_link": "https://m.media-amazon.com/images/I/31i5nmWFmhL._SX300_SY300_QL70_FMwebp_.jpg",
             "spec": "<br>colour : Midnight black<br>form_factor : In Ear<br>connectivity_type : Wireless<br>"
         }
     },
