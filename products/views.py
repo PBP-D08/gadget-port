@@ -33,6 +33,7 @@ def show_products(request):
     if request.user.role == "admin":
         return render(request, 'admin_products.html', {'products': products, 'store': stores})
 
+    stores = Store.objects.all()
     return render(request, 'products.html', {'products': products, 'store': stores})
 
 def get_filtered_products(request):

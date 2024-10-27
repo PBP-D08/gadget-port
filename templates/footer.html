@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Footer Section</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Footer Styling */
         footer {
@@ -40,6 +41,24 @@
             padding: 1rem 0;
             color: #4a5568;
             font-size: 0.875rem;
+        }
+
+        /* Social Media Icons Styling */
+        .social-icons a {
+            color: #2c5282;
+            font-size: 1.25rem;
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #3182ce;
+        }
+
+        /* Styling untuk Teks Social Media */
+        .social-text {
+            color: #4a5568;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
         }
     </style>
 </head>
@@ -78,6 +97,16 @@
                     <p><i class="fas fa-envelope"></i> cs.ui.ac.id</p>
                     <p><i class="fas fa-phone"></i> (021) 7863419</p>
                 </div>
+            </div>
+            
+            <!-- Social Media Section -->
+            <div class="social-text mt-4">Ingin tetap terhubung?</div>
+            <div class="social-icons flex justify-center gap-4">
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://line.me" target="_blank"><i class="fab fa-line"></i></a>
             </div>
         </section>
 
