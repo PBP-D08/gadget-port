@@ -2,7 +2,7 @@ import json
 from django.http import HttpResponse, HttpResponseNotFound, JsonResponse
 from django.shortcuts import redirect, render, get_object_or_404
 from .models import  Katalog
-from authentication.models import Profile
+from authentication.models import User
 from django.contrib.auth.decorators import login_required
 from django.core import serializers
 from django.views.decorators.csrf import csrf_exempt
@@ -13,8 +13,6 @@ from products.forms import ProductEntryForm
 # Create your views here.
 @login_required(login_url="authentication:login")
 def show_products(request):
-    user = request.user
-    user_profile = Profile.objects.get(user=user)
 
     # Cek apakah ada query untuk filter atau sort
     category = request.GET.get('category')
@@ -31,8 +29,8 @@ def show_products(request):
         products = [product.object for product in products]
 
     # Render template yang sesuai berdasarkan role pengguna
-    if user_profile.role.casefold() == "admin":
-        stores = Store.objects.filter(user=user)
+    stores = Store.objects.filter(user=request.user)
+    if request.user.role == "admin":
         return render(request, 'admin_products.html', {'products': products, 'store': stores})
 
     stores = Store.objects.all()

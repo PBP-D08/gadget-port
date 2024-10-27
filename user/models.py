@@ -1,10 +1,10 @@
 # user/models.py
 
 from django.db import models
-from authentication.models import Profile  # Mengambil dari model Profile
+from authentication.models import User  # Mengambil dari model Profile
 
 class UserProfile(models.Model):
-    profile = models.OneToOneField(Profile, on_delete=models.CASCADE, related_name='user_profile')
+    profile = models.OneToOneField(User, on_delete=models.CASCADE, related_name='user_profile')
 
     # Field lain yang relevan untuk UserProfile
     parent_profile = models.ForeignKey(
