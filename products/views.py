@@ -15,15 +15,16 @@ from products.forms import ProductEntryForm
 def show_products(request):
     user = request.user
     user_profile = Profile.objects.get(user=user)
-    stores = Store.objects.all()
 
     if user_profile.role.casefold() == "admin":
+        stores = Store.objects.filter(user=user)
         products = serializers.serialize('json', Katalog.objects.all())
         products = serializers.deserialize('json', products)
         products = [product.object for product in products]
-
         return render(request, 'admin_products.html', {'products': products, 'store':stores})
-
+    
+    stores = Store.objects.all()
+    products = Katalog.objects.all()
     return render(request, 'products.html', {'products': products, 'store':stores})
 
 @csrf_exempt
