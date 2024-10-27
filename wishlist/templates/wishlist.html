@@ -38,58 +38,58 @@
                     </div>
                 </div>
 
-            <!-- Filter Options -->
-            <div id="filterOptions" class="hidden mt-2 ml-24 mr-20 rounded-lg bg-[#01aae8] shadow-xl flex justify-end">
-                <form method="GET" class="flex flex-row gap-12 p-4">
-                    <div class="flex gap-4">
-                        <label class="text-white font-bold">Urutkan dari:</label>
-                        <label class="text-white">
-                            <input type="radio" name="sort" value="price_asc" {% if selected_sort == 'price_asc' %}checked{% endif %}>
-                            Harga paling rendah
-                        </label>
-                        <label class="text-white">
-                            <input type="radio" name="sort" value="price_desc" {% if selected_sort == 'price_desc' %}checked{% endif %}>
-                            Harga paling tinggi
-                        </label>
-                    </div>
-                  
-                    <div class="flex gap-8">
-                        <label class="text-white font-bold">Kategori:</label>
-                        {% for category, label in categories %}
-                        <label class="text-white">
-                            <input type="checkbox" name="category" value="{{ category }}" {% if category in selected_categories %}checked{% endif %}>
-                            {{ label }}
-                        </label>
-                        {% endfor %}
-                    </div>
-                    <button type="submit" class="bg-white rounded-lg p-3 text-[#01aae8] font-bold hover:bg-[#c4c4c4]">Cari</button>
-                </form>
+                <!-- Filter Options -->
+                <div id="filterOptions" class="hidden mt-2 ml-24 mr-20 rounded-lg bg-[#01aae8] shadow-xl flex flex-row justify-end">
+                    <form method="GET" class="items-center justify-center flex flex-row pr-4 my-4 gap-12">
+                        <div class="flex gap-4">
+                            <label class="text-white font-bold">Urutkan dari:</label>
+                            <label class="text-white">
+                                <input type="radio" name="sort" value="price_asc" {% if selected_sort == 'price_asc' %}checked{% endif %}>
+                                Harga paling rendah
+                            </label>
+                            <label class="text-white">
+                                <input type="radio" name="sort" value="price_desc" {% if selected_sort == 'price_desc' %}checked{% endif %}>
+                                Harga paling tinggi
+                            </label>
+                        </div>
+
+                        <div class="flex gap-8">
+                            <label class="text-white font-bold">Kategori:</label>
+                            {% for category, label in categories %}
+                            <label class="text-white">
+                                <input type="checkbox" name="category" value="{{ category }}" {% if category in selected_categories %}checked{% endif %}>
+                                {{ label }}
+                            </label>
+                            {% endfor %}
+                        </div>
+                        <button type="submit" class="bg-white rounded-lg p-3 text-[#01aae8] font-bold hover:bg-[#c4c4c4]">Cari</button>
+                    </form>
+                </div>
             </div>
-        </div>
 
             <!-- Wishlist Items -->
             {% if wishlist_items %}
             <div class="self-stretch pl-24 pr-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                 {% for item in wishlist_items %}
-                <div id="wishlist-item-{{ item.id }}" class="wishlist-item bg-white shadow-lg rounded-lg overflow-hidden transition hover:scale-105">
-                    <img src="{{ item.image.url }}" alt="{{ item.name }}" class="w-full h-64 object-cover">
+                <div id="wishlist-item-{{ item.product.id }}" class="wishlist-item bg-white shadow-lg rounded-lg overflow-hidden transition hover:scale-105">
+                    <img src="{{ item.product.image_link }}" alt="{{ item.product.name }}" class="w-full h-64 object-cover">
                     <div class="p-5">
-                        <h2 class="text-2xl font-bold text-gray-800">{{ item.name }}</h2>
-                        <p class="text-gray-600">{{ item.description|truncatewords:20 }}</p>
-                        <p class="text-blue-600 font-semibold">Rp{{ item.price }}</p>
-                        <button onclick="toggleWishlist({{ item.id }})" class="w-full bg-blue-500 text-white py-2 rounded-lg mt-3 hover:bg-blue-600">
-                            {% if item.in_wishlist %} Hapus dari Wishlist {% else %} Tambah ke Wishlist {% endif %}
+                        <h2 class="text-2xl font-bold text-gray-800">{{ item.product.name }}</h2>
+                        <p class="text-gray-600">{{ item.product.description|truncatewords:20 }}</p>
+                        <p class="text-blue-600 font-semibold">Rp{{ item.product.price }}</p>
+                        <button onclick="removeFromWishlist({{ item.product.id }})" class="w-full bg-blue-500 text-white py-2 rounded-lg mt-3 hover:bg-blue-600">
+                            Hapus dari Wishlist
                         </button>
-    <!--                     <button onclick="moveToCart({{ item.id }})" class="w-full bg-green-500 text-white py-2 rounded-lg mt-2 hover:bg-green-600">
+                        {% comment %} <button onclick="moveToCart({{ item.id }})" class="w-full bg-green-500 text-white py-2 rounded-lg mt-2 hover:bg-green-600">
                             Pindahkan ke Keranjang
-                        </button> -->
+                        </button> {% endcomment %}
                     </div>
                 </div>
                 {% endfor %}
             </div>
             {% else %}
             <div class="flex justify-center items-center w-screen pt-20">
-                <p class="text-center text-gray">Wishlist kamu masih kosong.</p>
+                <p class="text-center text-gray-500">Wishlist kamu masih kosong.</p>
             </div>
             {% endif %}
         </div>
@@ -144,7 +144,7 @@
             });
         }
 
-<!--         // Fungsi untuk memindahkan ke keranjang
+        // Fungsi untuk memindahkan ke keranjang
         {% comment %} function moveToCart(wishlistItemId) {
             fetch(`/wishlist/move-to-cart/${wishlistItemId}/`, {
                 method: 'POST',
@@ -175,16 +175,16 @@
                 console.error('Error:', error);
                 alert('Terjadi kesalahan saat memindahkan item ke keranjang.');
             });
-        } {% endcomment %} -->
+        } {% endcomment %}
 
-    function toggleFilter() {
-        const filterOptions = document.getElementById('filterOptions');
-        if (filterOptions.classList.contains('hidden')) {
-            filterOptions.classList.remove('hidden');
-        } else {
-            filterOptions.classList.add('hidden');
+        // Fungsi untuk toggle filter
+        function toggleFilter() {
+            const filterOptions = document.getElementById('filterOptions');
+            if (filterOptions.classList.contains('hidden')) {
+                filterOptions.classList.remove('hidden');
+            } else {
+                filterOptions.classList.add('hidden');
+            }
         }
-    } 
-</script>
+    </script>
 {% endblock content %}
-
