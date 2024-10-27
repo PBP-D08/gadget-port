@@ -1,8 +1,6 @@
-# Register your models here.
 from django.contrib import admin
 from .models import UserProfile
 
-admin.site.register(UserProfile)
-
-class UserProfile(admin.ModelAdmin):
-    fields = ['username', 'fullname', 'email', 'alamat']
+@admin.register(UserProfile)
+class UserProfileAdmin(admin.ModelAdmin):
+    list_display = ('user', 'parent_profile')  # Tambahkan field yang ingin ditampilkan
