@@ -61,7 +61,7 @@
                     <input class="w-12 text-center" type="text" value="1" id="jumlah"/>
                     <button class="px-2 py-1 border-l hover:bg-gray-100" onclick="increment()">+</button>
                 </div>
-                <a href="{% url 'cart_checkout:add_to_cart' product.id %}">
+                <a href="{% url 'cart_checkout:cart' %}">
                 <div class="flex justify-center text-gray-700 text-sm mt-4 p-4 w-full bg-[#6499E9] text-white py-3 rounded-lg hover:bg-blue-500">
                     <div class="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
