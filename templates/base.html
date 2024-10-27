@@ -47,9 +47,9 @@
     5. Connectin ke urls.py di gadget port 
        path('user/', include('user.urls')),  
        
-       6. Nah di base ini href dari tag <a></a> sisa kalian ganti. misal
-        tadi gw app user, definisiin url di gadgetport dengan "user/" lalu
-        definisiin url di user dengan "profile/", maka tulis di hrefnya "user/profile/"
+    6. Nah di base ini href dari tag <a></a> sisa kalian ganti. misal
+       tadi gw app user, definisiin url di gadgetport dengan "user/" lalu
+       definisiin url di user dengan "profile/", maka tulis di hrefnya "user/profile/"
     -->
     <!-- Navbar -->
 <nav class="w-full h-20 flex items-center justify-between px-5 lg:px-10 shadow-xl bg-blue-200 rounded-full mb-10">
@@ -70,7 +70,7 @@
         <li><a href="{% url 'products:show_products' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200">Products</a></li>
         <li><a href="{% url 'store:list_store' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200">Store</a></li>
         <li><a href="{% url 'cart_checkout:cart' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200">Cart</a></li>
-        <li><a href="{% url 'cart_checkout:cart' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200">Wishlist</a></li>
+        <li><a href="{% url 'wishlist:usser_wishlist' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200">Wishlist</a></li>
         <li>
             {% if user.is_authenticated %}
                 <div class="relative group">
@@ -101,7 +101,7 @@
     <a href="{% url 'products:show_products' %}" class="block text-gray-800 hover:text-blue-600 font-semibold">Products</a>
     <a href="{% url 'store:list_store' %}" class="block text-gray-800 hover:text-blue-600 font-semibold">Store</a>
     <a href="{% url 'cart_checkout:cart' %}" class="block text-gray-800 hover:text-blue-600 font-semibold">Cart</a>
-    <a href="{% url 'cart_checkout:cart' %}" class="block text-gray-800 hover:text-blue-600 font-semibold">Wishlist</a>
+    <a href="{% url 'wishlist:user_wishlist' %}" class="block text-gray-800 hover:text-blue-600 font-semibold">Wishlist</a>
     {% if user.is_authenticated %}
         <a href="{% url 'user:view_profile' %}" class="block text-gray-800 hover:text-blue-600 font-semibold">Profile</a>
         <a href="{% url 'authentication:logout' %}" class="block text-gray-800 hover:text-blue-600 font-semibold">Logout</a>
@@ -159,9 +159,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="text-center py-5 bg-blue-100">
-        <p class="text-gray-700 text-sm">© 2024 Gadget Port Store. All Rights Reserved.</p>
-    </footer>
+    {% include 'footer.html' %}
 
     <!-- JavaScript for Mobile Menu Toggle -->
     <script>
