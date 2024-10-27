@@ -97,7 +97,7 @@
     </nav>
 
     <!-- button icon cart -->
-    <button style="display: inline-flex; align-items: center; justify-content: center; padding: 8px; background-color: transparent; border: none; cursor: pointer; width: 40px; height: 40px;">
+    <a href="{% url 'cart_checkout:cart' %}" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background-color: transparent; border: none; cursor: pointer; text-decoration: none;">
         <svg
             style="width: 24px; height: 24px; stroke-width: 1.5;"
             stroke="currentColor"
@@ -113,7 +113,8 @@
                 d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
             ></path>
         </svg>
-    </button>
+    </a>
+    
     
     <!-- button wishlist -->
     <button style="display: inline-flex; align-items: center; justify-content: center; padding: 8px; background-color: transparent; border: none; cursor: pointer; width: 40px; height: 40px;">
