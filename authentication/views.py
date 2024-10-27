@@ -6,30 +6,22 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, logout as auth_logout, login as auth_login
 from django.views.decorators.csrf import csrf_exempt
 from authentication.forms import RegisterForm
-from .models import Profile  # Pastikan untuk mengimpor model Profile
+from django.http import HttpResponse, HttpResponseRedirect
+import datetime
+from .models import User  # Pastikan untuk mengimpor model User
 
 def login(request):
     if request.method == "POST":
-        username = request.POST.get("username")
-        password = request.POST.get("password")
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
+        form = AuthenticationForm(data=request.POST)
+        if form.is_valid():
+            user = form.get_user()
             auth_login(request, user)
-            next_page = request.GET.get("next")
-            if next_page is None:
-                response = redirect("main:show_main")
-            else:
-                response = redirect(next_page)
-            response.set_cookie("user_logged_in", user)
+            response = HttpResponseRedirect("/")
+            response.set_cookie("user_logged_in", str(datetime.datetime.now()))
             return response
-        else:
-            messages.error(request, "Sorry, incorrect username or password. Please try again.")
-    
-    context = {}
-    if request.user.is_authenticated:
-        return redirect('main:show_main')
     else:
-        return render(request, "login.html", context)
+        form = AuthenticationForm(request)
+    return render(request, "login.html", {"form": form})
 
 @csrf_exempt
 def register(request):
@@ -38,19 +30,7 @@ def register(request):
         form = RegisterForm(request.POST)
         
         if form.is_valid():
-            user = form.save()  # Simpan pengguna yang baru dibuat
-
-            # Buat profil untuk pengguna
-            Profile.objects.update_or_create(
-                user=user,
-                defaults={
-                    "full_name": form.cleaned_data['full_name'],
-                    "role": form.cleaned_data['role'],
-                    "email": user.email,  # Menyimpan email di profil
-                    "alamat": form.cleaned_data.get('alamat', '') 
-                }
-            )
-
+            form.save()  # Simpan pengguna yang baru dibuat
             messages.success(request, 'Your account has been successfully created!')
             return redirect('authentication:login')
     

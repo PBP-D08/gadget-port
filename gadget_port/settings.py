@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'products',
     'authentication',
     'user',
+    'wishlist',
+    'faq_page',
     'store',
     'review',
 ]
@@ -141,3 +143,5 @@ LOGIN_URL = '/signin/login/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+AUTH_USER_MODEL = 'authentication.User'

@@ -29,14 +29,13 @@
         box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Bayangan saat fokus */
     }
 </style>
+<div id="body">
 <div class="container mx-auto p-4">
     <div class="flex">
         <!-- Product Image -->
         <div class="flex justify-center items-center w-[300px] h-[300px]">
             <img alt="product image" class="object-contain w-full h-full" src="{{ product.image_link }}"/>
         </div>
-
-
         <!-- Product Details -->
         <div class="w-1/2 pl-20 pr-10  ">
             <h1 class="text-2xl font-semibold">
@@ -62,42 +61,50 @@
                     <input class="w-12 text-center" type="text" value="1" id="jumlah"/>
                     <button class="px-2 py-1 border-l hover:bg-gray-100" onclick="increment()">+</button>
                 </div>
-                <div class="flex justify-center text-gray-700 text-sm mt-4 p-4 w-full bg-[#6499E9] text-white py-3 rounded-lg hover:bg-blue-500">
                 <a href="{% url 'cart_checkout:add_to_cart' product.id %}">
+                <div class="flex justify-center text-gray-700 text-sm mt-4 p-4 w-full bg-[#6499E9] text-white py-3 rounded-lg hover:bg-blue-500">
                     <div class="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
                         </svg>
-                        <p class="text-white font-bold px-2 ">+Keranjang</p>
+                        <p class="text-white font-bold px-2 ">Keranjang</p>
                     </div>
-                </a>
                 </div>
-                <div class="flex justify-center text-gray-700 text-sm mt-4 p-4 w-full bg-[#6499E9] text-white py-3 rounded-lg hover:bg-blue-500">
-                <a>
+                </a>
+                <a href="{% url 'wishlist:add_to_wishlist' katalog_id=product.id %}">
+                <div class="flex justify-center mt-4 p-4 w-full bg-white text-[#6499E9] py-3 rounded-lg border border-blue-500 border-2 hover:bg-gray-100 font-bold ">
                     <div class="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#6499E9" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.76 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                         </svg>
-                        <p class="text-white font-bold px-2 ">Wishlist</p>
+                        <p class="text-[#6499E9] font-bold px-2 ">Wishlist</p>
                     </div>
-                </a>
                 </div>
+                </a>
             </div>
         </div>
     </div>
 </div>
 <!-- Reviews Section -->
 <div class="mt-8 flex ">
-    <div class="w-1/4">
+    <div class="w-1/4 pl-5">
         <h2 class="text-lg font-bold">Rating</h2>
         <div class="text-6xl font-bold mt-2">
-            {% if reviews %}
-                {{ average_rating|default:'5' }}  <!-- Menampilkan rata-rata rating -->
-            {% else %}
-                0  <!-- Jika tidak ada ulasan, tampilkan 0 -->
-            {% endif %}
+            <div class="stars-outer" style="display: inline-block; position: relative; font-size: 30px; color: #ccc;">
+                <span style="color: #ccc;">★★★★★</span>
+                <div class="stars-inner" style="position: absolute; top: 0; left: 0; white-space: nowrap; overflow: hidden; color: #f8ce0b;">
+                    <span>★★★★★</span>
+                </div>
+            </div>
+            <div style="font-size: 90px; color: #000; margin-top: 8px;">
+                {% if reviews %}
+                    {{ average_rating|default:'5' }}
+                {% else %}
+                    0
+                {% endif %}
+            </div>
         </div>
-        <div class="text-xl">/ 5.0</div>
+        <div class="text-2xl pl-10">/ 5.0</div>
             <div class="mt-6">
             <!-- Button to trigger the review modal -->
             <button type="button" onclick="showModal()" class="bg-[#6499E9] hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg" data-bs-toggle="modal" data-bs-target="#Review">
@@ -109,37 +116,7 @@
             <div class="flex flex-col">
                 <h2 class="text-xl font-bold mb-4">Semua Ulasan</h2>
                 <div id="reviews" class="flex flex-col mt-5">
-                    {% if reviews %}
-                        {% for review in reviews %}
-                            <div class="user-review w-full max-w-3xl mx-0 mb-6">
-                                <div class="bg-white shadow-md rounded-lg p-6 flex flex-col space-y-4">
-                                    <div class="review-details flex items-center justify-between">
-                                        <div class="user flex items-center space-x-3">
-                                            <p class="text-lg font-semibold">{{ review.user.username }}</p>
-                                        </div>
-                                        <div class="rating flex items-center space-x-2">
-                                            <span class="text-gray-600">Rating:</span>
-                                            <span class="text-gray-800">{{ review.rating }}.0/5.0</span>
-                                        </div>
-                                        <div class="timestamp text-gray-500 text-sm">
-                                            {{ review.timestamp }}
-                                        </div>
-                                    </div>
-                                    <div class="review-text text-gray-700">
-                                        {{ review.review_text }}
-                                    </div>
-                                    {% if request.user.is_authenticated and request.user == review.user %}
-                                        <div class="flex space-x-2 mt-4">
-                                            <button class="bg-[#6499E9] hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg" onclick="editReview({{ review.id }})">Edit</button>
-                                            <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg" onclick="deleteReview({{ review.id }})">Delete</button>
-                                        </div>
-                                    {% endif %}
-                                </div>
-                            </div>
-                        {% endfor %}
-                    {% else %}
-                        <p class="text-gray-500">No reviews yet.</p>
-                    {% endif %}
+             
                 </div>
             </div>
         </div>
@@ -147,7 +124,7 @@
         
     <!-- Modal for adding a review -->
     <div id="Review" 
-        class="modal fade fixed bg-opacity-50 w-screen h-screen justify-center items-center opacity-0 hidden transition-opacity duration-500" 
+        class="hidden fixed inset-0 z-50 w-full flex items-center justify-center bg-gray-800 bg-opacity-50 overflow-x-hidden overflow-y-auto transition-opacity duration-300 ease-out" 
         tabindex="-1" aria-labelledby="exampleModalLabel" 
         aria-hidden="true" >
         <div class="modal-dialog modal-dialog-centered mx-auto w-full max-w-lg p-4"> <!-- Responsif width dengan w-full dan max-w-lg -->
@@ -181,7 +158,7 @@
     </div>
     <!-- Modal untuk mengedit review -->
     <div id="EditReview" 
-        class="modal fade fixed bg-opacity-50 w-screen h-screen justify-center items-center opacity-0 hidden transition-opacity duration-500" 
+        class="hidden fixed inset-0 z-50 w-full flex items-center justify-center bg-gray-800 bg-opacity-50 overflow-x-hidden overflow-y-auto transition-opacity duration-300 ease-out" 
         tabindex="-1" aria-labelledby="editModalLabel" 
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered mx-auto w-full max-w-lg p-4">
@@ -215,6 +192,7 @@
         </div>
     </div>
 </div> 
+</div>
 <script>
 const productId = "{{ product.id }}";
 const product = "{{ product }}";
@@ -278,11 +256,16 @@ function deleteReview(reviewId) {
         }
     }
 
-/*
-    async function refreshReviews() {
-        const reviews = await getReviews();
-        document.getElementById("reviews").innerHTML = "";
-        let htmlString = "";
+
+async function refreshReviews() {
+    const reviews = await getReviews();
+    document.getElementById("reviews").innerHTML = "";
+    let htmlString = "";
+
+    if (reviews.length === 0) {
+        // Jika tidak ada ulasan, tampilkan pesan
+        htmlString = `<p class="text-gray-500">Belum ada ulasan produk ini.</p>`;
+    } else {
         reviews.forEach((review) => {
             const rating = review.fields.rating;
             const reviewText = review.fields.review_text;
@@ -290,7 +273,6 @@ function deleteReview(reviewId) {
             const timestamp = review.fields.timestamp;
             const reviewOwnerId = review.user.id; // ID pemilik review
             const reviewId = review.id;
-            console.log(review.id)
             htmlString += `
                 <div class="user-review w-full max-w-3xl mx-0 mb-6">
                     <div class="bg-white shadow-md rounded-lg p-6 flex flex-col space-y-4">
@@ -309,21 +291,25 @@ function deleteReview(reviewId) {
                         <div class="review-text text-gray-700">
                             ${reviewText}
                         </div>`;
-            
+
             // Menambahkan tombol Edit/Delete jika pengguna memiliki izin
-            if ( currentUserId == reviewOwnerId) {
+            if (toString(currentUserId) === toString(reviewOwnerId)) {
+
                 htmlString += `
                     <div class="flex space-x-2 mt-4">
-                        <button class="bg-yellow-500 text-white py-1 px-3 rounded" onclick="editReview(${review.id})">Edit</button>
-                        <button class="bg-red-500 text-white py-1 px-3 rounded" onclick="deleteReview(${review.id})">Delete</button>
+                        <button class="bg-[#6499E9] hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg" onclick="editReview(${review.id})">Edit</button>
+                        <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg" onclick="deleteReview(${review.id})">Delete</button>
                     </div>`;
             }
-            
+
             htmlString += `</div></div>`;
         });
-        document.getElementById("reviews").innerHTML = htmlString;
     }
-    refreshReviews(); */
+
+    document.getElementById("reviews").innerHTML = htmlString;
+}
+
+refreshReviews();
 
        
     function showModal() {
@@ -331,6 +317,7 @@ function deleteReview(reviewId) {
         review.classList.remove("hidden");
         review.classList.add("flex");
         setTimeout(() => {
+           // body.classList.add("bg-gray-100");
             review.classList.add("opacity-100");
         }, 20); 
     }
@@ -427,6 +414,21 @@ function decrement(){
         jumlah.value = parseInt(jumlah.value) - 1;
     }
         }
+
+// Ambil container rating dan pastikan average_rating dikonversi menjadi angka
+const ratingContainer = document.querySelector('.stars-outer');
+const averageRating = parseFloat("{{ average_rating }}"); // Ganti dengan rating rata-rata yang dinamis
+const starTotal = 5.0;
+
+// Hitung persentase bintang yang terisi
+const starPercentage = (averageRating / starTotal) * 100;
+const starPercentageRounded = `${Math.round(starPercentage)}%`; // Persentase dibulatkan
+
+// Set lebar stars-inner agar sesuai dengan persentase
+const starsInner = ratingContainer.querySelector(".stars-inner");
+starsInner.style.width = starPercentageRounded;
+
+
 </script>  
     
 {% endblock content %}

@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+<title>GadgetPort | FAQ</title>
+{% endblock meta %}
+
+{% block content %}
+
+<main>
+  <div class="container-fluid justify-content-center px-0">
+    <div class="text-center">
+      <h1 class="my-5">Pertanyaan yang Sering Diajukan (FAQ)</h1>
+    </div>
+    <div class="container mb-5 pb-5">
+      <div class="row">
+        <div class="col-md-6"></div>
+        <div id="faq-container" class="w-full space-y-4">
+          
+          <!-- Accordion Item 1 -->
+          <div class="faq-item border-b border-gray-300">
+            <button class="faq-btn w-full text-left py-3 px-4 font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200">
+              Bagaimana cara membeli produk?
+            </button>
+            <div class="faq-content hidden p-4 bg-gray-50">
+              <p>Masuk ke akun GadgetPort kamu atau daftar akun GadgetPort baru.</p>
+              <p>Cari dan pilih produk yang kamu inginkan.</p>
+              <p>Klik tombol “+Keranjang”, dan produkmu akan masuk ke dalam keranjang.</p>
+              <p>Klik ikon “Keranjang” di pojok kanan atas.</p>
+              <p>Kemudian, kamu bisa memilih bagian “Belanja Online” yang berada di sebelah kiri.</p>
+              <p>Lalu, klik kotak pada produk yang ingin kamu beli, lalu klik “Beli”.</p>
+              <p>Kemudian masuk ke Informasi Pembayaran.</p>
+              <p>Selanjutnya, klik “Pilih Pembayaran” dan pilih metode pembayaran yang kamu inginkan, kemudian klik tombol “Bayar”.</p>
+            </div>
+          </div>
+
+          <!-- Accordion Item 2 -->
+          <div class="faq-item border-b border-gray-300">
+            <button class="faq-btn w-full text-left py-3 px-4 font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200">
+              Bagaimana cara menjadi member?
+            </button>
+            <div class="faq-content hidden p-4 bg-gray-50">
+              Untuk menjadi member GadgetPort, kamu bisa registrasi dengan email atau nomor handphone.
+            </div>
+          </div>
+
+          <!-- Accordion Item 3 -->
+          <div class="faq-item border-b border-gray-300">
+            <button class="faq-btn w-full text-left py-3 px-4 font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200">
+              Apakah saya bisa mengubah data diri (profil) saya?
+            </button>
+            <div class="faq-content hidden p-4 bg-gray-50">
+              <p>Tentu saja. Kamu bisa melakukan perubahan data diri pada profil dengan cara:</p>
+              <ul>
+                <li>Masuk ke akun GadgetPort kamu.</li>
+                <li>Pilih menu “Akun”.</li>
+                <li>Pada dashboard akunmu, klik ikon “Perbaikan” di kanan atas.</li>
+                <li>Pilih data yang ingin diubah di bagian “Pengaturan Akun”.</li>
+                <li>Jika sudah selesai, klik tombol “Simpan”.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Accordion Item 4 -->
+          <div class="faq-item border-b border-gray-300">
+            <button class="faq-btn w-full text-left py-3 px-4 font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200">
+              Apakah saya bisa mengubah alamat email saya?
+            </button>
+            <div class="faq-content hidden p-4 bg-gray-50">
+              Saat ini, email yang sudah terdaftar tidak dapat diganti.
+            </div>
+          </div>
+
+          <!-- Accordion Item 5 -->
+          <div class="faq-item border-b border-gray-300">
+            <button class="faq-btn w-full text-left py-3 px-4 font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200">
+              Mengapa saya tidak bisa login?
+            </button>
+            <div class="faq-content hidden p-4 bg-gray-50">
+              <p>Beberapa alasan yang mungkin:</p>
+              <ul>
+                <li>Email atau kata sandi yang tidak sesuai. Pastikan email dan password benar.</li>
+                <li>Periksa koneksi internet atau pengaturan jaringan pada perangkat.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Accordion Item 6 -->
+          <div class="faq-item border-b border-gray-300">
+            <button class="faq-btn w-full text-left py-3 px-4 font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200">
+              Bisakah saya berbelanja tanpa membuat akun GadgetPort?
+            </button>
+            <div class="faq-content hidden p-4 bg-gray-50">
+              Tidak, Anda perlu membuat akun GadgetPort dan mengisi beberapa identitas yang diperlukan demi keamanan dan kenyamanan penjual dan pembeli.
+            </div>
+          </div>
+
+          <!-- Accordion Item 7 -->
+          <div class="faq-item border-b border-gray-300">
+            <button class="faq-btn w-full text-left py-3 px-4 font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200">
+              Apa detail kontak tim layanan pelanggan kami?
+            </button>
+            <div class="faq-content hidden p-4 bg-gray-50">
+              Anda dapat mengirim email ke <strong>cs.care@gadgetPort.com</strong> untuk bantuan, Senin - Jumat pukul 09:00 - 18:00 (tidak termasuk Sabtu, Minggu, & hari libur).
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+</main>
+
+{% block script %}
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const faqButtons = document.querySelectorAll(".faq-btn");
+
+        faqButtons.forEach((btn) => {
+            btn.addEventListener("click", function() {
+                const content = this.nextElementSibling;
+
+                // Tutup semua jawaban FAQ yang terbuka
+                document.querySelectorAll(".faq-content").forEach((faq) => {
+                    if (faq !== content) {
+                        faq.classList.add("hidden");
+                    }
+                });
+
+                // Tampilkan atau sembunyikan jawaban dari pertanyaan yang diklik
+                content.classList.toggle("hidden");
+            });
+        });
+    });
+</script>
+{% endblock script %}
+
+{% endblock content %}

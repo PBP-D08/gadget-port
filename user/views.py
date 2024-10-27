@@ -2,14 +2,14 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import UserProfile
 from .forms import UserProfileForm
-from authentication.models import Profile
+from authentication.models import User
 from cart_checkout.models import Order  # Ensure you import the Order model
 
 @login_required
 def view_profile(request):
     # Get the logged-in user's profile
     user = get_object_or_404(UserProfile, profile__user=request.user)
-    
+
     # Fetch the checkout history
     orders = Order.objects.filter(user=request.user).select_related('address', 'shipping_method')
 
@@ -43,7 +43,7 @@ def edit_profile(request):
 def add_bio(request):
     if request.method == 'POST':
         bio = request.POST.get('bio')
-        profile = get_object_or_404(Profile, user=request.user)
+        profile = get_object_or_404(User, user=request.user)
         profile.bio = bio
         profile.save()
         return redirect('user:view_profile')  # Change to 'user:view_profile'
@@ -52,7 +52,7 @@ def add_bio(request):
 
 @login_required
 def edit_bio(request):
-    profile = get_object_or_404(Profile, user=request.user)
+    profile = get_object_or_404(User, user=request.user)
 
     if request.method == 'POST':
         bio = request.POST.get('bio')
@@ -65,7 +65,7 @@ def edit_bio(request):
 
 @login_required
 def delete_bio(request):
-    profile = get_object_or_404(Profile, user=request.user)
+    profile = get_object_or_404(User, user=request.user)
     profile.bio = ''
     profile.save()
     return redirect('user:view_profile')  # Change to 'user:view_profile'
