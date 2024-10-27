@@ -80,9 +80,9 @@
                         <button onclick="removeFromWishlist({{ item.product.id }})" class="w-full bg-blue-500 text-white py-2 rounded-lg mt-3 hover:bg-blue-600">
                             Hapus dari Wishlist
                         </button>
-                        <button onclick="moveToCart({{ item.id }})" class="w-full bg-green-500 text-white py-2 rounded-lg mt-2 hover:bg-green-600">
+                        {% comment %} <button onclick="moveToCart({{ item.id }})" class="w-full bg-green-500 text-white py-2 rounded-lg mt-2 hover:bg-green-600">
                             Pindahkan ke Keranjang
-                        </button>
+                        </button> {% endcomment %}
                     </div>
                 </div>
                 {% endfor %}
@@ -145,38 +145,37 @@
         }
 
         // Fungsi untuk memindahkan ke keranjang
-        function moveToCart(wishlistItemId) {
-          console.log('Moving wishlist item:', wishlistItemId); // Debug log
-          
-          fetch(`/wishlist/move-to-cart/${wishlistItemId}/`, {
-              method: 'POST',
-              headers: {
-                  'X-CSRFToken': getCookie('csrftoken'),
-                  'X-Requested-With': 'XMLHttpRequest'
-              }
-          })
-          .then(response => response.json().then(data => {
-              if (!response.ok) {
-                  throw new Error(data.message || 'Network response was not ok');
-              }
-              return data;
-          }))
-          .then(data => {
-              console.log('Success:', data); // Debug log
-              alert(data.message);
-              const itemElement = document.querySelector(`button[onclick="moveToCart(${wishlistItemId})"]`).closest('.wishlist-item');
-              if (itemElement) {
-                  itemElement.remove();
-                  if (document.getElementsByClassName('wishlist-item').length === 0) {
-                      location.reload();
-                  }
-              }
-          })
-          .catch(error => {
-              console.error('Error:', error);
-              alert('Terjadi kesalahan saat memindahkan item ke keranjang: ' + error.message);
-          });
-        }
+        {% comment %} function moveToCart(wishlistItemId) {
+            fetch(`/wishlist/move-to-cart/${wishlistItemId}/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': getCookie('csrftoken'),
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                alert(data.message);
+                // Cari element parent dengan class wishlist-item
+                const itemElement = document.querySelector(`button[onclick="moveToCart(${wishlistItemId})"]`).closest('.wishlist-item');
+                if (itemElement) {
+                    itemElement.remove();
+                    // Cek apakah masih ada item wishlist
+                    if (document.getElementsByClassName('wishlist-item').length === 0) {
+                        location.reload();
+                    }
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Terjadi kesalahan saat memindahkan item ke keranjang.');
+            });
+        } {% endcomment %}
 
         // Fungsi untuk toggle filter
         function toggleFilter() {

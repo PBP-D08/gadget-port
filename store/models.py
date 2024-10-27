@@ -5,7 +5,7 @@ import uuid
 # Create your models here.
 class Store(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    id = models.AutoField(primary_key=True)
     nama = models.CharField(max_length=255)
     alamat = models.CharField(max_length=255)
     nomor_telepon = models.CharField(max_length=15, blank=True, null=True)

@@ -5,7 +5,8 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import Wishlist
 from products.models import Katalog
-from cart_checkout.models import CartItem
+# from cart_checkout.models import CartItem
+# from cart_checkout.models import Product, Store, CartItem
 
 @login_required
 def user_wishlist(request):
@@ -89,37 +90,47 @@ def remove_from_wishlist(request, katalog_id):
             'status': 'error'
         }, status=500)
 
-@login_required
-@csrf_exempt
-def move_to_cart(request, wishlist_item_id):
-    try:
-        # Mengambil item wishlist
-        wishlist_item = get_object_or_404(Wishlist, id=wishlist_item_id, user=request.user)
+# @login_required
+# @csrf_exempt
+# def move_to_cart(request, wishlist_item_id):
+#     try:
+#         # Ambil wishlist item
+#         wishlist_item = get_object_or_404(Wishlist, id=wishlist_item_id, user=request.user)
         
-        # Langsung gunakan product dari wishlist
-        product = wishlist_item.product  # Asumsikan wishlist langsung terhubung ke Product
+#         # Cari atau buat Product yang sesuai dengan Katalog
+#         product, created = Product.objects.get_or_create(
+#             name=wishlist_item.product.name,
+#             defaults={
+#                 'store': Store.objects.first(),  # Sesuaikan dengan store yang sesuai
+#                 'description': wishlist_item.product.description,
+#                 'price': wishlist_item.product.price,
+#                 'original_price': wishlist_item.product.price,
+#                 'image': wishlist_item.product.image
+#             }
+#         )
         
-        # Tambahkan ke keranjang
-        cart_item, created = CartItem.objects.get_or_create(
-            user=request.user,
-            product=product,
-            defaults={'quantity': 1}
-        )
+#         # Tambahkan ke cart
+#         cart_item, created = CartItem.objects.get_or_create(
+#             user=request.user,
+#             product=product,
+#             defaults={'quantity': 1}
+#         )
         
-        if not created:
-            cart_item.quantity += 1
-            cart_item.save()
-            
-        # Hapus dari wishlist
-        wishlist_item.delete()
+#         if not created:
+#             cart_item.quantity += 1
+#             cart_item.save()
         
-        return JsonResponse({
-            'message': 'Item berhasil dipindahkan ke keranjang.',
-            'status': 'success'
-        }, status=200)
-    except Exception as e:
-        print(f"Error detail: {str(e)}")  # Logging yang lebih detail
-        return JsonResponse({
-            'message': f'Terjadi kesalahan saat memindahkan produk: {str(e)}',
-            'status': 'error'
-        }, status=500)
+#         # Hapus dari wishlist
+#         wishlist_item.delete()
+        
+#         return JsonResponse({
+#             'message': 'Item berhasil dipindahkan ke keranjang.',
+#             'status': 'success'
+#         })
+        
+#     except Exception as e:
+#         print(f"Error detail: {str(e)}")
+#         return JsonResponse({
+#             'message': f'Terjadi kesalahan: {str(e)}',
+#             'status': 'error'
+#         }, status=500)

@@ -1,12 +1,10 @@
-# user/models.py
-
 from django.db import models
-from authentication.models import Profile  # Mengambil dari model Profile
+from django.conf import settings  # Import settings
 
 class UserProfile(models.Model):
-    profile = models.OneToOneField(Profile, on_delete=models.CASCADE, related_name='user_profile')
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='user_profile')
 
-    # Field lain yang relevan untuk UserProfile
+    # Additional fields for UserProfile
     parent_profile = models.ForeignKey(
         'self',
         on_delete=models.CASCADE,
@@ -17,9 +15,7 @@ class UserProfile(models.Model):
     )
 
     def can_add_sub_profile(self):
-        return self.profile.role == "Buyer"
+        return self.user.role == "Buyer"  # Perbaiki di sini
 
     def __str__(self):
-        return f"{self.profile.full_name}'s profile"
-    
-
+        return f"{self.user.username}'s profile"  # Perbaiki di sini

@@ -30,7 +30,7 @@ def show_product_reviews(request, id):
         
     }
 
-    return render(request, 'review.html', context)
+    return render(request, 'detail_and_review.html', context)
 
 # Create your views here.
 @login_required(login_url='authentication:login')
@@ -49,7 +49,7 @@ def show_product_admin(request, id):
         
     }
 
-    return render(request, 'detail_product.html', context)
+    return render(request, 'detail_admin.html', context)
 
 @login_required(login_url='authentication:login')
 @csrf_exempt

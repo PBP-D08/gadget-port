@@ -5,7 +5,7 @@ from django.db import models
 # from django.contrib.auth.models import Katalog
 # from authentication.models import Profile
 from django.db.models import UniqueConstraint
-from django.contrib.auth.models import User
+from authentication.models import User
 from products.models import Katalog
 
 class Wishlist(models.Model):
