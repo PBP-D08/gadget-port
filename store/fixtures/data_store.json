@@ -1,0 +1,405 @@
+[
+    {
+        "model": "store.Store",
+        "pk": 1,
+        "fields": {
+            "nama": "Lenovo",
+            "alamat": "Berlin",
+            "nomor_telepon": "673311313",
+            "logo": "",
+            "jam_buka": "09:00",
+            "jam_tutup": "22:00",
+            "user": 1
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 2,
+        "fields": {
+            "nama": "Jabra",
+            "alamat": "Mumbai",
+            "nomor_telepon": "731811003",
+            "logo": "",
+            "jam_buka": "08:30",
+            "jam_tutup": "22:00",
+            "user": 2
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 3,
+        "fields": {
+            "nama": "PTron",
+            "alamat": "Paris",
+            "nomor_telepon": "681161703",
+            "logo": "",
+            "jam_buka": "09:00",
+            "jam_tutup": "21:00",
+            "user": 3
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 4,
+        "fields": {
+            "nama": "Samsung",
+            "alamat": "Tokyo",
+            "nomor_telepon": "57103018",
+            "logo": "",
+            "jam_buka": "08:30",
+            "jam_tutup": "21:30",
+            "user": 4
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 5,
+        "fields": {
+            "nama": "Sony",
+            "alamat": "Sao Paulo",
+            "nomor_telepon": "841417674",
+            "logo": "",
+            "jam_buka": "08:30",
+            "jam_tutup": "22:30",
+            "user": 5
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 6,
+        "fields": {
+            "nama": "OPPO",
+            "alamat": "Mumbai",
+            "nomor_telepon": "588185243",
+            "logo": "",
+            "jam_buka": "08:00",
+            "jam_tutup": "22:00",
+            "user": 6
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 7,
+        "fields": {
+            "nama": "Dell",
+            "alamat": "New York",
+            "nomor_telepon": "863666042",
+            "logo": "",
+            "jam_buka": "08:00",
+            "jam_tutup": "22:00",
+            "user": 7
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 8,
+        "fields": {
+            "nama": "Apple",
+            "alamat": "Berlin",
+            "nomor_telepon": "303229239",
+            "logo": "",
+            "jam_buka": "08:30",
+            "jam_tutup": "21:00",
+            "user": 8
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 9,
+        "fields": {
+            "nama": "Nothing",
+            "alamat": "Sydney",
+            "nomor_telepon": "942294157",
+            "logo": "",
+            "jam_buka": "08:00",
+            "jam_tutup": "22:00",
+            "user": 9
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 10,
+        "fields": {
+            "nama": "Portronics",
+            "alamat": "London",
+            "nomor_telepon": "626812705",
+            "logo": "",
+            "jam_buka": "08:00",
+            "jam_tutup": "22:30",
+            "user": 10
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 11,
+        "fields": {
+            "nama": "Google",
+            "alamat": "Moscow",
+            "nomor_telepon": "242912095",
+            "logo": "",
+            "jam_buka": "09:00",
+            "jam_tutup": "22:30",
+            "user": 11
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 12,
+        "fields": {
+            "nama": "Noise",
+            "alamat": "Sydney",
+            "nomor_telepon": "359041191",
+            "logo": "",
+            "jam_buka": "09:00",
+            "jam_tutup": "21:30",
+            "user": 12
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 13,
+        "fields": {
+            "nama": "Nubia",
+            "alamat": "Seoul",
+            "nomor_telepon": "354388017",
+            "logo": "",
+            "jam_buka": "08:00",
+            "jam_tutup": "21:30",
+            "user": 13
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 14,
+        "fields": {
+            "nama": "Acer",
+            "alamat": "Seoul",
+            "nomor_telepon": "453644605",
+            "logo": "",
+            "jam_buka": "09:00",
+            "jam_tutup": "22:30",
+            "user": 14
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 15,
+        "fields": {
+            "nama": "Xiaomi",
+            "alamat": "Mumbai",
+            "nomor_telepon": "911828271",
+            "logo": "",
+            "jam_buka": "08:30",
+            "jam_tutup": "22:30",
+            "user": 15
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 16,
+        "fields": {
+            "nama": "Asus",
+            "alamat": "Berlin",
+            "nomor_telepon": "992689662",
+            "logo": "",
+            "jam_buka": "08:00",
+            "jam_tutup": "22:00",
+            "user": 16
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 17,
+        "fields": {
+            "nama": "Skullcandy",
+            "alamat": "Mumbai",
+            "nomor_telepon": "947891002",
+            "logo": "",
+            "jam_buka": "09:00",
+            "jam_tutup": "22:30",
+            "user": 17
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 18,
+        "fields": {
+            "nama": "Poco",
+            "alamat": "Moscow",
+            "nomor_telepon": "239592065",
+            "logo": "",
+            "jam_buka": "08:30",
+            "jam_tutup": "21:00",
+            "user": 18
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 19,
+        "fields": {
+            "nama": "Boult Audio",
+            "alamat": "Mumbai",
+            "nomor_telepon": "88302025",
+            "logo": "",
+            "jam_buka": "09:00",
+            "jam_tutup": "21:00",
+            "user": 19
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 20,
+        "fields": {
+            "nama": "OnePlus",
+            "alamat": "Moscow",
+            "nomor_telepon": "755766382",
+            "logo": "",
+            "jam_buka": "09:00",
+            "jam_tutup": "22:00",
+            "user": 20
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 21,
+        "fields": {
+            "nama": "Huawei",
+            "alamat": "Seoul",
+            "nomor_telepon": "358077686",
+            "logo": "",
+            "jam_buka": "08:30",
+            "jam_tutup": "22:30",
+            "user": 21
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 22,
+        "fields": {
+            "nama": "Dylect",
+            "alamat": "London",
+            "nomor_telepon": "472168204",
+            "logo": "",
+            "jam_buka": "09:00",
+            "jam_tutup": "22:00",
+            "user": 22
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 23,
+        "fields": {
+            "nama": "Tecno",
+            "alamat": "New York",
+            "nomor_telepon": "65962132",
+            "logo": "",
+            "jam_buka": "08:00",
+            "jam_tutup": "21:30",
+            "user": 23
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 24,
+        "fields": {
+            "nama": "HP",
+            "alamat": "Berlin",
+            "nomor_telepon": "871973390",
+            "logo": "",
+            "jam_buka": "09:00",
+            "jam_tutup": "22:30",
+            "user": 24
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 25,
+        "fields": {
+            "nama": "Motorola",
+            "alamat": "Tokyo",
+            "nomor_telepon": "178909136",
+            "logo": "",
+            "jam_buka": "08:30",
+            "jam_tutup": "22:00",
+            "user": 25
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 26,
+        "fields": {
+            "nama": "Meyaar",
+            "alamat": "Sydney",
+            "nomor_telepon": "446062922",
+            "logo": "",
+            "jam_buka": "08:00",
+            "jam_tutup": "22:00",
+            "user": 26
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 27,
+        "fields": {
+            "nama": "Infinix",
+            "alamat": "Berlin",
+            "nomor_telepon": "95812458",
+            "logo": "",
+            "jam_buka": "09:00",
+            "jam_tutup": "21:30",
+            "user": 27
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 28,
+        "fields": {
+            "nama": "ZEBRONICS",
+            "alamat": "Sydney",
+            "nomor_telepon": "424964377",
+            "logo": "",
+            "jam_buka": "08:30",
+            "jam_tutup": "22:00",
+            "user": 28
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 29,
+        "fields": {
+            "nama": "iQOO",
+            "alamat": "Tokyo",
+            "nomor_telepon": "843881378",
+            "logo": "",
+            "jam_buka": "08:30",
+            "jam_tutup": "22:30",
+            "user": 29
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 30,
+        "fields": {
+            "nama": "Realme",
+            "alamat": "Sydney",
+            "nomor_telepon": "665144551",
+            "logo": "",
+            "jam_buka": "08:00",
+            "jam_tutup": "21:30",
+            "user": 30
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 31,
+        "fields": {
+            "nama": "Vivo",
+            "alamat": "Sydney",
+            "nomor_telepon": "41841170",
+            "logo": "",
+            "jam_buka": "08:00",
+            "jam_tutup": "21:30",
+            "user": 31
+        }
+    }
+]
