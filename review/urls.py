@@ -21,4 +21,6 @@ urlpatterns = [
     path('edit-review/<int:review_id>/', edit_review, name='edit_review'),
     path('get-review-data/<int:review_id>/', get_review_data, name='get_review_data'),
 
+    path('user_product/<int:id>/', show_product_reviews, name='store_product_reviews'),
+    path('admin_product/<int:id>/', show_product_admin, name='store_product_admin'),
 ]

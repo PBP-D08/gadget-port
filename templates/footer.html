@@ -7,111 +7,150 @@
     <title>Footer Section</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Footer Styling */
-        footer {
-            background-color: #ebf8ff;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        /* Link Styling */
-        a {
-            color: #2c5282;
-            transition: color 0.3s ease;
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.5;
         }
-        a:hover {
+
+        .footer {
+            background-color: #ebf8ff;
+            padding: 1.5rem 0 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .footer-logo img {
+            width: 120px;
+        }
+
+        .footer-tagline {
+            color: #4a5568;
+            font-size: 0.9rem;
+        }
+
+        .footer-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-nav a {
+            color: #2c5282;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .footer-nav a:hover {
             color: #3182ce;
         }
 
-        /* Heading Styling */
-        h6 {
-            color: #2c5282;
-        }
-
-        /* Contact Section Styling */
-        .contact-info p {
-            color: #4a5568;
+        .social-icons {
             display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.875rem;
+            gap: 1rem;
         }
 
-        /* Copyright Styling */
-        .copyright {
-            background-color: #bee3f8;
-            padding: 1rem 0;
-            color: #4a5568;
-            font-size: 0.875rem;
-        }
-
-        /* Social Media Icons Styling */
         .social-icons a {
             color: #2c5282;
             font-size: 1.25rem;
-            transition: color 0.3s ease;
+            transition: color 0.2s ease;
         }
+
         .social-icons a:hover {
             color: #3182ce;
         }
 
-        /* Styling untuk Teks Social Media */
-        .social-text {
+        .copyright {
+            background-color: #bee3f8;
+            padding: 0.75rem;
+            text-align: center;
             color: #4a5568;
             font-size: 0.875rem;
-            margin-bottom: 0.5rem;
-            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-logo {
+                flex-direction: column;
+            }
+
+            .footer-nav ul {
+                justify-content: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
-    <footer class="text-center text-lg-start py-6">
-        <!-- Section: Links -->
-        <section class="container mx-auto text-center md:text-left mt-5">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                
-                <!-- Logo and About Section -->
-                <div class="mb-4">
-                    <a class="flex justify-center md:justify-start items-center" href="#">
-                        <img src="{% static 'image/Logo.png' %}" class="w-44 mx-10" alt="Logo"/>
-                    </a>
-                    <p class="text-gray-600 mt-3">
+    <br>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="{% static 'image/Logo.webp' %}" alt="Gadget Port Store Logo"/>
+                    <p class="footer-tagline">
                         Empowering Your World, One Gadget at a Time
                     </p>
                 </div>
 
-                <!-- Links Section -->
-                <div class="mb-4">
-                    <h6 class="font-semibold mb-2">Products</h6>
+                <nav class="footer-nav">
                     <ul>
-                        <li><a href="{% url 'main:show_main' %}" class="hover:text-blue-600 p-2 font-semibold transition duration-200">Home</a></li>
-                        <li><a href="{% url 'main:show_main' %}" class="hover:text-blue-600 p-2 font-semibold transition duration-200">Products</a></li>
-                        <li><a href="{% url 'cart_checkout:cart' %}" class="hover:text-blue-600 p-2 font-semibold transition duration-200">Cart</a></li>
-                        <li><a href="{% url 'wishlist:user_wishlist' %}" class="hover:text-blue-600 p-2 font-semibold transition duration-200">Wishlist</a></li>
-                        <li><a href="{% url 'faq_page:show_faqpage' %}" class="hover:text-blue-600 p-2 font-semibold transition duration-200">FAQ</a></li>
+                        <li><a href="{% url 'main:show_main' %}">Home</a></li>
+                        <li><a href="{% url 'products:show_products' %}">Products</a></li>
+                        <li><a href="{% url 'cart_checkout:cart' %}">Cart</a></li>
+                        <li><a href="{% url 'wishlist:user_wishlist' %}">Wishlist</a></li>
+                        <li><a href="{% url 'faq_page:show_faqpage' %}">FAQ</a></li>
                     </ul>
-                </div>
+                </nav>
 
-                <!-- Contact Section -->
-                <div class="contact-info mb-4">
-                    <h6 class="font-semibold mb-2">Contact</h6>
-                    <p><i class="fas fa-home"></i> Fakultas Ilmu Komputer, UI, Depok, Jawa Barat 16425</p>
-                    <p><i class="fas fa-envelope"></i> cs.ui.ac.id</p>
-                    <p><i class="fas fa-phone"></i> (021) 7863419</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
                 </div>
             </div>
-            
-            <!-- Social Media Section -->
-            <div class="social-text mt-4">Ingin tetap terhubung?</div>
-            <div class="social-icons flex justify-center gap-4">
-                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://line.me" target="_blank"><i class="fab fa-line"></i></a>
-            </div>
-        </section>
+        </div>
 
-        <!-- Copyright -->
-        <div class="text-center copyright">
+        <div class="copyright">
             <p>© 2024 Gadget Port Store. All Rights Reserved.</p>
         </div>
     </footer>
