@@ -70,7 +70,7 @@
         <li><a href="{% url 'products:show_products' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200">Products</a></li>
         <li><a href="{% url 'store:list_store' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200">Store</a></li>
         <li><a href="{% url 'cart_checkout:cart' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200">Cart</a></li>
-        <li><a href="{% url 'wishlist:usser_wishlist' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200">Wishlist</a></li>
+        <li><a href="{% url 'wishlist:user_wishlist' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200">Wishlist</a></li>
         <li>
             {% if user.is_authenticated %}
                 <div class="relative group">
