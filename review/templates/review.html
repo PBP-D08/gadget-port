@@ -2,18 +2,35 @@
 {% load static %}
 {% load humanize %}
 {% block meta %}
+    {% comment %} <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script> {% endcomment %}
 {% endblock meta %}
 
 {% block content %}
+<style>
+    .modal {
+        position: absolute;
+        width:30%;
+        top: 50%;  /* Position the modal at the center of the parent container */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+    }
+    /* Tambahkan gaya CSS untuk memperjelas tampilan input */
+    .form-control {
+        border: 2px solid #007bff; /* Ganti warna border sesuai kebutuhan */
+        border-radius: 0.375rem; /* Border radius untuk sudut yang lebih halus */
+        padding: 0.375rem 0.75rem; /* Padding untuk ruang di dalam input */
+    }
+    
+    .form-control:focus {
+        border-color: #0056b3; /* Warna border saat fokus */
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Bayangan saat fokus */
+    }
+</style>
 <div class="container mx-auto p-4">
-  <div id="show-alert" aria-hidden="true" style="position: fixed; top: 5%; left: 50%; transform: translateX(-50%); z-index: 1000; padding: 2rem; width: auto; height: 12px; text-align: center;" class="alert alert-danger d-flex align-items-center hidden flex items-center justify-center rounded-lg shadow-lg bg-red-200" role="alert">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi flex-shrink-0 me-2" viewBox="0 0 16 16" aria-label="Danger">
-        <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-      </svg>
-      <div class="font-semibold">
-        Invalid Input!
-      </div>
-  </div>
+  <div class="h-screen">
     <div class="flex">
         <!-- Product Image -->
         <div class="flex justify-center items-center w-[300px] h-[300px]">
@@ -37,330 +54,187 @@
                 <p>{{ product.spec|safe }}</p>
             </div>
         </div>
-        <!-- Purchase Section -->
+            <!-- Purchase Section -->
         <div class="w-full md:w-1/3">
             <div class="bg-white rounded-lg shadow p-6 sticky top-4">
                 <span class="text-lg font-bold mb-4">Jumlah :</span>
                 <div class="mt-4 flex justify-between mb-4 border rounded">
-                    <button class="px-2 py-1 border-r">-</button>
-                    <input class="w-12 text-center" type="text" value="1"/>
-                    <button class="px-2 py-1 border-l">+</button>
+                    <button class="px-2 py-1 border-r hover:bg-gray-100" onclick="decrement()">-</button>
+                    <input class="w-12 text-center" type="text" value="1" id="jumlah"/>
+                    <button class="px-2 py-1 border-l hover:bg-gray-100" onclick="increment()">+</button>
                 </div>
-            
-            <button class="w-full bg-[#6499E9] text-white py-3 rounded-lg hover:bg-blue-500">
-                Keranjang
-            </button>
-            <button class="mt-4 p-4 w-full bg-white text-[#6499E9] py-3 rounded-lg border border-blue-500 hover:bg-gray-100">
-                Beli Langsung
-            </button>
+                <div class="flex justify-center text-gray-700 text-sm mt-4 p-4 w-full bg-[#6499E9] text-white py-3 rounded-lg hover:bg-blue-500">
+                <a href="{% url 'cart_checkout:cart' %}">
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                        </svg>
+                        <p class="text-white font-bold px-2 ">Keranjang</p>
+                    </div>
+                </a>
+                </div>
+                <a href="{% url 'cart_checkout:checkout' %}">
+                <button href="{% url 'cart_checkout:checkout' %}" class="mt-4 p-4 w-full bg-white text-[#6499E9] py-3 rounded-lg border border-blue-500 hover:bg-gray-100 font-bold ">
+                    Beli Langsung
+                </button>
+                </a>
+                <div class="flex justify-center text-gray-700 text-sm mt-4 p-4 w-full bg-[#6499E9] text-white py-3 rounded-lg hover:bg-blue-500">
+                <a>
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.76 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                        </svg>
+                        <p class="text-white font-bold px-2 ">Wishlist</p>
+                    </div>
+                </a>
+                </div>
             </div>
         </div>
     </div>
-    <!-- Reviews Section -->
+   <!-- Reviews Section -->
     <div class="mt-8 flex">
-        <div class="w-1/3">
-            <h2 class="text-xl font-bold mb-4">Rating</h2>
-            <div class="text-center mb-4">
-            <div class="text-6xl font-bold">
-                {{ p.rating.update_rating|default:'0' }}
-            </div>
-            <div class="text-lg">/ 5</div>
-            </div>
-        </div>
-        <div class="w-2/3 pl-8">
-            <h2 class="text-xl font-bold mb-4">Semua Ulasan</h2>
-            <div id="reviews" class="reviews-list">
+        <div class="w-1/4">
+            <h2 class="text-lg font-bold">Rating</h2>
+            <div class="text-6xl font-bold mt-2">
                 {% if reviews %}
-                    {% for review in reviews %}
-                        <div class="review-item">
-                            <p><strong>{{ review.user.username }}</strong> - {{ review.timestamp }}</p>
-                            <p>Rating: {{ review.rating }} / 5</p>
-                            <p>{{ review.review_text }}</p>
-
-                            {% if request.user.is_admin %}
-                                <!-- Only admins can see the delete button -->
-                                <button class="btn btn-danger" onclick="deleteReview({{ review.id }})">Delete Review</button>
-                            {% endif %}
-                        </div>
-                    {% endfor %}
+                    {{ average_rating|default:'5' }}  <!-- Menampilkan rata-rata rating -->
                 {% else %}
-                    <p>No reviews yet.</p>
+                    0  <!-- Jika tidak ada ulasan, tampilkan 0 -->
                 {% endif %}
             </div>
-            {% comment %} Coba buffet {% endcomment %}
-                <!-- Modal for adding a review -->
-                <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">Add a Review</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <form id="reviewForm">
-                                    <input type="hidden" name="prodiuctId" id="productId" value="{{ product.id }}">
-                                    <label for="reviewText" class="form-label">Review</label>
-                                    <input type="number" name="rating" id="rating" min="1" max="5" required><br>
-                                    {% comment %} <div class="mb-3">
-                                        <label for="rating" class="form-label">Rating</label>
-                                        <select id="rating" class="form-select">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>    
-                                            <option value="5">5</option>
-                                        </select>
-                                    </div> {% endcomment %}
-                                    <br><br>
-                                    <div class="mb-3">
-                                        <label for="reviewText" class="form-label">Review</label>
-                                        <textarea class="form-control" name="reviewText" id="reviewText" rows="3" required></textarea>
-                                    </div>
-                                    <button type="submit" id="submitReviewBtn" class="btn btn-primary">Submit Review</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-<!-- Script to handle review submission -->
-{% comment %} <script src="{% static 'js/review.js' %}"></script> {% endcomment %}
-
-            {% comment %} Close buffet {% endcomment %}
-            <!--
-            <div class="flex justify-center items-center">
-                <button
-                    style="border-radius: 15px;"
-                    data-modal-target="crudModal" data-modal-toggle="crudModal"
-                    class="bg-[#6499E9] hover:bg-blue-500 flex items-center justify-center gap-2 text-white font-raleway font-medium pr-4 pl-3 py-2"
-                    type="button"
-                    class="btn btn-secondary"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
-                    onclick="addReview();"
-                >
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                    <path
-                        d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"
-                    />
-                    </svg>
-                    <p class="-mb-0.5">Add Your Review</p>
+            <div class="text-xl">/ 5.0</div>
+                <div class="mt-6">
+                <!-- Button to trigger the review modal -->
+                <button type="button" onclick="showModal()" class="bg-[#6499E9] hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg" data-bs-toggle="modal" data-bs-target="#Review">
+                    Add Review
                 </button>
                 </div>
             </div>
-            <!-- -->
-        <!-- Modal body -->
-        <!--
-            <div id="review-box" class="relative"></div>
-                <div id="crudModal" tabindex="-1" aria-hidden="true" class="hidden fixed inset-0 z-50 w-full flex items-center justify-center bg-gray-800 bg-opacity-50 overflow-x-hidden overflow-y-auto transition-opacity duration-300 ease-out ">
-                <div id="crudModalContent" class="relative bg-white rounded-lg shadow-lg w-5/6 sm:w-3/4 md:w-1/2 lg:w-1/3 mx-4 sm:mx-0 transform scale-95 opacity-0 transition-transform transition-opacity duration-300 ease-out">
-                    <!-- Modal header -->
-          <!--          <div class="flex items-center justify-between p-4 border-b rounded-t">
-                    <h3 class="text-xl font-semibold text-gray-900">
-                        Add New Review
-                    </h3>
-                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" id="closeModalBtn">
-                        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                        </svg>
-                        <span class="sr-only">Close modal</span>
-                    </button>
-                    </div>
-                    <!-- Modal body -->
-                    {% comment %} <div class="px-6 py-4 space-y-6 form-style">
-                    <form id="reviewForm">
-                        <div class="mb-4">
-                        <label for="rating" class="block text-sm font-medium text-gray-700">Rating</label>
-                        <input type="number" id="rating" name="rating" min="0.0" max="5.0" step="0.1" class="mt-1 block w-full border border-gray-300 rounded-md p-2 hover:border-indigo-700" placeholder="Rate the product" required>
-                        </div>
-                        <div class="mb-4">
-                        <label for="review_text" class="block text-sm font-medium text-gray-700">Review</label>
-                        <textarea id="review_text" name="review_text" rows="3" class="mt-1 block w-full h-20 resize-none border border-gray-300 rounded-md p-2 hover:border-indigo-700" placeholder="Describe the product" required></textarea>
-                        </div>
-                    </form>
-                    </div>
-                    <!-- Modal footer -->
-                    <div class="flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-2 p-6 border-t border-gray-200 rounded-b justify-center md:justify-end">
-                    <button type="button" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg" id="cancelButton">Cancel</button>
-                    <button type="submit" id="submitReview" form="reviewForm" class="button text-white font-bold py-2 px-4 rounded-lg">Save</button>
+            <div class="w-2/3 ml-6">
+                <div class="flex flex-col">
+                    <h2 class="text-xl font-bold mb-4">Semua Ulasan</h2>
+                    <div id="reviews" class="flex flex-col mt-5">
+                        {% if reviews %}
+                            {% for review in reviews %}
+                                <div class="user-review w-full max-w-3xl mx-0 mb-6">
+                                    <div class="bg-white shadow-md rounded-lg p-6 flex flex-col space-y-4">
+                                        <div class="review-details flex items-center justify-between">
+                                            <div class="user flex items-center space-x-3">
+                                                <p class="text-lg font-semibold">{{ review.user.username }}</p>
+                                            </div>
+                                            <div class="rating flex items-center space-x-2">
+                                                <span class="text-gray-600">Rating:</span>
+                                                <span class="text-gray-800">{{ review.rating }}.0/5.0</span>
+                                            </div>
+                                            <div class="timestamp text-gray-500 text-sm">
+                                                {{ review.timestamp }}
+                                            </div>
+                                        </div>
+                                        <div class="review-text text-gray-700">
+                                            {{ review.review_text }}
+                                        </div>
+                                        {% if request.user.is_authenticated and request.user == review.user %}
+                                            <div class="flex space-x-2 mt-4">
+                                                <button class="bg-[#6499E9] hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg" onclick="editReview({{ review.id }})">Edit</button>
+                                                <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg" onclick="deleteReview({{ review.id }})">Delete</button>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <p class="text-gray-500">No reviews yet.</p>
+                        {% endif %}
                     </div>
                 </div>
-            </div> {% endcomment %}
-            <!-- -->
+            </div>
+        </div>
+            
+        <!-- Modal for adding a review -->
+        <div id="Review" 
+            class="modal fade fixed bg-opacity-50 w-screen h-screen justify-center items-center opacity-0 hidden transition-opacity duration-500" 
+            tabindex="-1" aria-labelledby="exampleModalLabel" 
+            aria-hidden="true" >
+            <div class="modal-dialog modal-dialog-centered mx-auto w-full max-w-lg p-4"> <!-- Responsif width dengan w-full dan max-w-lg -->
+                <div class="modal-content rounded-lg shadow-lg">
+                    <div class="modal-header border-b border-gray-200 p-4 flex justify-between items-center">
+                        <h1 class="modal-title text-lg font-semibold" id="exampleModalLabel">Add a Review</h1>
+                    </div>
+                    <div class="modal-body p-6">
+                        <form id="reviewForm">
+                            {% csrf_token %}
+                            <input type="hidden" name="productId" id="productId" value="{{ product.id }}">
+
+                            <div class="mb-4">
+                                <label for="rating" class="block text-gray-700 font-medium mb-2">Rating</label>
+                                <input type="number" name="rating" id="rating" min="1" max="5" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="review_text" class="block text-gray-700 font-medium mb-2">Review</label>
+                                <textarea class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" name="review_text" id="review_text" rows="3" required></textarea>
+                            </div>
+
+                            <div class="flex flex-col space-y-3 md:flex-row md:space-y-0 md:space-x-3 mt-6 border-t border-gray-200 pt-4">
+                                <button type="button" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-md" data-bs-dismiss="modal" aria-label="Close" onclick="hideModal()">Cancel</button>
+                                <button type="submit" form="reviewForm" class="bg-[#6499E9] hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md">Save</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal untuk mengedit review -->
+        <div id="EditReview" 
+            class="modal fade fixed bg-opacity-50 w-screen h-screen justify-center items-center opacity-0 hidden transition-opacity duration-500" 
+            tabindex="-1" aria-labelledby="editModalLabel" 
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered mx-auto w-full max-w-lg p-4">
+                <div class="modal-content rounded-lg shadow-lg">
+                    <div class="modal-header border-b border-gray-200 p-4 flex justify-between items-center">
+                        <h1 class="modal-title text-lg font-semibold" id="editModalLabel">Edit Review</h1>
+                    </div>
+                    <div class="modal-body p-6">
+                        <form id="editReviewForm" onsubmit="submitEditReview(event)">
+                            {% csrf_token %}
+                            <input type="hidden" name="productId" id="editProductId" value="{{ product.id }}">
+                            <input type="hidden" name="reviewId" id="editReviewId" >
+
+                            <div class="mb-4">
+                                <label for="editRating" class="block text-gray-700 font-medium mb-2">Rating</label>
+                                <input type="number" name="rating" id="editRating" min="1" max="5" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="editReviewText" class="block text-gray-700 font-medium mb-2">Review</label>
+                                <textarea class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" name="review_text" id="editReviewText" rows="3" required></textarea>
+                            </div>
+
+                            <div class="flex flex-col space-y-3 md:flex-row md:space-y-0 md:space-x-3 mt-6 border-t border-gray-200 pt-4">
+                                <button type="button" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-md" data-bs-dismiss="modal" aria-label="Close" onclick="hideEditModal()">Cancel</button>
+                                <button type="submit" form="editReviewForm" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md">Save</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
     </div>
     </div>
 </div> 
-{% comment %} <script> {% endcomment %}
-{% comment %} /**
-   async function getReview() {
-    return fetch(`/review/${id}/`).then((res) => res.json());
-  }
-  async function refreshReview() {
-    // Menghapus isi review-box sebelum diisi ulang
-    document.getElementById("review-box").innerHTML = "";
-    document.getElementById("review-box").className = "";
-
-    // Mendapatkan produk dari API atau fungsi getProducts()
-    const reviews = await getReview();
-    let htmlString = "";
-    let classNameString = "";
-
-    // Jika tidak ada review
-    if (reviews.length === 0) {
-        classNameString = "flex flex-col items-center justify-center min-h-[24rem] p-6";
-        htmlString = `
-            <div class="flex flex-col items-center justify-center min-h-[24rem] p-6">
-                <img src="{% static 'img/none.jpg' %}" alt="Sad face" class="w-32 h-32 mb-4"/>
-                <p class="text-center text-gray-600 mt-4">Belum ada review pada produk ini</p>
-            </div>
-        `;
-    } else {
-        // Jika review tersedia, buat layout grid
-        classNameString = "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full m-10";
-
-
-        // Loop melalui setiap produk
-        reviews.forEach((item) => {
-            const text = DOMPurify.sanitize(review.review_text);
-            const rating = review.rating || 0;
-            const starPercentage = (rating / 5) * 100;
-            htmlString += `
-                <div class="flex items-center mb-2">
-                    <img alt="User  pp" class="rounded-full mr-2" height="40" width="40" />
-                    <div>
-                    <div class="font-bold">${review.user.username}</div>
-                    <div class="text-sm text-gray-500">Diulas pada {{ review.timestamp }}</div>
-                     <div class="star-rating p-2" data-rating="${rating}" style="display: inline-block; font-size: 0; position: relative;">
-                      <div>
-                        <div class="stars-outer" style="display: inline-block; position: relative; font-size: 30px; color: #ccc;">
-                          <span style="color: #ccc;">★★★★★</span>
-                          <div class="stars-inner" style="position: absolute; top: 0; left: 0; white-space: nowrap; overflow: hidden; color: #f8ce0b;">
-                            <span>★★★★★</span>
-                          </div>
-                        </div>
-                        <span class="ml-4 rounded px-2.5 py-0.5 text-xs text-black font-bold" style="background-color: #f8ce00; vertical-align: 5px;">${rating}</span>
-                      </div>
-                      <span class="rating-value">0.0</span>
-                    </div>
-                    </div>
-                </div>
-                <div class="text-sm">${text}</div>
-              `;
-          });
-      }
-      // Menambahkan class untuk grid/konten produk
-      document.getElementById("review-box").className = classNameString;
-      // Mengisi konten produk dengan kartu-kartu produk
-      document.getElementById("review-box").innerHTML = htmlString;
-
-      // Setelah konten produk diisi, jalankan ulang rating bintang
-      const ratingContainers = document.querySelectorAll(".star-rating");
-      ratingContainers.forEach((ratingContainer) => {
-          const rating = parseFloat(ratingContainer.dataset.rating); // Pastikan rating diambil sebagai angka
-          const starTotal = 5.0;
-          const starPercentage = (rating / starTotal) * 100;
-          const starPercentageRounded = `${Math.round(starPercentage)}%`; // Persentase dibulatkan
-          const starsInner = ratingContainer.querySelector(".stars-inner");
-          starsInner.style.width = starPercentageRounded; // Set width dari inner bintang
-          const ratingValue = ratingContainer.querySelector(".rating-value");
-          ratingValue.innerText = rating; // Set teks rating
-      });
-  }
-  refreshReview();
-  // Fungsi untuk menampilkan modal
-  function showModal() {
-      const modal = document.getElementById('crudModal');
-      const modalContent = document.getElementById('crudModalContent');
-
-      modal.classList.remove('hidden'); 
-      setTimeout(() => {
-        modalContent.classList.remove('opacity-0', 'scale-95');
-        modalContent.classList.add('opacity-100', 'scale-100');
-      }, 50); 
-  }
-
-  // Fungsi untuk menyembunyikan modal
-  function hideModal() {
-    const modal = document.getElementById('crudModal');
-    const modalContent = document.getElementById('crudModalContent');
-
-    modalContent.classList.remove('opacity-100', 'scale-100');
-    modalContent.classList.add('opacity-0', 'scale-95');
-
-    setTimeout(() => {
-      modal.classList.add('hidden');
-    }, 150);
-  }
-  // Event listener untuk tombol Cancel dan Close
-  document.getElementById("cancelButton").addEventListener("click", hideModal);
-  document.getElementById("closeModalBtn").addEventListener("click", hideModal);
-
-  function showAlert() {
-    const alertContent = document.getElementById('show-alert');
-    alertContent.classList.remove('hidden');
-    setTimeout(() => {
-      alertContent.classList.add('opacity-100', 'scale-100');
-    }, 0);
-
-    setTimeout(() => {
-      alertContent.classList.add('hidden');
-    }, 2000); // menunggu 2 detik
-  }
-  // JavaScript (client-side)
-  function addReview() {
-      const form = document.querySelector('#reviewForm');
-      const formData = new FormData(form);
-
-      // Validasi input
-      const rating = formData.get('rating').trim();
-      const review_text = formData.get('review_text').trim();
-
-      fetch("{% url 'review:add_review' product.id %}", {
-          method: "POST",
-          body: formData,
-      })
-      .then(response => {
-          if (response.ok) {
-              hideModal();
-              refreshReview();
-              form.reset();
-              document.querySelector("[data-modal-toggle='crudModal']").click();
-          } else {
-              return response.text(); // return error
-          }
-      })
-      .then(data => {
-          // alert error jika ada data invalid
-          if (data) {
-              form.reset(); // reset form
-              showAlert();
-              // alert(data);
-          }
-      })
-      return false;
-  }
-  // Event listener untuk submit form
-  document.getElementById("reviewForm").addEventListener("submit", (e) => {
-    e.preventDefault();
-    addReview();
-  });
-  
-**/ {% endcomment %}
-
-{% comment %} </script> {% endcomment %}
-{% endblock content %}
-{% block script %}
-{% comment %} <script src="/js/review.js"></script> {% endcomment %}
+<script>
+const productId = "{{ product.id }}";
+const product = "{{ product }}";
+const currentUserId = "{{ user.id }}"
+</script>
 <script>
 // JavaScript untuk menambahkan review dan memperbarui daftar review
 document.getElementById('reviewForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    print("asdasd")
     const productId = document.getElementById('productId').value;
     const rating = document.getElementById('rating').value;
-    const reviewText = document.getElementById('reviewText').value;
+    const reviewText = document.getElementById('review_text').value;
 
     // Validasi input
     if (!rating || !reviewText) {
@@ -371,73 +245,196 @@ document.getElementById('reviewForm').addEventListener('submit', function(e) {
 
     fetch(`/review/product/${productId}/add/`, {
         method: "POST",
-        body: formData = new FormData(document.getElementById('reviewForm'));
-    })
-    .then(response => {
-        if (!response.ok) throw new Error('Error during submission');
-        return response.json();
-    })
-    .then(data => {
-        if (data.message) {
-            alert(data.message);
-            window.location.reload();
-        } else if (data.error) {
-            alert(data.error);
-        }
-    })
-    .catch(err => {
-        console.error('Fetch error:', err);
-        alert('An error occurred: ' + err.message);
-    });
+        body: formData = new FormData(document.getElementById('reviewForm'))
+    }).then(response => {window.location.reload();
 
     // Bersihkan form setelah submit
     document.getElementById("reviewForm").reset();
+    hideModal();
+});
 });
 
-
-
-function updateReviewList(productId) {
-    fetch(`/review/product/${productId}/reviews/`) // Endpoint untuk mengambil semua review produk
-    .then(response => response.json())
-    .then(data => {
-        const reviewsContainer = document.getElementById('reviews');
-        reviewsContainer.innerHTML = ''; // Hapus daftar review yang ada
-
-        if (data.reviews.length > 0) {
-            data.reviews.forEach(review => {
-                const reviewItem = document.createElement('div');
-                reviewItem.classList.add('review-item');
-                reviewItem.innerHTML = `
-                    <p><strong>${review.user.username}</strong> - ${review.timestamp}</p>
-                    <p>Rating: ${review.rating} / 5</p>
-                    <p>${review.review_text}</p>
-                `;
-
-                // Menambahkan tombol hapus jika user adalah admin
-                if ({{ request.user.is_superuser|yesno:"true,false" }}) {
-                    reviewItem.innerHTML += `<button class="btn btn-danger" onclick="deleteReview(${review.id})">Delete Review</button>`;
-                }
-
-                reviewsContainer.appendChild(reviewItem);
-            });
-        } else {
-            reviewsContainer.innerHTML = '<p>No reviews yet.</p>';
+function deleteReview(reviewId) {
+    fetch(`/review/delete-review/${reviewId}/`, { // Menggunakan reviewId di sini
+        method: 'DELETE',
+    })
+    .then(response => {
+        if (response.ok) {
+            return response.json(); // Mengambil data JSON dari respons
         }
+        throw new Error('Network response was not ok.');
+    })
+    .then(data => {
+        alert(data.message); // Menampilkan pesan berhasil
+        window.location.reload(); // Reload halaman untuk memperbarui daftar ulasan
+    })
+    .catch(error => {
+        alert('Error: ' + error.message); // Menampilkan pesan kesalahan
     });
 }
-
-function deleteReview(reviewId) {
-    fetch(`/review/review/${reviewId}/delete/`, {
-        method: 'DELETE',
-         alert(data.message);
-            // Perbarui daftar review setelah menghapus
-            const productId = document.getElementById('productId').value;
-            updateReviewList(productId);
-        } else {
-            alert(data.error);
+    async function getReviews() {
+        try {
+            // Pastikan `productId` diinisialisasi dan memiliki nilai numerik
+            const res = await fetch(`/review/get-product-review-json/${productId}/`);
+            if (!res.ok) {
+                console.error(`Error ${res.status}: ${res.statusText}`);
+                throw new Error('Failed to fetch reviews');
+            }
+            return await res.json();
+        } catch (error) {
+            console.error('Fetch error:', error);
         }
-    )}
+    }
 
+/*
+    async function refreshReviews() {
+        const reviews = await getReviews();
+        document.getElementById("reviews").innerHTML = "";
+        let htmlString = "";
+        reviews.forEach((review) => {
+            const rating = review.fields.rating;
+            const reviewText = review.fields.review_text;
+            const username = review.user.username;
+            const timestamp = review.fields.timestamp;
+            const reviewOwnerId = review.user.id; // ID pemilik review
+            const reviewId = review.id;
+            console.log(review.id)
+            htmlString += `
+                <div class="user-review w-full max-w-3xl mx-0 mb-6">
+                    <div class="bg-white shadow-md rounded-lg p-6 flex flex-col space-y-4">
+                        <div class="review-details flex items-center justify-between">
+                            <div class="user flex items-center space-x-3">
+                                <p class="text-lg font-semibold">${username}</p>
+                            </div>
+                            <div class="rating flex items-center space-x-2">
+                                <span class="text-gray-600">Rating:</span>
+                                <span class="text-gray-800">${rating}.0/5.0</span>
+                            </div>
+                            <div class="timestamp text-gray-500 text-sm">
+                                ${timestamp}
+                            </div>
+                        </div>
+                        <div class="review-text text-gray-700">
+                            ${reviewText}
+                        </div>`;
+            
+            // Menambahkan tombol Edit/Delete jika pengguna memiliki izin
+            if ( currentUserId == reviewOwnerId) {
+                htmlString += `
+                    <div class="flex space-x-2 mt-4">
+                        <button class="bg-yellow-500 text-white py-1 px-3 rounded" onclick="editReview(${review.id})">Edit</button>
+                        <button class="bg-red-500 text-white py-1 px-3 rounded" onclick="deleteReview(${review.id})">Delete</button>
+                    </div>`;
+            }
+            
+            htmlString += `</div></div>`;
+        });
+        document.getElementById("reviews").innerHTML = htmlString;
+    }
+    refreshReviews(); */
+
+       
+    function showModal() {
+        let review = document.getElementById("Review");
+        review.classList.remove("hidden");
+        review.classList.add("flex");
+        setTimeout(() => {
+            review.classList.add("opacity-100");
+        }, 20); 
+    }
+
+    function hideModal() {
+        let review = document.getElementById("Review");
+        review.classList.add("opacity-0");
+        review.classList.remove("opacity-100");
+        setTimeout(() => {
+            review.classList.add("hidden");
+            review.classList.remove("flex");
+        }, 500); 
+    }
+// JavaScript untuk memanggil modal edit review
+function editReview(reviewId) {
+    // Ambil data review dengan cara yang benar
+    fetch(`/review/get-review-data/${reviewId}/`)  // Endpoint ini perlu disesuaikan di server
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            document.getElementById('editRating').value = data.rating;  // Pastikan ID input benar
+            document.getElementById('editReviewText').value = data.review_text; // Pastikan ID input benar
+            document.getElementById('editProductId').value = data.productId; // Pastikan ID input benar
+            document.getElementById('editReviewId').value = reviewId; // ID review yang diedit
+
+            showEditModal();  // Tampilkan modal edit
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+function submitEditReview(event) {
+    event.preventDefault(); // Mencegah reload halaman
+
+    const reviewId = document.getElementById('editReviewId').value;
+    const rating = document.getElementById('editRating').value;
+    const reviewText = document.getElementById('editReviewText').value;
+
+    fetch(`/review/edit-review/${reviewId}/`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value // Menambahkan token CSRF
+        },
+        body: new URLSearchParams({
+            'rating': rating,
+            'review_text': reviewText
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.error) {
+            console.error('Error:', data.error);
+        } else {
+            // Menampilkan pesan sukses (opsional)
+            console.log(data.message); // Atau gunakan alert atau modal untuk menampilkan pesan
+
+            // Refresh halaman setelah sukses
+            window.location.reload(); // Refresh halaman
+            hideEditModal(); // Sembunyikan modal setelah menyimpan
+        }
+    })
+    .catch(error => console.error('Error:', error));
+    
+}
+
+function showEditModal() {
+    let editReviewModal = document.getElementById("EditReview");
+    editReviewModal.classList.remove("hidden");
+    editReviewModal.classList.add("flex");
+    setTimeout(() => {
+        editReviewModal.classList.add("opacity-100");
+    }, 20);
+}
+
+function hideEditModal() {
+    let editReviewModal = document.getElementById("EditReview");
+    editReviewModal.classList.add("opacity-0");
+    editReviewModal.classList.remove("opacity-100");
+    setTimeout(() => {
+        editReviewModal.classList.add("hidden");
+        editReviewModal.classList.remove("flex");
+    }, 500);
+}
+let jumlah = document.getElementById('jumlah');
+function increment(){
+    jumlah.value = parseInt(jumlah.value) + 1;
+}
+function decrement(){
+    if(jumlah.value > 1){
+        jumlah.value = parseInt(jumlah.value) - 1;
+    }
+        }
 </script>  
     
-{% endblock script %}
+{% endblock content %}

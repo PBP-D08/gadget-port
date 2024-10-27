@@ -3,12 +3,11 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # ============================================================
-#                       Cart Functions
+#                            Cart
 # ============================================================
 
 class Store(models.Model):
     name = models.CharField(max_length=100)
-    # logo = models.ImageField(upload_to='store_logos/')
     is_official = models.BooleanField(default=False)
 
     def __str__(self):
@@ -21,7 +20,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     original_price = models.DecimalField(max_digits=10, decimal_places=2)
     discount_percentage = models.IntegerField(default=0)
-    # image = models.ImageField(upload_to='products/')
+    image = models.ImageField(upload_to='products/')
     
     def __str__(self):
         return self.name

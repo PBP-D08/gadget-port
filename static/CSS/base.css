@@ -9,14 +9,6 @@ body {
     animation: gradient-animation 15s infinite alternate;
 }
 
-@keyframes gradient-animation {
-    0% {
-        background-position: left;
-    }
-    100% {
-        background-position: right;
-    }
-}
 
 
 .gradient-teksintro {
@@ -26,9 +18,38 @@ body {
     background-clip: text;
     color: transparent;
     filter: drop-shadow(0.3px 0.3px 0.3px rgba(0,0,0,0.7));
-    animation:  gradient-animation 4s infinite alternate;
+    animation:  gradient-animation 2s infinite alternate;
 }
 
 .gradient-teksintro:hover {
     cursor: pointer;
+}
+
+.hero, .cart_image1 {
+    animation: heroanim 4s ease-in-out infinite;
+}
+
+
+@keyframes heroanim {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: right;
+    }
 }

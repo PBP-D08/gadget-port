@@ -7,6 +7,7 @@ from .models import Store
 from authentication.models import Profile
 from django.core import serializers
 from django.http import HttpResponse, HttpResponseNotFound
+from products.models import Katalog
 
 @login_required(login_url="authentication:login")
 def list_store(request):
@@ -14,7 +15,7 @@ def list_store(request):
     user_profile = Profile.objects.get(user=user)
 
     if user_profile.role.casefold() == "admin":
-        store_list = serializers.serialize('json', Store.objects.all())
+        store_list = serializers.serialize('json', Store.objects.filter(user=user))
         store_list = serializers.deserialize('json', store_list)
         store_list = [store.object for store in store_list]
 
@@ -66,7 +67,8 @@ def delete_store(request, id):
 @login_required(login_url="authentication:login")
 def store_detail(request, id):
     store = get_object_or_404(Store, id=id)
-    context = {'store': store}
+    products = Katalog.objects.filter(store=store)
+    context = {'store': store, 'products': products}
     if Profile.objects.get(user=request.user).role.casefold() == "admin":
         return render(request, 'admin_store_detail.html', context)
     return render(request, 'store_detail.html', context)

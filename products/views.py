@@ -15,7 +15,6 @@ from products.forms import ProductEntryForm
 def show_products(request):
     user = request.user
     user_profile = Profile.objects.get(user=user)
-    stores = Store.objects.all()
 
     # Cek apakah ada query untuk filter atau sort
     category = request.GET.get('category')
@@ -33,8 +32,10 @@ def show_products(request):
 
     # Render template yang sesuai berdasarkan role pengguna
     if user_profile.role.casefold() == "admin":
+        stores = Store.objects.filter(user=user)
         return render(request, 'admin_products.html', {'products': products, 'store': stores})
 
+    stores = Store.objects.all()
     return render(request, 'products.html', {'products': products, 'store': stores})
 
 def get_filtered_products(request):
