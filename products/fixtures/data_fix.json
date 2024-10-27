@@ -1415,5 +1415,744 @@
             "spec": "colour : Copper Black<br>form_factor : In Ear<br>connectivity_type : Bluetooth<br>",
             "store": 2
         }
+    },
+    {
+        "model": "store.Store",
+        "pk": 1,
+        "fields": {
+            "nama": "Lenovo",
+            "alamat": "Berlin",
+            "nomor_telepon": "673311313",
+            "logo": "",
+            "jam_buka": "09:00",
+            "jam_tutup": "22:00",
+            "user": 1
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 2,
+        "fields": {
+            "nama": "Jabra",
+            "alamat": "Mumbai",
+            "nomor_telepon": "731811003",
+            "logo": "",
+            "jam_buka": "08:30",
+            "jam_tutup": "22:00",
+            "user": 2
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 3,
+        "fields": {
+            "nama": "PTron",
+            "alamat": "Paris",
+            "nomor_telepon": "681161703",
+            "logo": "",
+            "jam_buka": "09:00",
+            "jam_tutup": "21:00",
+            "user": 3
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 4,
+        "fields": {
+            "nama": "Samsung",
+            "alamat": "Tokyo",
+            "nomor_telepon": "57103018",
+            "logo": "",
+            "jam_buka": "08:30",
+            "jam_tutup": "21:30",
+            "user": 4
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 5,
+        "fields": {
+            "nama": "Sony",
+            "alamat": "Sao Paulo",
+            "nomor_telepon": "841417674",
+            "logo": "",
+            "jam_buka": "08:30",
+            "jam_tutup": "22:30",
+            "user": 5
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 6,
+        "fields": {
+            "nama": "OPPO",
+            "alamat": "Mumbai",
+            "nomor_telepon": "588185243",
+            "logo": "",
+            "jam_buka": "08:00",
+            "jam_tutup": "22:00",
+            "user": 6
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 7,
+        "fields": {
+            "nama": "Dell",
+            "alamat": "New York",
+            "nomor_telepon": "863666042",
+            "logo": "",
+            "jam_buka": "08:00",
+            "jam_tutup": "22:00",
+            "user": 7
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 8,
+        "fields": {
+            "nama": "Apple",
+            "alamat": "Berlin",
+            "nomor_telepon": "303229239",
+            "logo": "",
+            "jam_buka": "08:30",
+            "jam_tutup": "21:00",
+            "user": 8
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 9,
+        "fields": {
+            "nama": "Nothing",
+            "alamat": "Sydney",
+            "nomor_telepon": "942294157",
+            "logo": "",
+            "jam_buka": "08:00",
+            "jam_tutup": "22:00",
+            "user": 9
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 10,
+        "fields": {
+            "nama": "Portronics",
+            "alamat": "London",
+            "nomor_telepon": "626812705",
+            "logo": "",
+            "jam_buka": "08:00",
+            "jam_tutup": "22:30",
+            "user": 10
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 11,
+        "fields": {
+            "nama": "Google",
+            "alamat": "Moscow",
+            "nomor_telepon": "242912095",
+            "logo": "",
+            "jam_buka": "09:00",
+            "jam_tutup": "22:30",
+            "user": 11
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 12,
+        "fields": {
+            "nama": "Noise",
+            "alamat": "Sydney",
+            "nomor_telepon": "359041191",
+            "logo": "",
+            "jam_buka": "09:00",
+            "jam_tutup": "21:30",
+            "user": 12
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 13,
+        "fields": {
+            "nama": "Nubia",
+            "alamat": "Seoul",
+            "nomor_telepon": "354388017",
+            "logo": "",
+            "jam_buka": "08:00",
+            "jam_tutup": "21:30",
+            "user": 13
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 14,
+        "fields": {
+            "nama": "Acer",
+            "alamat": "Seoul",
+            "nomor_telepon": "453644605",
+            "logo": "",
+            "jam_buka": "09:00",
+            "jam_tutup": "22:30",
+            "user": 14
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 15,
+        "fields": {
+            "nama": "Xiaomi",
+            "alamat": "Mumbai",
+            "nomor_telepon": "911828271",
+            "logo": "",
+            "jam_buka": "08:30",
+            "jam_tutup": "22:30",
+            "user": 15
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 16,
+        "fields": {
+            "nama": "Asus",
+            "alamat": "Berlin",
+            "nomor_telepon": "992689662",
+            "logo": "",
+            "jam_buka": "08:00",
+            "jam_tutup": "22:00",
+            "user": 16
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 17,
+        "fields": {
+            "nama": "Skullcandy",
+            "alamat": "Mumbai",
+            "nomor_telepon": "947891002",
+            "logo": "",
+            "jam_buka": "09:00",
+            "jam_tutup": "22:30",
+            "user": 1
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 18,
+        "fields": {
+            "nama": "Poco",
+            "alamat": "Moscow",
+            "nomor_telepon": "239592065",
+            "logo": "",
+            "jam_buka": "08:30",
+            "jam_tutup": "21:00",
+            "user": 2
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 19,
+        "fields": {
+            "nama": "Boult Audio",
+            "alamat": "Mumbai",
+            "nomor_telepon": "88302025",
+            "logo": "",
+            "jam_buka": "09:00",
+            "jam_tutup": "21:00",
+            "user": 3
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 20,
+        "fields": {
+            "nama": "OnePlus",
+            "alamat": "Moscow",
+            "nomor_telepon": "755766382",
+            "logo": "",
+            "jam_buka": "09:00",
+            "jam_tutup": "22:00",
+            "user": 4
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 21,
+        "fields": {
+            "nama": "Huawei",
+            "alamat": "Seoul",
+            "nomor_telepon": "358077686",
+            "logo": "",
+            "jam_buka": "08:30",
+            "jam_tutup": "22:30",
+            "user": 5
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 22,
+        "fields": {
+            "nama": "Dylect",
+            "alamat": "London",
+            "nomor_telepon": "472168204",
+            "logo": "",
+            "jam_buka": "09:00",
+            "jam_tutup": "22:00",
+            "user": 6
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 23,
+        "fields": {
+            "nama": "Tecno",
+            "alamat": "New York",
+            "nomor_telepon": "65962132",
+            "logo": "",
+            "jam_buka": "08:00",
+            "jam_tutup": "21:30",
+            "user": 7
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 24,
+        "fields": {
+            "nama": "HP",
+            "alamat": "Berlin",
+            "nomor_telepon": "871973390",
+            "logo": "",
+            "jam_buka": "09:00",
+            "jam_tutup": "22:30",
+            "user": 8
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 25,
+        "fields": {
+            "nama": "Motorola",
+            "alamat": "Tokyo",
+            "nomor_telepon": "178909136",
+            "logo": "",
+            "jam_buka": "08:30",
+            "jam_tutup": "22:00",
+            "user": 9
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 26,
+        "fields": {
+            "nama": "Meyaar",
+            "alamat": "Sydney",
+            "nomor_telepon": "446062922",
+            "logo": "",
+            "jam_buka": "08:00",
+            "jam_tutup": "22:00",
+            "user": 10
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 27,
+        "fields": {
+            "nama": "Infinix",
+            "alamat": "Berlin",
+            "nomor_telepon": "95812458",
+            "logo": "",
+            "jam_buka": "09:00",
+            "jam_tutup": "21:30",
+            "user": 11
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 28,
+        "fields": {
+            "nama": "ZEBRONICS",
+            "alamat": "Sydney",
+            "nomor_telepon": "424964377",
+            "logo": "",
+            "jam_buka": "08:30",
+            "jam_tutup": "22:00",
+            "user": 12
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 29,
+        "fields": {
+            "nama": "iQOO",
+            "alamat": "Tokyo",
+            "nomor_telepon": "843881378",
+            "logo": "",
+            "jam_buka": "08:30",
+            "jam_tutup": "22:30",
+            "user": 13
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 30,
+        "fields": {
+            "nama": "Realme",
+            "alamat": "Sydney",
+            "nomor_telepon": "665144551",
+            "logo": "",
+            "jam_buka": "08:00",
+            "jam_tutup": "21:30",
+            "user": 14
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 31,
+        "fields": {
+            "nama": "Vivo",
+            "alamat": "Sydney",
+            "nomor_telepon": "41841170",
+            "logo": "",
+            "jam_buka": "08:00",
+            "jam_tutup": "21:30",
+            "user": 15
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$yPOLC2JGnnNeMtprgpYWlM$wETbhAWroJtDl2QkJc45UJ8FNWkOsHJoAe44614A8Kg=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "andi_setiawan",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-10-25T15:26:59.343Z",
+            "full_name": "Andi Setiawan",
+            "role": "admin",
+            "alamat": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$kohMT69EboHmFd98r3Ve2c$afWyBFvCatNXVEfV6QOlquTu15HhXkxNGcZN+/C85YE=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "siti_nur",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-10-25T15:27:14.223Z",
+            "full_name": "Siti Nurhaliza",
+            "role": "admin",
+            "alamat": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 3,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$UACaLcME3oGPwWGepvBpqd$JOw2zcbeaDx4iC0A7oAUCc/gipLfu5/jU4uTk4S5FR4=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "budi_san",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-10-25T15:27:28.485Z",
+            "full_name": "Budi Santoso",
+            "role": "admin",
+            "alamat": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 4,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$VV7NkMyW7MP7sZWP6u071b$kJfoecGZMakIZwKSNR7KhA0gi1G98gh9lFhdPyz76Ig=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "maria.j",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-10-25T15:27:44.481Z",
+            "full_name": "Maria Johnson",
+            "role": "admin",
+            "alamat": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 5,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$RC6pRmVgur6X4EgxYIGiXx$QpPn7UsffBvuWjaZX8yg0BFh948Gpyx5L65rDDP6oBU=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "rina_aulia",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-10-25T15:28:00.654Z",
+            "full_name": "Rina Aulia",
+            "role": "admin",
+            "alamat": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 6,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$CNzwxc31T2ehi3N89Z4GHX$B+SQciuFUPRmZTd08M3fQTJJDjvImQYIPwtR68pxQt0=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "joko_p",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-10-25T15:28:12.923Z",
+            "full_name": "Joko Prasetyo",
+            "role": "admin",
+            "alamat": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 7,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$MF6wEkrVGeQOaUzcmAoF4E$lyENPS0X35Gne21UCuD4k6H6V3A3sbaVZ5VlpxgeNBg=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "tania.s",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-10-25T15:28:24.631Z",
+            "full_name": "Tania Safira",
+            "role": "admin",
+            "alamat": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 8,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$nfTg5W2dZPQ5HxxnGicq86$9k5bFfJWnijEjTgSINLA6g3BSEs+KHxBCufRYbsuwZ0=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "fajar_h",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-10-25T15:28:36.862Z",
+            "full_name": "Fajar Hidayat",
+            "role": "admin",
+            "alamat": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 9,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$QzlivaDVRk4FTMMq1IVO6Z$mGdbjAb1K9URH25mYmZn/Ev7G3V46EASJIOLT/gM5MU=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "lila_m",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-10-25T15:29:05.381Z",
+            "full_name": "Lila Mustika",
+            "role": "admin",
+            "alamat": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 10,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$qAkIit81IvHmRoDu4d3dll$Mr5IAzY8RRgD6Sd2E33BY0rXnusXV08eK/jxo6fofX8=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "ahmadjaya",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-10-25T15:29:31.803Z",
+            "full_name": "Ahmad Jaya",
+            "role": "admin",
+            "alamat": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 11,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$u1flI1nBJ52F0YRReZLUjx$a44nFwUl/Y/OhaF2wARtFuDRsZhU8W1DR4USDDEZFH0=",
+            "last_login": "2024-10-25T16:08:01.619Z",
+            "is_superuser": false,
+            "username": "faziltirtana",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-10-25T15:38:59.325Z",
+            "full_name": "Muhammad Fazil Tirtana",
+            "role": "buyer",
+            "alamat": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 12,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$N4ddb0OKuwSfzN8U4vqRzy$luvJUJ3Yz/taSokTQ8QxdbViE+3UVYeKzsASSBMIFYE=",
+            "last_login": "2024-10-25T16:10:50.734Z",
+            "is_superuser": false,
+            "username": "damar",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-10-25T15:40:35.310Z",
+            "full_name": "Athallah Damar Jiwanto",
+            "role": "buyer",
+            "alamat": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 13,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$gKactt8r70EFehTJcp21Eg$52ghsj01zuUMdOBsb3RZyhyE/EGFMMzNSReYt9Q4e4o=",
+            "last_login": "2024-10-26T04:39:09.516Z",
+            "is_superuser": false,
+            "username": "syauqiyasman",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-10-25T15:41:36.294Z",
+            "full_name": "Syauqi Muhammad Yasman",
+            "role": "buyer",
+            "alamat": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 14,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$jDIOUt6bsdvNxmJhYpucH2$B+tHICvM2KnyNop1uclRayUAKzjcqPeFjiLPYCZetM8=",
+            "last_login": "2024-10-26T04:38:30.666Z",
+            "is_superuser": false,
+            "username": "mdlnecg",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-10-25T15:43:22.391Z",
+            "full_name": "Madeline Clairine Gultom",
+            "role": "buyer",
+            "alamat": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 15,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$SDPDQTFgp6sqh60vqpaaH8$HiZgtAttW6yPmHERXN2RO91Xqj5mxw3SqhspXecRJHA=",
+            "last_login": "2024-10-25T16:09:17.560Z",
+            "is_superuser": false,
+            "username": "bemo",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-10-25T15:45:32.684Z",
+            "full_name": "Muhammad Fawwaz Edsa Fatin Setiawan",
+            "role": "buyer",
+            "alamat": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 16,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$taakWk06NXbdcexoMAMSKi$rAmHeI+JH21zzoGO+vyiuw+32AoJBUUJIYQIU72yiMc=",
+            "last_login": "2024-10-25T16:03:41.124Z",
+            "is_superuser": false,
+            "username": "andiaqsa",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-10-25T15:47:26.656Z",
+            "full_name": "Andi Aqsa Mappatunru Marzuki",
+            "role": "buyer",
+            "alamat": "",
+            "groups": [],
+            "user_permissions": []
+        }
     }
 ]

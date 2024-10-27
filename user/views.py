@@ -9,7 +9,7 @@ from cart_checkout.models import Order  # Ensure you import the Order model
 def view_profile(request):
     # Get the logged-in user's profile
     user = get_object_or_404(UserProfile, profile__user=request.user)
-    
+
     # Fetch the checkout history
     orders = Order.objects.filter(user=request.user).select_related('address', 'shipping_method')
 
