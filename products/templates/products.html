@@ -6,64 +6,139 @@
 
 {% block content %}
 <div class="container mx-auto px-4 py-6">
-    <div class="flex justify-between items-center mb-8">
-        <h1 class="text-2xl font-bold text-gray-800">Latest Products</h1>
-    </div>
-    
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
-        {% for product in products %}
-        <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden group">
-            <!-- Image Container with aspect ratio -->
-            <div class="bg-gray-100 relative aspect-square">
-                <br>
-                <img class="w-full h-full object-contain " 
-                     src="{{ product.image_link }}" 
-                     alt="{{ product.name }}"
-                     onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'">
-                
-                <!-- Gradient Overlay on Hover -->
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
-                <!-- Quick View Button (Optional) -->
-                <a href="{% url 'review:product_reviews' product.id %}" class="absolute bottom-2 left-1/2 -translate-x-1/2 bg-white/90 text-gray-800 px-4 py-1 rounded-full text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white">
-                    Quick View
-                </a>
+    <div class="bg-white rounded-xl shadow-md p-4 mb-8">
+        <form method="GET" action="" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                <div>
+                    <label for="category" class="block text-sm font-medium text-gray-700 mb-1">Category</label>
+                    <select name="category" id="category" 
+                        class="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                        <option value="">All Categories</option>
+                        {% for category in categories %}
+                        <option value="{{ category }}" {% if request.GET.category == category %}selected{% endif %}>
+                            {{ category }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
 
-            </div>
+                <div>
+                    <label for="brand" class="block text-sm font-medium text-gray-700 mb-1">Brand</label>
+                    <select name="brand" id="brand" 
+                        class="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                        <option value="">All Brands</option>
+                        {% for brand in brands %}
+                        <option value="{{ brand }}" {% if request.GET.brand == brand %}selected{% endif %}>
+                            {{ brand }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
 
-            <!-- Product Info -->
-            <div class="p-3">
-                <!-- Brand Badge -->
-                <span class="inline-block bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full mb-2">
-                    {{ product.brand }}
-                </span>
+                <div>
+                    <label for="sort" class="block text-sm font-medium text-gray-700 mb-1">Sort By</label>
+                    <select name="sort" id="sort" 
+                        class="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                        <option value="">Default Sorting</option>
+                        <option value="price_asc" {% if request.GET.sort == 'price_asc' %}selected{% endif %}>
+                            Price: Low to High
+                        </option>
+                        <option value="price_desc" {% if request.GET.sort == 'price_desc' %}selected{% endif %}>
+                            Price: High to Low
+                        </option>
+                    </select>
+                </div>
 
-                <!-- Product Name -->
-                <h3 class="font-medium text-gray-800 mb-1 truncate">{{ product.name }}</h3>
-
-                <!-- Price -->
-                <div class="text-blue-600 font-semibold">
-                    Rp{{ product.price|floatformat:0|intcomma }}
+                <div class="flex items-end">
+                    <button type="submit"
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        Apply Filters
+                    </button>
                 </div>
             </div>
-        </div>
-        {% endfor %}
+        </form>
     </div>
+
+    {% if products %}
+        <div class="flex justify-between items-center mb-8">
+            <h1 class="text-2xl font-bold text-gray-800">Latest Products</h1>
+            {% if request.GET.category or request.GET.brand or request.GET.sort %}
+                <a href="{% url 'products:show_products' %}" 
+                   class="text-sm text-gray-600 hover:text-gray-800 flex items-center space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                    <span>Clear Filters</span>
+                </a>
+            {% endif %}
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+            {% for product in products %}
+            <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden group">
+                <div class="bg-gray-100 relative aspect-square">
+                    <br>
+                    <img class="w-full h-full object-contain" 
+                        src="{{ product.image_link }}" 
+                        alt="{{ product.name }}"
+                        onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'">
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    
+                    <a href="{% url 'review:product_reviews' product.id %}" 
+                       class="absolute bottom-2 left-1/2 -translate-x-1/2 bg-white/90 text-gray-800 px-4 py-1 rounded-full text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white">
+                        Quick View
+                    </a>
+                </div>
+
+                <div class="p-3">
+                    <span class="inline-block bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full mb-2">
+                        {{ product.brand }}
+                    </span>
+
+                    <h3 class="font-medium text-gray-800 mb-1 truncate">{{ product.name }}</h3>
+
+                    <div class="text-blue-600 font-semibold">
+                        Rp{{ product.price|floatformat:0|intcomma }}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="min-h-[60vh] flex flex-col items-center justify-center text-center px-4">
+            <div class="mb-8">
+                <svg class="mx-auto h-24 w-24 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                </svg>
+            </div>
+            <h3 class="mt-2 text-2xl font-semibold text-gray-900">No Products Found</h3>
+            <p class="mt-4 text-gray-500 max-w-lg">We couldn't find any products matching your filters. Try adjusting your selection or clear the filters to see all products.</p>
+            <div class="mt-8">
+                <a href="{% url 'products:show_products' %}" 
+                   class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>
+                    Clear Filters
+                </a>
+            </div>
+        </div>
+    {% endif %}
 </div>
 
 {% block script %}
 <script>
-  function closeModal() {
-    document.querySelector("#form").reset();
-    window.location.href="{% url 'products:show_products' %}";
-    document.querySelector("#modal").classList.add("hidden");
-  }
-  
-  function returnToproductList(){
-    window.location.href="{% url 'products:show_products' %}";
-  }
-  
-  document.getElementById("cancel-modal").addEventListener("click", closeModal);
+    function closeModal() {
+        document.querySelector("#form").reset();
+        window.location.href="{% url 'products:show_products' %}";
+        document.querySelector("#modal").classList.add("hidden");
+    }
+    
+    function returnToproductList(){
+        window.location.href="{% url 'products:show_products' %}";
+    }
+    
+    document.getElementById("cancel-modal").addEventListener("click", closeModal);
 </script>
 {% endblock script %}
 {% endblock content %}

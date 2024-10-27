@@ -1,6 +1,6 @@
 # user/forms.py
 from django import forms
-from authentication.models import User  # Pastikan mengimpor dari model Profile
+from authentication.models import User  
 
 class UserProfileForm(forms.ModelForm):
     class Meta:
