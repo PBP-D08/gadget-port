@@ -27,10 +27,8 @@
                      alt="{{ product.name }}"
                      onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'">
                 
-                <!-- Gradient Overlay on Hover -->
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 
-                <!-- Quick View Button (Optional) -->
                 <a href="{% url 'review:product_admin' product.id %}" class="absolute bottom-2 left-1/2 -translate-x-1/2 bg-white/90 text-gray-800 px-4 py-1 rounded-full text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white">
                     Quick View
                 </a>
@@ -44,10 +42,8 @@
                     {{ product.brand }}
                 </span>
 
-                <!-- Product Name -->
                 <h3 class="font-medium text-gray-800 mb-1 truncate">{{ product.name }}</h3>
 
-                <!-- Price -->
                 <div class="text-blue-600 font-semibold">
                     Rp{{ product.price|floatformat:0|intcomma }}
                 </div>

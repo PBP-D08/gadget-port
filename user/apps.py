@@ -1,9 +1,8 @@
-# user/apps.py
 from django.apps import AppConfig
 
-class UserConfig(AppConfig):
+class YourAppConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'user'
 
     def ready(self):
-        import user.signals  # Load signals saat aplikasi dimuat
+        import user.signals  # Pastikan ini mengarah ke file signals.py

@@ -13,6 +13,13 @@ from products.forms import ProductEntryForm
 # Create your views here.
 @login_required(login_url="authentication:login")
 def show_products(request):
+    # Menggunakan values_list() dengan distinct() untuk mendapatkan nilai unik
+    categories = Katalog.objects.values_list('category', flat=True).distinct().order_by('category')
+    brands = Katalog.objects.values_list('brand', flat=True).distinct().order_by('brand')
+    
+    # Mengubah QuerySet menjadi list dan menghilangkan nilai None/null jika ada
+    categories = [category for category in categories if category]
+    brands = [brand for brand in brands if brand]
 
     # Cek apakah ada query untuk filter atau sort
     category = request.GET.get('category')
@@ -27,14 +34,21 @@ def show_products(request):
         products = serializers.serialize('json', Katalog.objects.all())
         products = serializers.deserialize('json', products)
         products = [product.object for product in products]
-
-    # Render template yang sesuai berdasarkan role pengguna
+    
     stores = Store.objects.filter(user=request.user)
-    if request.user.role == "admin":
-        return render(request, 'admin_products.html', {'products': products, 'store': stores})
+    context = {
+        'products': products,
+        'store': stores,
+        'categories': categories,  # Menambahkan categories ke context
+        'brands': brands,         # Menambahkan brands ke context
+    }
 
+    if request.user.role == "admin":
+        return render(request, 'admin_products.html', context)
+    
     stores = Store.objects.all()
-    return render(request, 'products.html', {'products': products, 'store': stores})
+    context['store'] = stores
+    return render(request, 'products.html', context)
 
 def get_filtered_products(request):
     # Ambil semua data dari Katalog
