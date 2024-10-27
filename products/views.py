@@ -15,7 +15,6 @@ from products.forms import ProductEntryForm
 def show_products(request):
     user = request.user
     user_profile = Profile.objects.get(user=user)
-    stores = Store.objects.all()
 
     # Cek apakah ada query untuk filter atau sort
     category = request.GET.get('category')
