@@ -1,11 +1,13 @@
+from django.contrib.auth.models import AbstractUser
 from django.db import models
-from django.contrib.auth.models import User
 
-# Create your models here.
-class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    role = models.CharField(max_length=5)
-    username = models.CharField(max_length=30)
+class User(AbstractUser):
+    ROLES = [
+        ('admin', 'Admin'),
+        ('buyer', 'Buyer'),
+    ]
+    role = models.CharField(max_length=5, choices=ROLES, default='buyer')
+    username = models.CharField(max_length=30, unique=True)
     full_name = models.CharField(max_length=30)
     email = models.EmailField(max_length=200)
     alamat = models.CharField(max_length=255)
@@ -17,4 +19,4 @@ class Profile(models.Model):
         return self.role == 'Buyer'
 
     def __str__(self):
-        return self.user.username
+        return self.username

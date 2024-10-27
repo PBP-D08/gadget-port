@@ -4,28 +4,21 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, logout as auth_logout, login as auth_login
 from django.views.decorators.csrf import csrf_exempt
 from authentication.forms import RegisterForm
+from django.http import HttpResponse, HttpResponseRedirect
+import datetime
 
 def login(request):
     if request.method == "POST":
-        username = request.POST.get("username")
-        password = request.POST.get("password")
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
+        form = AuthenticationForm(data=request.POST)
+        if form.is_valid():
+            user = form.get_user()
             auth_login(request, user)
-            next_page = request.GET.get("next")
-            if next_page is None:
-                response = redirect("main:show_main")
-            else:
-                response = redirect(next_page)
-            response.set_cookie("user_logged_in", user)
+            response = HttpResponseRedirect("/")
+            response.set_cookie("user_logged_in", str(datetime.datetime.now()))
             return response
-        else:
-            messages.error(request, "Sorry, incorrect username or password. Please try again.")
-    context = {}
-    if request.user.is_authenticated:
-        return redirect('main:show_main')
     else:
-        return render(request, "login.html", context)
+        form = AuthenticationForm(request)
+    return render(request, "login.html", {"form": form})
 
 @csrf_exempt
 def register(request):
