@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('review', '0006_alter_review_timestamp'),
+        ('products', '0008_merge_20241025_2313'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='review',
-            name='timestamp',
-            field=models.DateTimeField(auto_now_add=True),
+            model_name='katalog',
+            name='id',
+            field=models.AutoField(primary_key=True, serialize=False),
         ),
     ]

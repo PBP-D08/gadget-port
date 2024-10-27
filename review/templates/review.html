@@ -3,6 +3,7 @@
 {% load humanize %}
 {% block meta %}
 {% endblock meta %}
+
 {% block content %}
 <div class="container mx-auto p-4">
   <div id="show-alert" aria-hidden="true" style="position: fixed; top: 5%; left: 50%; transform: translateX(-50%); z-index: 1000; padding: 2rem; width: auto; height: 12px; text-align: center;" class="alert alert-danger d-flex align-items-center hidden flex items-center justify-center rounded-lg shadow-lg bg-red-200" role="alert">
@@ -68,65 +69,63 @@
         </div>
         <div class="w-2/3 pl-8">
             <h2 class="text-xl font-bold mb-4">Semua Ulasan</h2>
-            <div class="flex flex-col grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-10 p-4 md:p-10">
-            {% for p in review %}
-            {% if p %}
-            <div class="flex items-center mb-2">
-                <img alt="User  pp" class="rounded-full mr-2" height="40" width="40" />
-                <div>
-                <div class="font-bold">{{ p.user.username }}</div>
-                <div class="text-sm text-gray-500">Diulas pada {{ p.timestamp }}</div>
-                </div>
+            <div id="reviews" class="reviews-list">
+                {% if reviews %}
+                    {% for review in reviews %}
+                        <div class="review-item">
+                            <p><strong>{{ review.user.username }}</strong> - {{ review.timestamp }}</p>
+                            <p>Rating: {{ review.rating }} / 5</p>
+                            <p>{{ review.review_text }}</p>
+
+                            {% if request.user.is_admin %}
+                                <!-- Only admins can see the delete button -->
+                                <button class="btn btn-danger" onclick="deleteReview({{ review.id }})">Delete Review</button>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No reviews yet.</p>
+                {% endif %}
             </div>
-            <div class="text-sm">{{ p.review }}</div>
-            {% else %}
-            <div class="flex items-center mb-2">
-                <img
-                alt="Ugada"
-                class="rounded-full mr-2"
-                src="{% static 'img/none.jpg' %}"
-                height="40"
-                width="40"
-                />
-                <div class="text-sm">Belum ada review</div>
-            </div>
-            {% endif %}
-            {% endfor %}
             {% comment %} Coba buffet {% endcomment %}
- <!-- Modal for adding review -->
-<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Add a Review</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form id="reviewForm">
-                    <input type="hidden" id="productId" value="{{ product.id }}">
-                    <div class="mb-3">
-                        <label for="rating" class="form-label">Rating</label>
-                        <select id="rating" class="form-select">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
+                <!-- Modal for adding a review -->
+                <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Add a Review</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="reviewForm">
+                                    <input type="hidden" name="prodiuctId" id="productId" value="{{ product.id }}">
+                                    <label for="reviewText" class="form-label">Review</label>
+                                    <input type="number" name="rating" id="rating" min="1" max="5" required><br>
+                                    {% comment %} <div class="mb-3">
+                                        <label for="rating" class="form-label">Rating</label>
+                                        <select id="rating" class="form-select">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>    
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div> {% endcomment %}
+                                    <br><br>
+                                    <div class="mb-3">
+                                        <label for="reviewText" class="form-label">Review</label>
+                                        <textarea class="form-control" name="reviewText" id="reviewText" rows="3" required></textarea>
+                                    </div>
+                                    <button type="submit" id="submitReviewBtn" class="btn btn-primary">Submit Review</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="reviewText" class="form-label">Review</label>
-                        <textarea class="form-control" id="reviewText" rows="3"></textarea>
-                    </div>
-                    <button type="submit" id="submitReviewBtn" class="btn btn-primary">Submit Review</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+                </div>
+
 
 <!-- Script to handle review submission -->
-<script src="{% static 'js/review.js' %}"></script>
+{% comment %} <script src="{% static 'js/review.js' %}"></script> {% endcomment %}
 
             {% comment %} Close buffet {% endcomment %}
             <!--
@@ -192,7 +191,7 @@
         </div>
     </div>
     </div>
-</div>
+</div> 
 {% comment %} <script> {% endcomment %}
 {% comment %} /**
    async function getReview() {
@@ -354,4 +353,91 @@
 {% endblock content %}
 {% block script %}
 {% comment %} <script src="/js/review.js"></script> {% endcomment %}
+<script>
+// JavaScript untuk menambahkan review dan memperbarui daftar review
+document.getElementById('reviewForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    print("asdasd")
+    const productId = document.getElementById('productId').value;
+    const rating = document.getElementById('rating').value;
+    const reviewText = document.getElementById('reviewText').value;
+
+    // Validasi input
+    if (!rating || !reviewText) {
+        alert('Please provide a rating and review text.');
+        return;
+    }
+
+
+    fetch(`/review/product/${productId}/add/`, {
+        method: "POST",
+        body: formData = new FormData(document.getElementById('reviewForm'));
+    })
+    .then(response => {
+        if (!response.ok) throw new Error('Error during submission');
+        return response.json();
+    })
+    .then(data => {
+        if (data.message) {
+            alert(data.message);
+            window.location.reload();
+        } else if (data.error) {
+            alert(data.error);
+        }
+    })
+    .catch(err => {
+        console.error('Fetch error:', err);
+        alert('An error occurred: ' + err.message);
+    });
+
+    // Bersihkan form setelah submit
+    document.getElementById("reviewForm").reset();
+});
+
+
+
+function updateReviewList(productId) {
+    fetch(`/review/product/${productId}/reviews/`) // Endpoint untuk mengambil semua review produk
+    .then(response => response.json())
+    .then(data => {
+        const reviewsContainer = document.getElementById('reviews');
+        reviewsContainer.innerHTML = ''; // Hapus daftar review yang ada
+
+        if (data.reviews.length > 0) {
+            data.reviews.forEach(review => {
+                const reviewItem = document.createElement('div');
+                reviewItem.classList.add('review-item');
+                reviewItem.innerHTML = `
+                    <p><strong>${review.user.username}</strong> - ${review.timestamp}</p>
+                    <p>Rating: ${review.rating} / 5</p>
+                    <p>${review.review_text}</p>
+                `;
+
+                // Menambahkan tombol hapus jika user adalah admin
+                if ({{ request.user.is_superuser|yesno:"true,false" }}) {
+                    reviewItem.innerHTML += `<button class="btn btn-danger" onclick="deleteReview(${review.id})">Delete Review</button>`;
+                }
+
+                reviewsContainer.appendChild(reviewItem);
+            });
+        } else {
+            reviewsContainer.innerHTML = '<p>No reviews yet.</p>';
+        }
+    });
+}
+
+function deleteReview(reviewId) {
+    fetch(`/review/review/${reviewId}/delete/`, {
+        method: 'DELETE',
+         alert(data.message);
+            // Perbarui daftar review setelah menghapus
+            const productId = document.getElementById('productId').value;
+            updateReviewList(productId);
+        } else {
+            alert(data.error);
+        }
+    )}
+
+</script>  
+    
 {% endblock script %}

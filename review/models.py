@@ -10,7 +10,7 @@ class Review(models.Model):
     review_text = models.TextField(null=True, blank=True)
     rating = models.IntegerField(default=1, choices=((i,i) for i in range(1, 6)))
     product = models.ForeignKey(Katalog, on_delete=models.CASCADE)
-    timestamp = models.DateTimeField(default=datetime.now())
+    timestamp = models.DateTimeField(auto_now_add=True)
 
     def update_rating(self):
         avg_rating = Review.objects.filter(product=self).aggregate(Avg('rating'))['rating__avg']
@@ -20,3 +20,6 @@ class Review(models.Model):
         else:
             self.rating = 0.0
             self.save()
+
+    def __str__(self):
+        return f"{self.user.username} - {self.product.name}: {self.rating}"
