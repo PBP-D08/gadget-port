@@ -5,9 +5,9 @@
 <div class="bg-gray-100">
     <div class="container mx-auto p-6">
         <h1 class="text-2xl font-bold">Profile:</h1>
-        <p><strong>Full Name:</strong> {{ user.profile.full_name }}</p>
-        <p><strong>Email:</strong> {{ user.profile.email }}</p>
-        <p><strong>Address:</strong> {{ user.profile.alamat }}</p>
+        <p><strong>Full Name:</strong> {{ user_profile.user.full_name }}</p>
+        <p><strong>Email:</strong> {{ user_profile.user.email }}</p>
+        <p><strong>Address:</strong> {{ user_profile.user.alamat }}</p>
         
         <a href="{% url 'user:edit_profile' %}" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded">Edit Profile</a>
         <a href="{% url 'user:add_bio' %}" class="mt-4 inline-block bg-green-500 text-white py-2 px-4 rounded">Add Bio</a>
@@ -15,8 +15,8 @@
         <!-- Displaying the bio -->
         <div class="mt-6">
             <h2 class="text-xl font-semibold">Bio:</h2>
-            {% if user.profile.bio %}
-                <p>{{ user.profile.bio }}</p>
+            {% if user_profile.user.bio %}
+                <p>{{ user_profile.user.bio }}</p>
                 <a href="{% url 'user:edit_bio' %}" class="mt-4 inline-block bg-yellow-500 text-white py-2 px-4 rounded">Edit Bio</a>
                 <form method="POST" action="{% url 'user:delete_bio' %}" class="inline-block">
                     {% csrf_token %}
