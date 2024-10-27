@@ -23,11 +23,19 @@
             <!-- Store Logo Container -->
             <div class="flex justify-center items-center p-8 bg-gradient-to-br from-blue-50 to-gray-50 h-52 group-hover:from-blue-100 group-hover:to-white transition-all duration-500">
                 <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-lg flex-shrink-0 group-hover:scale-110 transition-transform duration-500">
-                    <img 
-                        src="{{ store.logo.url }}" 
-                        alt="{{ store.nama }}" 
-                        class="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-500"
-                    >
+                    {% if store.logo %}  <!-- Check if the logo exists -->
+                        <img 
+                            src="{{ store.logo.url }}" 
+                            alt="{{ store.nama }}" 
+                            class="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-500"
+                        >
+                    {% else %}
+                        <img 
+                            src="https://via.placeholder.com/128" 
+                            alt="{{ store.nama }} - No Logo Available" 
+                            class="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-500"
+                        >
+                    {% endif %}
                 </div>
             </div>
             

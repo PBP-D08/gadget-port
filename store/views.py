@@ -4,18 +4,15 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from .forms import StoreForm
 from .models import Store
-from authentication.models import Profile
+from authentication.models import User
 from django.core import serializers
 from django.http import HttpResponse, HttpResponseNotFound
 from products.models import Katalog
 
 @login_required(login_url="authentication:login")
 def list_store(request):
-    user = request.user
-    user_profile = Profile.objects.get(user=user)
-
-    if user_profile.role.casefold() == "admin":
-        store_list = serializers.serialize('json', Store.objects.filter(user=user))
+    if request.user.role == "admin":
+        store_list = serializers.serialize('json', Store.objects.filter(user=request.user))
         store_list = serializers.deserialize('json', store_list)
         store_list = [store.object for store in store_list]
 
@@ -69,6 +66,6 @@ def store_detail(request, id):
     store = get_object_or_404(Store, id=id)
     products = Katalog.objects.filter(store=store)
     context = {'store': store, 'products': products}
-    if Profile.objects.get(user=request.user).role.casefold() == "admin":
+    if request.user.role == "admin":
         return render(request, 'admin_store_detail.html', context)
     return render(request, 'store_detail.html', context)
