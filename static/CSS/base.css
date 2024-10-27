@@ -1,11 +1,12 @@
 :root{
     --gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    --gradient2: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%);
 }
 
 body {
     background-image: var(--gradient);
     background-size: 300%;
-    animation: gradient-animation 5s infinite alternate;
+    animation: gradient-animation 15s infinite alternate;
 }
 
 @keyframes gradient-animation {
@@ -17,6 +18,17 @@ body {
     }
 }
 
-p#intro {
+
+.gradient-teksintro {
     font-family: "Chakra Petch", sans-serif;
+    background-image: var(--gradient2);
+    background-size: 180%;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0.3px 0.3px 0.3px rgba(0,0,0,0.7));
+    animation:  gradient-animation 4s infinite alternate;
+}
+
+.gradient-teksintro:hover {
+    cursor: pointer;
 }

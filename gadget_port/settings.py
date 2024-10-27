@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     'main',
     'cart_checkout',
     'products',
@@ -45,6 +46,8 @@ INSTALLED_APPS = [
     'user',
     'wishlist',
     'faq_page',
+    'store',
+    'review',
 ]
 
 MIDDLEWARE = [
@@ -137,3 +140,6 @@ else:
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = '/signin/login/'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
