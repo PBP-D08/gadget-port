@@ -32,6 +32,25 @@ def show_product_reviews(request, id):
 
     return render(request, 'review.html', context)
 
+# Create your views here.
+@login_required(login_url='authentication:login')
+def show_product_admin(request, id):
+    """ View to show product detail with all reviews """
+    product = get_object_or_404(Katalog, pk=id)
+    reviews = Review.objects.filter(product=product)
+    average_rating = reviews.aggregate(Avg('rating'))['rating__avg'] or 0 
+    # Tambahkan logging untuk debug
+    print(f"Product: {product.name}, Reviews Count: {reviews.count()}")
+    # print(request.user, " " ,product," ", request.POST.get('rating')," ", request.POST.get('review_text'))
+    context = {
+        'product': product,
+        'reviews': reviews,
+        'average_rating' : f"{average_rating:.1f}"
+        
+    }
+
+    return render(request, 'detail_product.html', context)
+
 @login_required(login_url='authentication:login')
 @csrf_exempt
 def add_review(request, id):
@@ -60,18 +79,6 @@ def add_review(request, id):
 
     return JsonResponse({'error': 'Invalid request method'}, status=400)
 
-@csrf_exempt
-def add_review_ajax(request):
-    if request.method == 'POST':
-        rating = request.POST.get('rating')
-        review_text = request.POST.get('review_text')
-
-        # Save the review to the database
-        Review.objects.create(rating=rating, review_text=review_text)
-
-        return JsonResponse({'success': True})
-    return JsonResponse({'success': False}, status=400)
-
 @login_required(login_url='authentication:login')
 @csrf_exempt
 def delete_review(request, id):
@@ -86,6 +93,14 @@ def delete_review(request, id):
             return JsonResponse({'error': 'Review not found'}, status=404)
 
     return JsonResponse({'error': 'Invalid request method'}, status=400)
+
+@csrf_exempt
+def delete_review_admin(request, review_id):
+    if request.method == 'DELETE':
+        review = get_object_or_404(Review, id=review_id)
+        review.delete()
+        return JsonResponse({'message': 'Review deleted successfully!'}, status=200)
+    return JsonResponse({'error': 'Invalid request'}, status=400)
 
 @login_required(login_url='authentication:login')
 def get_review_data(request, review_id):
@@ -157,26 +172,3 @@ def get_product_review_json(request, product_id):
             }
         })
     return JsonResponse(data, safe=False)
-
-
-@login_required(login_url='authentication:login')
-def get_product_reviews(request, id):
-    """ View to get all reviews for a product """
-    reviews = Review.objects.filter(pk=id)
-    review_data = [{
-        'id': review.id,
-        'user': {
-            'username': review.user.username,
-        },
-        'rating': review.rating,
-        'review_text': review.review_text,
-        'timestamp': review.timestamp.strftime('%Y-%m-%d %H:%M:%S')
-    } for review in reviews]
-
-    return JsonResponse({'reviews': review_data})
-
-
-def get_user_review(request, id):
-    product = Katalog.objects.get(pk = id)
-    review = Review.objects.filter(user=request.user, product=product)
-    return HttpResponse(serializers.serialize('json', review))
