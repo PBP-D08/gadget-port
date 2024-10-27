@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="{% static 'CSS/store.css' %}"/>
 </head>
 
-<body class="bg-white font-sans flex flex-col min-h-screen">
+<body class="bg-white font-sans flex flex-col min-h-screen pt-5">
 
     <!-- Cara connectin modul kalian ke navbar : 
     1. Buat startapp dulu sesuai modul
@@ -52,18 +52,18 @@
        definisiin url di user dengan "profile/", maka tulis di hrefnya "user/profile/"
     -->
     <!-- Navbar -->
-<nav class="w-full h-20 flex items-center justify-between px-5 lg:px-10 shadow-xl bg-blue-200 rounded-full mb-10">
-    <div class="flex items-center">
-        <img src="{% static 'image/Logo.png' %}" class="w-32 lg:w-44" alt="Logo" />
-    </div>
-    <!-- Mobile Menu Button -->
-    <div class="md:hidden">
-        <button id="mobile-menu-button" class="focus:outline-none p-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition duration-300">
-            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
-        </button>
-    </div>
+    <nav class="w-full h-20 flex items-center justify-between px-5 lg:px-10 shadow-xl bg-blue-200 rounded-full mb-10">
+        <div class="flex items-center">
+            <img src="{% static 'image/Logo.webp' %}" class="w-32 lg:w-44" alt="Logo" />
+        </div>
+        
+        <div class="md:hidden relative z-50">
+            <button id="mobile-menu-button" class="focus:outline-none p-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition duration-300">
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
     <!-- Desktop Menu -->
     <ul class="hidden md:flex space-x-10 lg:space-x-20 items-center">
         <li><a href="{% url 'main:show_main' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200">Home</a></li>
@@ -119,58 +119,75 @@
     </ul>
 </nav>
 
-<!-- Mobile Menu -->
-<div id="mobile-menu" class="md:hidden hidden bg-blue-200 rounded-lg p-4 space-y-2">
-    <a href="{% url 'main:show_main' %}" class="block text-gray-800 hover:text-blue-600 font-semibold">Home</a>
-    <a href="{% url 'products:show_products' %}" class="block text-gray-800 hover:text-blue-600 font-semibold">Products</a>
-    <a href="{% url 'store:list_store' %}" class="block text-gray-800 hover:text-blue-600 font-semibold">Store</a>
-    <a href="{% url 'cart_checkout:cart' %}" class="block text-gray-800 hover:text-blue-600 font-semibold">Cart</a>
-    <a href="{% url 'wishlist:user_wishlist' %}" class="block text-gray-800 hover:text-blue-600 font-semibold">Wishlist</a>
+ <!-- Mobile Menu - Fixed positioning and z-index -->
+ <div id="mobile-menu" class="md:hidden hidden fixed top-20 left-0 right-0 bg-blue-200 p-4 space-y-2 z-40 shadow-lg mx-4 rounded-lg">
+    <a href="{% url 'main:show_main' %}" class="block text-gray-800 hover:text-blue-600 font-semibold p-2">Home</a>
+    <a href="{% url 'products:show_products' %}" class="block text-gray-800 hover:text-blue-600 font-semibold p-2">Products</a>
+    <a href="{% url 'store:list_store' %}" class="block text-gray-800 hover:text-blue-600 font-semibold p-2">Store</a>
+    <a href="{% url 'cart_checkout:cart' %}" class="block text-gray-800 hover:text-blue-600 font-semibold p-2">Cart</a>
+    <a href="{% url 'wishlist:user_wishlist' %}" class="block text-gray-800 hover:text-blue-600 font-semibold p-2">Wishlist</a>
     {% if user.is_authenticated %}
-        <a href="{% url 'user:view_profile' %}" class="block text-gray-800 hover:text-blue-600 font-semibold">Profile</a>
-        <a href="{% url 'authentication:logout' %}" class="block text-gray-800 hover:text-blue-600 font-semibold">Logout</a>
+        <a href="{% url 'user:view_profile' %}" class="block text-gray-800 hover:text-blue-600 font-semibold p-2">Profile</a>
+        <a href="{% url 'authentication:logout' %}" class="block text-gray-800 hover:text-blue-600 font-semibold p-2">Logout</a>
     {% else %}
-        <a href="{% url 'authentication:login' %}" class="block text-gray-800 hover:text-blue-600 font-semibold">Sign In</a>
+        <a href="{% url 'authentication:login' %}" class="block text-gray-800 hover:text-blue-600 font-semibold p-2">Sign In</a>
     {% endif %}
 </div>
 
+<!-- Main Content Block -->
+<div class="flex-grow container mx-auto mb-10">
+    {% block content %}
+    {% endblock content %}
+</div>
+
+<!-- Footer -->
+{% include 'footer.html' %}
+
 <script>
-    // Toggle mobile menu visibility
-    document.getElementById('mobile-menu-button').addEventListener('click', function() {
-        document.getElementById('mobile-menu').classList.toggle('hidden');
-    });
-</script>
-    <!-- Main Content Block -->
-    <div class="flex-grow container mx-auto mb-10 overflow-y-auto">
-        {% block content %}
-        {% endblock content %}
-    </div>
-
-    <!-- Footer -->
-    {% include 'footer.html' %}
-
     <!-- JavaScript for Mobile Menu Toggle -->
-    <script>
+    document.addEventListener('DOMContentLoaded', function() {
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
+        let isMenuOpen = false;
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        document.addEventListener('DOMContentLoaded', function () {
-            const dropdownToggle = document.getElementById('dropdown-toggle');
-            const dropdownMenu = document.getElementById('dropdown-menu');
-
-            dropdownToggle.addEventListener('click', function () {
-                dropdownMenu.classList.toggle('hidden');
-            });
-
-            document.addEventListener('click', function (event) {
-                if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
-                    dropdownMenu.classList.add('hidden');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', function(e) {
+                e.stopPropagation();
+                isMenuOpen = !isMenuOpen;
+                mobileMenu.classList.toggle('hidden');
+                
+                // Optional: Add animation classes
+                if (isMenuOpen) {
+                    mobileMenu.classList.add('animate-fade-in');
+                } else {
+                    mobileMenu.classList.remove('animate-fade-in');
                 }
             });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (isMenuOpen && !mobileMenu.contains(e.target)) {
+                    mobileMenu.classList.add('hidden');
+                    isMenuOpen = false;
+                }
+            });
+        }
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+        const dropdownToggle = document.getElementById('dropdown-toggle');
+        const dropdownMenu = document.getElementById('dropdown-menu');
+
+        dropdownToggle.addEventListener('click', function () {
+            dropdownMenu.classList.toggle('hidden');
         });
-    </script>
+
+        document.addEventListener('click', function (event) {
+            if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.classList.add('hidden');
+            }
+        });
+    });
+
+</script>
 </body>
 </html>
