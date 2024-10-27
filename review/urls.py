@@ -1,7 +1,6 @@
 from django.urls import path
 from authentication.views import *
 from .views import *
-from cart_checkout.views import *
 
 app_name = 'review'
 
@@ -21,5 +20,4 @@ urlpatterns = [
 
     path('product/<int:id>/reviews/', get_product_reviews, name='get_product_reviews'),  # kosong
     path('get-user-review/<int:id>/', get_user_review, name='get_user_review'),  # Mendapatkan review pengguna berdasarkan produk
-    path('add-to-cart/<int:product_id>/', add_to_cart, name='add_to_cart'),
 ]
