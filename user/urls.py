@@ -1,6 +1,5 @@
 from django.urls import path
 from .views import view_profile, edit_profile, add_bio, edit_bio, delete_bio, checkout_history
-
 app_name = 'user'
 
 urlpatterns = [
