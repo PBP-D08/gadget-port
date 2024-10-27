@@ -42,7 +42,7 @@ def user_wishlist(request):
 @csrf_exempt
 def toggle_wishlist(request, katalog_id):
     katalog = get_object_or_404(Katalog, id=katalog_id)
-    wishlist, created = Wishlist.objects.get_or_create(wishlist__user=request.user, katalog=katalog)
+    wishlist, created = Wishlist.objects.get_or_create(wishlist__user=request.user, product=katalog)
 
     if created:
         message = 'Product added to wishlist.'
@@ -60,7 +60,7 @@ def add_to_wishlist(request, katalog_id):
     katalog = get_object_or_404(Katalog, id=katalog_id)
 
     # Check if the product is already in the wishlist
-    wishlist, created = Wishlist.objects.get_or_create(wishlist__user=request.user, katalog=katalog)
+    wishlist, created = Wishlist.objects.get_or_create(user=request.user, product=katalog)
 
     if created:
         return JsonResponse({'message': 'Product added to wishlist.'}, status=201)
@@ -71,7 +71,7 @@ def add_to_wishlist(request, katalog_id):
 @csrf_exempt
 def remove_from_wishlist(request, katalog_id):
     katalog = get_object_or_404(Katalog, id=katalog_id)
-    wishlist_item = Wishlist.objects.filter(wishlist__user=request.user, katalog=katalog).first()
+    wishlist_item = Wishlist.objects.filter(wishlist__user=request.user, product=katalog).first()
 
     if wishlist_item:
         wishlist_item.delete()
