@@ -25,76 +25,97 @@
 
 <body class="bg-white font-sans flex flex-col min-h-screen">
 
+    <!-- Cara connectin modul kalian ke navbar : 
+    1. Buat startapp dulu sesuai modul
+    2. Buat folder tmplates, file html di aplikasi kalian, jangan lupa kasih:
+    extends 'base.html'
+    load static
+
+    {% block content(s) %}
+    <h1>Hai</h1>
+    {% endblock content(s) %}
+    3. Buat juga views.py dan model.py
+    4. Buat urls.py di aplikasi kalian, isi : 
+    from django.urls import path
+    from . import views
+
+    app_name = "user" // "user" ganti jadi nama apps kalian
+
+    urlpatterns = [
+        path('profile/', views.user_profile_view, name='user_profile'),
+    ]
+    5. Connectin ke urls.py di gadget port 
+       path('user/', include('user.urls')),  
+       
+       6. Nah di base ini href dari tag <a></a> sisa kalian ganti. misal
+        tadi gw app user, definisiin url di gadgetport dengan "user/" lalu
+        definisiin url di user dengan "profile/", maka tulis di hrefnya "user/profile/"
+    -->
     <!-- Navbar -->
-    <nav class="w-auto h-20 flex items-center justify-between m-10 shadow-xl bg-blue-200 rounded-full mb-10">
-        <div class="flex items-center">
-            <img src="{% static 'image/Logo.png' %}" class="w-44 mx-10" alt="Logo"/>
-            
-        </div>
-        <div class="md:hidden">
-            <button id="mobile-menu-button" class="focus:outline-none p-2 mx-5 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition duration-300">
-                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/> 
-                </svg>
-            </button>
-        </div>
-        <ul class="hidden md:flex space-x-20 p-5 inline-block items-center">
-            <!-- Cara connectin modul kalian ke navbar : 
-            1. Buat startapp dulu sesuai modul
-            2. Buat folder tmplates, file html di aplikasi kalian, jangan lupa kasih:
-            extends 'base.html'
-            load static
-
-            {% block content(s) %}
-            <h1>Hai</h1>
-            {% endblock content(s) %}
-            3. Buat juga views.py dan model.py
-            4. Buat urls.py di aplikasi kalian, isi : 
-            from django.urls import path
-            from . import views
-
-            app_name = "user" // "user" ganti jadi nama apps kalian
-
-            urlpatterns = [
-                path('profile/', views.user_profile_view, name='user_profile'),
-            ]
-            5. Connectin ke urls.py di gadget port 
-               path('user/', include('user.urls')),  
-               
-               6. Nah di base ini href dari tag <a></a> sisa kalian ganti. misal
-                tadi gw app user, definisiin url di gadgetport dengan "user/" lalu
-                definisiin url di user dengan "profile/", maka tulis di hrefnya "user/profile/"
-            -->
-            <li><a href="{% url 'main:show_main' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200">Home</a></li>
-            <li><a href="{% url 'products:show_products' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200">Products</a></li>
-            <li><a href="{% url 'store:list_store' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200">Store</a></li>
-            <li><a href="{% url 'cart_checkout:cart' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200">Cart</a></li>
-            <li>
-                {% if user.is_authenticated %}
-                    {% comment %} <a href="user/profile/" class="text-gray-800 hover:text-blue-600 bg-gray-100 p-3 rounded-full font-semibold transition duration-200">Welcome, {{ user.username }}</a> {% endcomment %}
-                    <div class="relative group">
-                        <div class="relative ">
-                            <div id="dropdown-toggle" class ="flex items-center hover:border-blue-500 hover:text-blue-500 border-2 border-black rounded-full px-4 py-2 cursor-pointer">
-                                <i class="fas fa-user-circle text-xl"></i>
-                                <span class="ml-2 font-medium ">Welcome, {{ user.username }}</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                                </svg>
-                            </div>
-                            <div id="dropdown-menu" class="absolute hidden bg-white border border-black rounded-md mt-2 w-full z-50">
-                                <ul class="py-2">
-                                    <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer">Profile</li>
-                                    <a href="{% url 'authentication:logout' %}"><li class="px-4 py-2 hover:bg-gray-200 cursor-pointer">Logout</li></a>
-                                </ul>
-                            </div>
-                        </div>
+    <!-- Navbar -->
+<nav class="w-full h-20 flex items-center justify-between px-5 lg:px-10 shadow-xl bg-blue-200 rounded-full mb-10">
+    <div class="flex items-center">
+        <img src="{% static 'image/Logo.png' %}" class="w-32 lg:w-44" alt="Logo" />
+    </div>
+    <!-- Mobile Menu Button -->
+    <div class="md:hidden">
+        <button id="mobile-menu-button" class="focus:outline-none p-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition duration-300">
+            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+        </button>
+    </div>
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex space-x-10 lg:space-x-20 items-center">
+        <li><a href="{% url 'main:show_main' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200">Home</a></li>
+        <li><a href="{% url 'products:show_products' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200">Products</a></li>
+        <li><a href="{% url 'store:list_store' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200">Store</a></li>
+        <li><a href="{% url 'cart_checkout:cart' %}" class="text-gray-800 hover:text-blue-600 p-2 rounded-xl font-semibold transition duration-200">Cart</a></li>
+        <li>
+            {% if user.is_authenticated %}
+                <div class="relative group">
+                    <button id="dropdown-toggle" class="flex items-center hover:text-blue-500 border-2 border-black rounded-full px-4 py-2 cursor-pointer">
+                        <i class="fas fa-user-circle text-xl"></i>
+                        <span class="ml-2 font-medium">Welcome, {{ user.username }}</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 ml-1">
+                            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div id="dropdown-menu" class="absolute hidden group-hover:block bg-white border border-black rounded-md mt-2 w-full z-50">
+                        <ul class="py-2">
+                            <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer">Profile</li>
+                            <a href="{% url 'authentication:logout' %}"><li class="px-4 py-2 hover:bg-gray-200 cursor-pointer">Logout</li></a>
+                        </ul>
                     </div>
-                {% else %}
-                    <a href="{% url 'authentication:login' %}" class="text-gray-800 hover:text-blue-600 bg-gray-100 p-3 rounded-full font-semibold transition duration-200">Sign In</a>
-                {% endif %}
-            </li>
-        </ul>
-    </nav>
+                </div>
+            {% else %}
+                <a href="{% url 'authentication:login' %}" class="text-gray-800 hover:text-blue-600 bg-gray-100 p-3 rounded-full font-semibold transition duration-200">Sign In</a>
+            {% endif %}
+        </li>
+    </ul>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="md:hidden hidden bg-blue-200 rounded-lg p-4 space-y-2">
+    <a href="{% url 'main:show_main' %}" class="block text-gray-800 hover:text-blue-600 font-semibold">Home</a>
+    <a href="{% url 'products:show_products' %}" class="block text-gray-800 hover:text-blue-600 font-semibold">Products</a>
+    <a href="{% url 'store:list_store' %}" class="block text-gray-800 hover:text-blue-600 font-semibold">Store</a>
+    <a href="{% url 'cart_checkout:cart' %}" class="block text-gray-800 hover:text-blue-600 font-semibold">Cart</a>
+    {% if user.is_authenticated %}
+        <a href="{% url 'user:profile' %}" class="block text-gray-800 hover:text-blue-600 font-semibold">Profile</a>
+        <a href="{% url 'authentication:logout' %}" class="block text-gray-800 hover:text-blue-600 font-semibold">Logout</a>
+    {% else %}
+        <a href="{% url 'authentication:login' %}" class="block text-gray-800 hover:text-blue-600 font-semibold">Sign In</a>
+    {% endif %}
+</div>
+
+<script>
+    // Toggle mobile menu visibility
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+</script>
+
 
     <!-- button icon cart -->
     <a href="{% url 'cart_checkout:cart' %}" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background-color: transparent; border: none; cursor: pointer; text-decoration: none;">
