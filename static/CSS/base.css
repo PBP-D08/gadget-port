@@ -9,8 +9,6 @@ body {
     animation: gradient-animation 15s infinite alternate;
 }
 
-
-
 .gradient-teksintro {
     font-family: "Chakra Petch", sans-serif;
     background-image: var(--gradient2);
