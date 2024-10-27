@@ -33,7 +33,7 @@ def add_to_cart(request, product_id):
         
     except Exception as e:
         messages.error(request, 'Error adding product to cart')
-        return redirect('product_detail', product_id=product_id)
+        return redirect('cart.html', product_id=product_id)
 
 @login_required
 @csrf_exempt
