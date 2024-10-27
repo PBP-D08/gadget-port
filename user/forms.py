@@ -1,13 +1,8 @@
 # user/forms.py
 from django import forms
-from .models import Profile  # Adjust this import
+from authentication.models import Profile  # Pastikan mengimpor dari model Profile
 
 class UserProfileForm(forms.ModelForm):
     class Meta:
-        model = Profile  # Use Profile if SubProfile doesn't exist
-        fields = ['username', 'full_name', 'email', 'alamat']
-
-class SubProfileForm(forms.ModelForm):
-    class Meta:
-        model = Profile  # Use Profile again if SubProfile is meant to refer to Profile
-        fields = ['full_name', 'email', 'alamat']
+        model = Profile  # Menggunakan model Profile
+        fields = ['username', 'full_name', 'email', 'alamat', 'bio']  # Tambahkan bio di sini

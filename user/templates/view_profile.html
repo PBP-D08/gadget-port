@@ -1,57 +1,63 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-{% load static %}
 <div class="bg-gray-100">
     <div class="container mx-auto p-6">
         <h1 class="text-2xl font-bold">Profile:</h1>
         <p><strong>Full Name:</strong> {{ user.profile.full_name }}</p>
         <p><strong>Email:</strong> {{ user.profile.email }}</p>
         <p><strong>Address:</strong> {{ user.profile.alamat }}</p>
+        
         <a href="{% url 'user:edit_profile' %}" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded">Edit Profile</a>
-        <a href="{% url 'user:add_sub_profile' %}" class="mt-4 inline-block bg-green-500 text-white py-2 px-4 rounded">Add Sub Profile</a>
+        <a href="{% url 'user:add_bio' %}" class="mt-4 inline-block bg-green-500 text-white py-2 px-4 rounded">Add Bio</a>
 
-        <!-- Section untuk button ke halaman lain -->
+        <!-- Displaying the bio -->
+        <div class="mt-6">
+            <h2 class="text-xl font-semibold">Bio:</h2>
+            {% if user.profile.bio %}
+                <p>{{ user.profile.bio }}</p>
+                <a href="{% url 'user:edit_bio' %}" class="mt-4 inline-block bg-yellow-500 text-white py-2 px-4 rounded">Edit Bio</a>
+                <form method="POST" action="{% url 'user:delete_bio' %}" class="inline-block">
+                    {% csrf_token %}
+                    <button type="submit" class="bg-red-500 text-white py-2 px-4 rounded">Delete Bio</button>
+                </form>
+            {% else %}
+                <p>No bio available. Add one!</p>
+            {% endif %}
+        </div>
+
         <div class="mt-8">
             <h2 class="text-xl font-semibold mb-4">Quick Access</h2>
             <div class="grid grid-cols-3 gap-4">
-                <a href="{% url 'main:show_main' %}" class="block text-center bg-blue-500 text-white py-4 rounded shadow hover:bg-blue-600 transition duration-200">
-                    Dashboard
-                </a>
-                <a href="{% url 'products:show_products' %}" class="block text-center bg-blue-500 text-white py-4 rounded shadow hover:bg-blue-600 transition duration-200">
-                    Products
-                </a>
-                <a href="{% url 'store:list_store' %}" class="block text-center bg-blue-500 text-white py-4 rounded shadow hover:bg-blue-600 transition duration-200">
-                    Store
-                </a>
-                <a href="{% url 'cart_checkout:cart' %}" class="block text-center bg-blue-500 text-white py-4 rounded shadow hover:bg-blue-600 transition duration-200">
-                    Cart
-                </a>
+                <a href="{% url 'main:show_main' %}" class="block text-center bg-blue-500 text-white py-4 rounded shadow hover:bg-blue-600 transition duration-200">Dashboard</a>
+                <a href="{% url 'products:show_products' %}" class="block text-center bg-blue-500 text-white py-4 rounded shadow hover:bg-blue-600 transition duration-200">Products</a>
+                <a href="{% url 'store:list_store' %}" class="block text-center bg-blue-500 text-white py-4 rounded shadow hover:bg-blue-600 transition duration-200">Store</a>
+                <a href="{% url 'cart_checkout:cart' %}" class="block text-center bg-blue-500 text-white py-4 rounded shadow hover:bg-blue-600 transition duration-200">Cart</a>
             </div>
         </div>
 
-        <!-- Section untuk history produk -->
-    <div class="mt-8">
-        <h2 class="text-xl font-semibold mb-4">Product History</h2>
-        <div class="grid grid-cols-3 gap-4">
-            {% if product_history %}
-                {% for product in product_history %}
+        <!-- Checkout / Purchase History -->
+        <div class="mt-8">
+            <h2 class="text-xl font-semibold mb-4">Purchase History</h2>
+            <div class="grid grid-cols-1 gap-4">
+                {% if orders %}
+                    {% for order in orders %}
+                        <div class="bg-white p-4 rounded shadow">
+                            <h3 class="font-semibold">Order #{{ order.id }}</h3>
+                            <p>Total: {{ order.grand_total }}</p>
+                            <p>Address: {{ order.address.full_address }}</p>
+                            <p>Shipping Method: {{ order.shipping_method.name }}</p>
+                            <p>Order Date: {{ order.created_at|date:"Y-m-d H:i" }}</p>
+                        </div>
+                    {% endfor %}
+                {% else %}
                     <div class="bg-white p-4 rounded shadow">
-                        <img src="{{ product.image_url }}" alt="{{ product.name }}" class="w-full h-32 object-cover mb-2 rounded">
-                        <h3 class="font-semibold">{product.name }}</h3>
-                        <p class="text-gray-600">{product.description }}</p>
-                        <p class="mt-2 font-bold">Price: {{ product.price }}</p>
-                        <a href="{% url 'products:product_detail' product.id %}" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded">View Details</a>
+                        <p class="text-gray-700">No purchase history available.</p>
                     </div>
-                {% endfor %}
-            {% else %}
-                <div class="bg-white p-4 rounded shadow">
-                    <p class="text-gray-700">No history available yet.</p>
-                </div>
-            {% endif %}
+                {% endif %}
+            </div>
         </div>
-    </div>
-
     </div>
 </div>
 {% endblock content %}
