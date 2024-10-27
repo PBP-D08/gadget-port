@@ -4,6 +4,12 @@ from store.models import Store
 # Create your models here.
     
 class Katalog(models.Model):
+    CATEGORY_CHOICES = [
+        ('hp', 'HP'),
+        ('laptop', 'Laptop'),
+        ('earphone', 'Earphone')
+    ]
+        
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     category = models.CharField(max_length=255)

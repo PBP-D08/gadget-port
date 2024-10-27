@@ -1,0 +1,770 @@
+[
+    {
+        "model": "products.Katalog",
+        "pk": 1,
+        "fields": {
+            "category": "hp",
+            "name": "Apple iPhone 15",
+            "brand": "Apple",
+            "price": 13225650.0,
+            "image_link": "https://cdn1.smartprix.com/rx-iWLT056zS-w280-h280/apple-iphone-15.webp",
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Bionic  A16, Hexa Core, 3.46GHz <br>Storage : 6GB RAM, 128GB inbuilt<br>Battery : 3349mAh Battery with Fast Charging<br>Display : 6.1 inches, 1179x2556px Display with Dynamic Island<br>Camera : 48MP + 12MP Dual Rear & 12MP Front Camera<br>Memory : Memory Card Not Supported<br>OS : iOS v17<br>",
+            "store": 1
+        }
+    },
+    {
+        "model": "products.Katalog",
+        "pk": 2,
+        "fields": {
+            "category": "hp",
+            "name": "Vivo T2 Pro 5G",
+            "brand": "Vivo",
+            "price": 4439815.0,
+            "image_link": "https://cdn1.smartprix.com/rx-iU8jVEFYT-w280-h280/vivo-t2-pro-5g.webp",
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Dimensity 7200, Octa Core, 2.8GHz <br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 4600mAh Battery with 66W Fast Charging<br>Display : 6.78 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 64MP + 2MP Dual Rear & 16MP Front Camera<br>Memory : Android v13<br>OS : No FM Radio<br>",
+            "store": 2
+        }
+    },
+    {
+        "model": "products.Katalog",
+        "pk": 3,
+        "fields": {
+            "category": "hp",
+            "name": "Vivo T3 Pro",
+            "brand": "Vivo",
+            "price": 5918150.0,
+            "image_link": "https://cdn1.smartprix.com/rx-i6VP9mIfo-w280-h280/vivo-t3-pro.webp",
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Vo5G, Wi-Fi<br>Processor : Snapdragon 782G, Octa Core, 2.7GHz <br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 4700mAh Battery with 80W Fast Charging<br>Display : 6.67 inches, 1080x2408px, 120 Hz Display with Water Drop Notch<br>Camera : 64MP + 8MP + 2MP Triple Rear & 32MP Front Camera<br>Memory : Memory Card (Hybrid), upto 1TB<br>OS : Android v13<br>",
+            "store": 3
+        }
+    },
+    {
+        "model": "products.Katalog",
+        "pk": 4,
+        "fields": {
+            "category": "hp",
+            "name": "Samsung Galaxy M14 (6GB RAM + 128GB)",
+            "brand": "Samsung",
+            "price": 2260145.0,
+            "image_link": "https://cdn1.smartprix.com/rx-iSLHUYeot-w280-h280/samsung-galaxy-m14-6.webp",
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Exynos 1330, Octa Core, 2.4GHz <br>Storage : 6GB RAM, 128GB inbuilt<br>Battery : 6000mAh Battery with 25W Fast Charging<br>Display : 6.6 inches, 1080x2408px, 90 Hz Display with Water Drop Notch<br>Camera : 50MP + 2MP + 2MP Triple Rear & 13MP Front Camera<br>Memory : Memory Card Supported, upto 1TB<br>OS : Android v13<br>",
+            "store": 4
+        }
+    },
+    {
+        "model": "products.Katalog",
+        "pk": 5,
+        "fields": {
+            "category": "hp",
+            "name": "Poco X6 Pro 5G",
+            "brand": "Poco",
+            "price": 4809815.0,
+            "image_link": "https://cdn1.smartprix.com/rx-iAdmzTljq-w280-h280/poco-x6-pro-5g.webp",
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC, IR Blaster<br>Processor : Dimensity 8300 Ultra, Octa Core, 3.35GHz <br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 67W Fast Charging<br>Display : 6.67 inches, 1220x2712px, 120 Hz Display with Punch Hole<br>Camera : 64MP + 8MP + 2MP Triple Rear & 16MP Front Camera<br>Memory : Android v14<br>OS : No FM Radio<br>",
+            "store": 5
+        }
+    },
+    {
+        "model": "products.Katalog",
+        "pk": 6,
+        "fields": {
+            "category": "hp",
+            "name": "Motorola Edge 40 5G",
+            "brand": "Motorola",
+            "price": 4994815.0,
+            "image_link": "https://cdn1.smartprix.com/rx-i5k8kTQcK-w280-h280/motorola-edge-40-5g.webp",
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Dimensity 8020, Octa Core, 2.6GHz <br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 4400mAh Battery with 68W Fast Charging<br>Display : 6.55 inches, 1080x2400px, 144 Hz Display<br>Camera : 50MP + 13MP Dual Rear & 32MP Front Camera<br>Memory : Android v13<br>OS : Bluetooth<br>",
+            "store": 6
+        }
+    },
+    {
+        "model": "products.Katalog",
+        "pk": 7,
+        "fields": {
+            "category": "hp",
+            "name": "Nothing Phone 3",
+            "brand": "Nothing",
+            "price": 8508150.0,
+            "image_link": "https://cdn1.smartprix.com/rx-iz4D1blDK-w280-h280/nothing-phone-3.webp",
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Snapdragon 8s Gen3, Octa Core, 3GHz <br>Storage : 8GB RAM, 128GB inbuilt<br>Battery : 5000mAh Battery with 100W Fast Charging<br>Display : 6.67 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 64MP + 50MP + 32MP Triple Rear & 32MP Front Camera<br>Memory : Android v14<br>OS : No FM Radio<br>",
+            "store": 7
+        }
+    },
+    {
+        "model": "products.Katalog",
+        "pk": 8,
+        "fields": {
+            "category": "hp",
+            "name": "Vivo T3 5G (8GB RAM + 256GB)",
+            "brand": "Vivo",
+            "price": 4069815.0,
+            "image_link": "https://cdn1.smartprix.com/rx-iJgJnXY13-w280-h280/vivo-t3-5g-8gb-ram-2.webp",
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Dimensity 7200, Octa Core, 2.8GHz <br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 44W Fast Charging<br>Display : 6.67 inches, 1080x2400px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 2MP Triple Rear & 16MP Front Camera<br>Memory : Memory Card (Hybrid), upto 1TB<br>OS : Android v14<br>",
+            "store": 8
+        }
+    },
+    {
+        "model": "products.Katalog",
+        "pk": 9,
+        "fields": {
+            "category": "hp",
+            "name": "Samsung Galaxy S24 Ultra 5G",
+            "brand": "Samsung",
+            "price": 18998150.0,
+            "image_link": "https://cdn1.smartprix.com/rx-iIJ80bm3T-w280-h280/samsung-galaxy-s24-ultra-5g.webp",
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Exynos 2400, Octa Core, 3.2GHz <br>Storage : 12GB RAM, 256GB inbuilt<br>Battery : 5000mAh Battery with 45W Fast Charging<br>Display : 6.8 inches, 1440x3088px, 120 Hz Display with Punch Hole<br>Camera : 200MP + 12MP + 10MP + 10MP Quad Rear & 12MP Front Camera<br>Memory : Memory Card Not Supported<br>OS : Android v14<br>",
+            "store": 9
+        }
+    },
+    {
+        "model": "products.Katalog",
+        "pk": 10,
+        "fields": {
+            "category": "hp",
+            "name": "Oppo Find N3 Flip",
+            "brand": "Oppo",
+            "price": 20254000.0,
+            "image_link": "https://cdn1.smartprix.com/rx-iTHFZqNLa-w280-h280/oppo-find-n3-flip.webp",
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Snapdragon 8 Gen2, Octa Core, 3.2GHz <br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 4300mAh Battery with 44W Fast Charging<br>Display : 6.8 inches, 1080x2520px, 120 Hz Display with Water Drop Notch<br>Camera : 50MP + 32MP + 48MP Triple Rear & 32MP Front Camera<br>Memory : Memory Card Not Supported<br>OS : Android v14<br>",
+            "store": 10
+        }
+    },
+    {
+        "model": "products.Katalog",
+        "pk": 11,
+        "fields": {
+            "category": "hp",
+            "name": "Realme GT 3",
+            "brand": "Realme",
+            "price": 8598150.0,
+            "image_link": "https://cdn1.smartprix.com/rx-iUtYXsI3j-w280-h280/realme-gt-3.webp",
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Snapdragon 8 Gen2, Octa Core, 3.2GHz <br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 4600mAh Battery with 240W Fast Charging<br>Display : 6.74 inches, 1240x2772px, 144 Hz Display with Punch Hole<br>Camera : 50MP + 8MP + 2MP Triple Rear & 16MP Front Camera<br>Memory : Android v14<br>OS : Bluetooth<br>",
+            "store": 11
+        }
+    },
+    {
+        "model": "products.Katalog",
+        "pk": 12,
+        "fields": {
+            "category": "hp",
+            "name": "Oppo Reno 10 5G",
+            "brand": "Oppo",
+            "price": 5676150.0,
+            "image_link": "https://cdn1.smartprix.com/rx-iZZq61EEl-w280-h280/oppo-reno-10-5g.webp",
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi<br>Processor : Snapdragon 778G, Octa Core, 2.4GHz <br>Storage : 8GB RAM, 256GB inbuilt<br>Battery : 4700mAh Battery with 67W Fast Charging<br>Display : 6.7 inches, 1080x2412px, 120 Hz Display with Water Drop Notch<br>Camera : 64MP + 32MP + 8MP Triple Rear & 32MP Front Camera<br>Memory : Memory Card Not Supported<br>OS : Android v13<br>",
+            "store": 12
+        }
+    },
+    {
+        "model": "products.Katalog",
+        "pk": 13,
+        "fields": {
+            "category": "hp",
+            "name": "Asus ROG Phone 6 Pro",
+            "brand": "Asus",
+            "price": 18998150.0,
+            "image_link": "https://cdn1.smartprix.com/rx-iWcO1U97T-w280-h280/asus-rog-phone-6-pro.webp",
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Snapdragon 8+ Gen1, Octa Core, 3.2GHz <br>Storage : 18GB RAM, 512GB inbuilt<br>Battery : 6000mAh Battery with 65W Fast Charging<br>Display : 6.78 inches, 1080x2448px, 165 Hz Display with Punch Hole<br>Camera : 50MP + 13MP + 5MP Triple Rear & 12MP Front Camera<br>Memory : Memory Card Not Supported<br>OS : Android v13<br>",
+            "store": 13
+        }
+    },
+    {
+        "model": "products.Katalog",
+        "pk": 14,
+        "fields": {
+            "category": "hp",
+            "name": "Xiaomi 13 Pro",
+            "brand": "Xiaomi",
+            "price": 19802150.0,
+            "image_link": "https://cdn1.smartprix.com/rx-iZwfZOVCC-w280-h280/xiaomi-13-pro.webp",
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Snapdragon 8 Gen2, Octa Core, 3.2GHz <br>Storage : 12GB RAM, 512GB inbuilt<br>Battery : 4820mAh Battery with 120W Fast Charging<br>Display : 6.73 inches, 1440x3200px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 50MP + 50MP Triple Rear & 32MP Front Camera<br>Memory : Memory Card Not Supported<br>OS : Android v13<br>",
+            "store": 14
+        }
+    },
+    {
+        "model": "products.Katalog",
+        "pk": 15,
+        "fields": {
+            "category": "hp",
+            "name": "Honor Magic V2",
+            "brand": "Honor",
+            "price": 28998150.0,
+            "image_link": "https://cdn1.smartprix.com/rx-i8im6cOv1-w280-h280/honor-magic-v2.webp",
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Snapdragon 8 Gen2, Octa Core, 3.2GHz <br>Storage : 12GB RAM, 512GB inbuilt<br>Battery : 5000mAh Battery with 66W Fast Charging<br>Display : 7.9 inches, 1984x2272px, 120 Hz Display with Punch Hole<br>Camera : 50MP + 50MP + 12MP Triple Rear & 16MP Front Camera<br>Memory : Memory Card Not Supported<br>OS : Android v13<br>",
+            "store": 15
+        }
+    },
+    {
+        "model": "products.Katalog",
+        "pk": 16,
+        "fields": {
+            "category": "hp",
+            "name": "Realme GT 5",
+            "brand": "Realme",
+            "price": 10398150.0,
+            "image_link": "https://cdn1.smartprix.com/rx-iB4SHDTHm-w280-h280/realme-gt-5.webp",
+            "spec": "Network : Dual Sim, 3G, 4G, 5G, VoLTE, Wi-Fi, NFC<br>Processor : Snapdragon 8 Gen2, Octa Core, 3.2GHz <br>Storage : 12GB RAM, 256GB inbuilt<br>Battery : 4600mAh Battery with 240W Fast Charging<br>Display : 6.74 inches, 1240x2772px, 144 Hz Display with Punch Hole<br>Camera : 50MP + 8MP + 2MP Triple Rear & 16MP Front Camera<br>Memory : Android v14<br>OS : Bluetooth<br>",
+            "store": 16
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 1,
+        "fields": {
+            "nama": "Lenovo",
+            "alamat": "Berlin",
+            "nomor_telepon": "673311313",
+            "logo": "",
+            "jam_buka": "09:00",
+            "jam_tutup": "22:00",
+            "user": 1
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 2,
+        "fields": {
+            "nama": "Jabra",
+            "alamat": "Mumbai",
+            "nomor_telepon": "731811003",
+            "logo": "",
+            "jam_buka": "08:30",
+            "jam_tutup": "22:00",
+            "user": 2
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 3,
+        "fields": {
+            "nama": "PTron",
+            "alamat": "Paris",
+            "nomor_telepon": "681161703",
+            "logo": "",
+            "jam_buka": "09:00",
+            "jam_tutup": "21:00",
+            "user": 3
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 4,
+        "fields": {
+            "nama": "Samsung",
+            "alamat": "Tokyo",
+            "nomor_telepon": "57103018",
+            "logo": "",
+            "jam_buka": "08:30",
+            "jam_tutup": "21:30",
+            "user": 4
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 5,
+        "fields": {
+            "nama": "Sony",
+            "alamat": "Sao Paulo",
+            "nomor_telepon": "841417674",
+            "logo": "",
+            "jam_buka": "08:30",
+            "jam_tutup": "22:30",
+            "user": 5
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 6,
+        "fields": {
+            "nama": "OPPO",
+            "alamat": "Mumbai",
+            "nomor_telepon": "588185243",
+            "logo": "",
+            "jam_buka": "08:00",
+            "jam_tutup": "22:00",
+            "user": 6
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 7,
+        "fields": {
+            "nama": "Dell",
+            "alamat": "New York",
+            "nomor_telepon": "863666042",
+            "logo": "",
+            "jam_buka": "08:00",
+            "jam_tutup": "22:00",
+            "user": 7
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 8,
+        "fields": {
+            "nama": "Apple",
+            "alamat": "Berlin",
+            "nomor_telepon": "303229239",
+            "logo": "",
+            "jam_buka": "08:30",
+            "jam_tutup": "21:00",
+            "user": 8
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 9,
+        "fields": {
+            "nama": "Nothing",
+            "alamat": "Sydney",
+            "nomor_telepon": "942294157",
+            "logo": "",
+            "jam_buka": "08:00",
+            "jam_tutup": "22:00",
+            "user": 9
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 10,
+        "fields": {
+            "nama": "Portronics",
+            "alamat": "London",
+            "nomor_telepon": "626812705",
+            "logo": "",
+            "jam_buka": "08:00",
+            "jam_tutup": "22:30",
+            "user": 10
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 11,
+        "fields": {
+            "nama": "Google",
+            "alamat": "Moscow",
+            "nomor_telepon": "242912095",
+            "logo": "",
+            "jam_buka": "09:00",
+            "jam_tutup": "22:30",
+            "user": 11
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 12,
+        "fields": {
+            "nama": "Noise",
+            "alamat": "Sydney",
+            "nomor_telepon": "359041191",
+            "logo": "",
+            "jam_buka": "09:00",
+            "jam_tutup": "21:30",
+            "user": 12
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 13,
+        "fields": {
+            "nama": "Nubia",
+            "alamat": "Seoul",
+            "nomor_telepon": "354388017",
+            "logo": "",
+            "jam_buka": "08:00",
+            "jam_tutup": "21:30",
+            "user": 13
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 14,
+        "fields": {
+            "nama": "Acer",
+            "alamat": "Seoul",
+            "nomor_telepon": "453644605",
+            "logo": "",
+            "jam_buka": "09:00",
+            "jam_tutup": "22:30",
+            "user": 14
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 15,
+        "fields": {
+            "nama": "Xiaomi",
+            "alamat": "Mumbai",
+            "nomor_telepon": "911828271",
+            "logo": "",
+            "jam_buka": "08:30",
+            "jam_tutup": "22:30",
+            "user": 15
+        }
+    },
+    {
+        "model": "store.Store",
+        "pk": 16,
+        "fields": {
+            "nama": "Asus",
+            "alamat": "Berlin",
+            "nomor_telepon": "992689662",
+            "logo": "",
+            "jam_buka": "08:00",
+            "jam_tutup": "22:00",
+            "user": 16
+        }
+    }, 
+    {
+        "model": "authentication.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$yPOLC2JGnnNeMtprgpYWlM$wETbhAWroJtDl2QkJc45UJ8FNWkOsHJoAe44614A8Kg=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "andi_setiawan",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-10-25T15:26:59.343Z",
+            "full_name": "Andi Setiawan",
+            "role": "admin",
+            "alamat": "",
+            "bio": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$kohMT69EboHmFd98r3Ve2c$afWyBFvCatNXVEfV6QOlquTu15HhXkxNGcZN+/C85YE=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "siti_nur",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-10-25T15:27:14.223Z",
+            "full_name": "Siti Nurhaliza",
+            "role": "admin",
+            "alamat": "",
+            "bio": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 3,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$UACaLcME3oGPwWGepvBpqd$JOw2zcbeaDx4iC0A7oAUCc/gipLfu5/jU4uTk4S5FR4=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "budi_san",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-10-25T15:27:28.485Z",
+            "full_name": "Budi Santoso",
+            "role": "admin",
+            "alamat": "",
+            "bio": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 4,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$VV7NkMyW7MP7sZWP6u071b$kJfoecGZMakIZwKSNR7KhA0gi1G98gh9lFhdPyz76Ig=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "maria.j",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-10-25T15:27:44.481Z",
+            "full_name": "Maria Johnson",
+            "role": "admin",
+            "alamat": "",
+            "bio": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 5,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$RC6pRmVgur6X4EgxYIGiXx$QpPn7UsffBvuWjaZX8yg0BFh948Gpyx5L65rDDP6oBU=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "rina_aulia",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-10-25T15:28:00.654Z",
+            "full_name": "Rina Aulia",
+            "role": "admin",
+            "alamat": "",
+            "bio": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 6,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$CNzwxc31T2ehi3N89Z4GHX$B+SQciuFUPRmZTd08M3fQTJJDjvImQYIPwtR68pxQt0=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "joko_p",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-10-25T15:28:12.923Z",
+            "full_name": "Joko Prasetyo",
+            "role": "admin",
+            "alamat": "",
+            "bio": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 7,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$MF6wEkrVGeQOaUzcmAoF4E$lyENPS0X35Gne21UCuD4k6H6V3A3sbaVZ5VlpxgeNBg=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "tania.s",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-10-25T15:28:24.631Z",
+            "full_name": "Tania Safira",
+            "role": "admin",
+            "alamat": "",
+            "bio": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 8,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$nfTg5W2dZPQ5HxxnGicq86$9k5bFfJWnijEjTgSINLA6g3BSEs+KHxBCufRYbsuwZ0=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "fajar_h",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-10-25T15:28:36.862Z",
+            "full_name": "Fajar Hidayat",
+            "role": "admin",
+            "alamat": "",
+            "bio": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 9,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$QzlivaDVRk4FTMMq1IVO6Z$mGdbjAb1K9URH25mYmZn/Ev7G3V46EASJIOLT/gM5MU=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "lila_m",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-10-25T15:29:05.381Z",
+            "full_name": "Lila Mustika",
+            "role": "admin",
+            "alamat": "",
+            "bio": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 10,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$qAkIit81IvHmRoDu4d3dll$Mr5IAzY8RRgD6Sd2E33BY0rXnusXV08eK/jxo6fofX8=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "ahmadjaya",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-10-25T15:29:31.803Z",
+            "full_name": "Ahmad Jaya",
+            "role": "admin",
+            "alamat": "",
+            "bio": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 11,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$u1flI1nBJ52F0YRReZLUjx$a44nFwUl/Y/OhaF2wARtFuDRsZhU8W1DR4USDDEZFH0=",
+            "last_login": "2024-10-25T16:08:01.619Z",
+            "is_superuser": false,
+            "username": "faziltirtana",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-10-25T15:38:59.325Z",
+            "full_name": "Muhammad Fazil Tirtana",
+            "role": "buyer",
+            "alamat": "",
+            "bio": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 12,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$N4ddb0OKuwSfzN8U4vqRzy$luvJUJ3Yz/taSokTQ8QxdbViE+3UVYeKzsASSBMIFYE=",
+            "last_login": "2024-10-25T16:10:50.734Z",
+            "is_superuser": false,
+            "username": "damar",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-10-25T15:40:35.310Z",
+            "full_name": "Athallah Damar Jiwanto",
+            "role": "buyer",
+            "alamat": "",
+            "bio": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 13,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$gKactt8r70EFehTJcp21Eg$52ghsj01zuUMdOBsb3RZyhyE/EGFMMzNSReYt9Q4e4o=",
+            "last_login": "2024-10-26T04:39:09.516Z",
+            "is_superuser": false,
+            "username": "syauqiyasman",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-10-25T15:41:36.294Z",
+            "full_name": "Syauqi Muhammad Yasman",
+            "role": "buyer",
+            "alamat": "",
+            "bio": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 14,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$jDIOUt6bsdvNxmJhYpucH2$B+tHICvM2KnyNop1uclRayUAKzjcqPeFjiLPYCZetM8=",
+            "last_login": "2024-10-26T04:38:30.666Z",
+            "is_superuser": false,
+            "username": "mdlnecg",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-10-25T15:43:22.391Z",
+            "full_name": "Madeline Clairine Gultom",
+            "role": "buyer",
+            "alamat": "",
+            "bio": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 15,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$SDPDQTFgp6sqh60vqpaaH8$HiZgtAttW6yPmHERXN2RO91Xqj5mxw3SqhspXecRJHA=",
+            "last_login": "2024-10-25T16:09:17.560Z",
+            "is_superuser": false,
+            "username": "bemo",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-10-25T15:45:32.684Z",
+            "full_name": "Muhammad Fawwaz Edsa Fatin Setiawan",
+            "role": "buyer",
+            "alamat": "",
+            "bio": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 16,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$taakWk06NXbdcexoMAMSKi$rAmHeI+JH21zzoGO+vyiuw+32AoJBUUJIYQIU72yiMc=",
+            "last_login": "2024-10-25T16:03:41.124Z",
+            "is_superuser": false,
+            "username": "andiaqsa",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-10-25T15:47:26.656Z",
+            "full_name": "Andi Aqsa Mappatunru Marzuki",
+            "role": "buyer",
+            "alamat": "",
+            "bio": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    }
+]

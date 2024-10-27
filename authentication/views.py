@@ -1,3 +1,5 @@
+# authentication/views.py
+
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
@@ -6,6 +8,7 @@ from django.views.decorators.csrf import csrf_exempt
 from authentication.forms import RegisterForm
 from django.http import HttpResponse, HttpResponseRedirect
 import datetime
+from .models import User  # Pastikan untuk mengimpor model User
 
 def login(request):
     if request.method == "POST":
@@ -25,10 +28,12 @@ def register(request):
     form = RegisterForm()
     if request.method == "POST":
         form = RegisterForm(request.POST)
+        
         if form.is_valid():
-            form.save()
+            form.save()  # Simpan pengguna yang baru dibuat
             messages.success(request, 'Your account has been successfully created!')
             return redirect('authentication:login')
+    
     context = {'form': form}
     return render(request, 'register.html', context)
 
