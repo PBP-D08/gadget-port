@@ -127,10 +127,6 @@ def edit_review(request, review_id):
             rating = request.POST.get('rating')  # Menggunakan request.POST
             review_text = request.POST.get('review_text')  # Menggunakan request.POST
 
-            # Debugging untuk memastikan nilai yang diterima
-            print('Rating:', rating)
-            print('Review Text:', review_text)
-
             # Pastikan rating adalah angka sebelum menyimpannya
             if rating is not None:
                 review.rating = int(rating)  # Konversi ke integer
