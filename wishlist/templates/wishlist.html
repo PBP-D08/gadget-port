@@ -1,3 +1,4 @@
+
 {% extends 'base.html' %}
 {% load static %}
 
@@ -71,12 +72,12 @@
             {% if wishlist_items %}
             <div class="self-stretch pl-24 pr-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                 {% for item in wishlist_items %}
-                <div id="wishlist-item-{{ item.id }}" class="wishlist-item bg-white shadow-lg rounded-lg overflow-hidden transition hover:scale-105">
-                    <img src="{{ item.image.url }}" alt="{{ item.name }}" class="w-full h-64 object-cover">
+                <div id="wishlist-item-{{ item.product.id }}" class="wishlist-item bg-white shadow-lg rounded-lg overflow-hidden transition hover:scale-105">
+                    <img src="{{ item.product.image_link }}" alt="{{ item.product.name }}" class="w-full h-64 object-cover">
                     <div class="p-5">
-                        <h2 class="text-2xl font-bold text-gray-800">{{ item.name }}</h2>
-                        <p class="text-gray-600">{{ item.description|truncatewords:20 }}</p>
-                        <p class="text-blue-600 font-semibold">Rp{{ item.price }}</p>
+                        <h2 class="text-2xl font-bold text-gray-800">{{ item.product.name }}</h2>
+                        <p class="text-gray-600">{{ item.product.description|truncatewords:20 }}</p>
+                        <p class="text-blue-600 font-semibold">Rp{{ item.product.price }}</p>
                         <button onclick="toggleWishlist({{ item.id }})" class="w-full bg-blue-500 text-white py-2 rounded-lg mt-3 hover:bg-blue-600">
                             {% if item.in_wishlist %} Hapus dari Wishlist {% else %} Tambah ke Wishlist {% endif %}
                         </button>
@@ -187,4 +188,3 @@
     } 
 </script>
 {% endblock content %}
-

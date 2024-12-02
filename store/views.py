@@ -69,3 +69,9 @@ def store_detail(request, id):
     if request.user.role == "admin":
         return render(request, 'admin_store_detail.html', context)
     return render(request, 'store_detail.html', context)
+
+def show_json_store(request):
+    # Ambil semua data Store
+    data = Store.objects.all()
+    json_data = serializers.serialize("json", data)
+    return HttpResponse(json_data, content_type="application/json")

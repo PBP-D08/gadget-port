@@ -10,7 +10,7 @@ urlpatterns = [
     path('product/<int:id>/', show_product_reviews, name='product_reviews'),
     path('product/<int:id>/add/', add_review, name='add_review'),
     path('delete/<int:id>/', delete_review, name='delete_review'),
-    path('show-json/', show_json, name='show_json'),  # Menampilkan semua review dalam format JSON
+    path('json/', show_json, name='show_json'),  # Menampilkan semua review dalam format JSON
 # urls.py
     path('get-product-review/<int:id>/', get_product_review_by_id, name='get_product_review_by_id'),  # Mendapatkan produk berdasarkan ID
     path('get-product-review-json/<int:product_id>/', get_product_review_json, name='get_product_review_json'),
