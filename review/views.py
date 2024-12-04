@@ -12,7 +12,6 @@ from .forms import ReviewForm
 from django.shortcuts import render
 from products.models import Katalog
 
-
 # Create your views here.
 @login_required(login_url='authentication:login')
 def show_product_reviews(request, id):
@@ -27,7 +26,6 @@ def show_product_reviews(request, id):
         'product': product,
         'reviews': reviews,
         'average_rating' : f"{average_rating:.1f}"
-        
     }
 
     return render(request, 'detail_and_review.html', context)

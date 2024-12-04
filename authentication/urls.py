@@ -7,4 +7,7 @@ urlpatterns = [
     path('login/', login, name='login'),
     path('logout/', logout, name='logout'),
     path('register/', register, name='register'),
+    path('login_flutter/', login_flutter, name='login_flutter'),
+    path('reg_flutter/', register_flutter, name='reg_flutter')
+
 ]

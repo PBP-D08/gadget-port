@@ -1,16 +1,16 @@
 import json
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import Wishlist
 from products.models import Katalog
-from cart_checkout.models import CartItem
+# from cart_checkout.models import CartItem
+# from cart_checkout.models import Product, Store, CartItem
 
 @login_required
 def user_wishlist(request):
-    # wishlist_items = WishlistItem.objects.filter(wishlist__user=request.user).select_related('katalog')
-    wishlist_items = Wishlist.objects.all().select_related('product')
+    wishlist_items = Wishlist.objects.filter(user=request.user).select_related('product')
 
     query = request.GET.get('q')
     categories = request.GET.getlist('category')
@@ -18,11 +18,11 @@ def user_wishlist(request):
 
     # Handle search by product name
     if query:
-        wishlist_items = wishlist_items.filter(katalog__name__icontains=query)
+        wishlist_items = wishlist_items.filter(product__name__icontains=query)
 
     # Filter by categories if specified
     if categories:
-        wishlist_items = wishlist_items.filter(katalog__category__in=categories)
+        wishlist_items = wishlist_items.filter(product__category__in=categories)
 
     # Handle sorting
     if sort_option == 'price_asc':
@@ -31,7 +31,7 @@ def user_wishlist(request):
         wishlist_items = wishlist_items.order_by('-product__price')
 
     context = {
-        'wishlist_items': [item.product for item in wishlist_items],
+        'wishlist_items': wishlist_items,  # No need to extract products, template can access through item.product
         'categories': Katalog.CATEGORY_CHOICES,
         'selected_categories': categories,
         'selected_sort': sort_option,
@@ -40,70 +40,97 @@ def user_wishlist(request):
 
 @login_required
 @csrf_exempt
-def toggle_wishlist(request, katalog_id):
-    katalog = get_object_or_404(Katalog, id=katalog_id)
-    wishlist, created = Wishlist.objects.get_or_create(wishlist__user=request.user, product=katalog)
-
-    if created:
-        message = 'Product added to wishlist.'
-        status = 'added'
-    else:
-        wishlist.delete()
-        message = 'Product removed from wishlist.'
-        status = 'removed'
-
-    return JsonResponse({'message': message, 'status': status})
-
-@login_required
-@csrf_exempt
 def add_to_wishlist(request, katalog_id):
-    katalog = get_object_or_404(Katalog, id=katalog_id)
+    try:
+        product = get_object_or_404(Katalog, id=katalog_id)
+        wishlist, created = Wishlist.objects.get_or_create(
+            user=request.user,
+            product=product
+        )
 
-    # Check if the product is already in the wishlist
-    wishlist, created = Wishlist.objects.get_or_create(user=request.user, product=katalog)
-
-    if created:
-        return JsonResponse({'message': 'Product added to wishlist.'}, status=201)
-    else:
-        return JsonResponse({'message': 'Product is already in wishlist.'}, status=200)
-
+        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+            message = 'Berhasil ditambahkan ke wishlist!' if created else 'Berhasil dihapus dari wishlist!'
+            status = 'added' if created else 'removed'
+            return JsonResponse({
+                'message': message,
+                'status': status
+            }, status=200)
+        
+        return redirect('wishlist:user_wishlist')
+        
+    except Exception as e:
+        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+            return JsonResponse({
+                'message': f'Terjadi kesalahan: {str(e)}',
+                'status': 'error'
+            }, status=500)
+        return redirect('wishlist:user_wishlist')
+    
 @login_required
 @csrf_exempt
 def remove_from_wishlist(request, katalog_id):
-    katalog = get_object_or_404(Katalog, id=katalog_id)
-    wishlist_item = Wishlist.objects.filter(wishlist__user=request.user, product=katalog).first()
-
-    if wishlist_item:
-        wishlist_item.delete()
-        return JsonResponse({'message': 'Product removed from wishlist.'}, status=200)
-    return JsonResponse({'message': 'Product not found in wishlist.'}, status=404)
-
-@login_required
-@csrf_exempt
-def move_to_cart(request, wishlist_item_id):
     try:
-        # Ambil item wishlist
-        wishlist_item = get_object_or_404(Wishlist, id=wishlist_item_id, wishlist__user=request.user)
-
-        # Ambil produk yang ada di wishlist item
-        katalog = wishlist_item.katalog
-
-        # Tambahkan produk ke keranjang, jika sudah ada tambahkan jumlahnya
-        cart_item, created = CartItem.objects.get_or_create(
+        wishlist_item = Wishlist.objects.get(
             user=request.user,
-            katalog=katalog,
-            defaults={'quantity': 1}
+            product_id=katalog_id
         )
-        
-        if not created:
-            # Jika sudah ada di keranjang, tambahkan jumlahnya
-            cart_item.quantity += 1
-            cart_item.save()
-
-        # Hapus item dari wishlist setelah dipindahkan
         wishlist_item.delete()
-
-        return JsonResponse({'message': 'Item successfully moved to cart.'}, status=200)
-
+        return JsonResponse({
+            'message': 'Berhasil dihapus dari wishlist.',
+            'status': 'success'
+        }, status=200)
     except Wishlist.DoesNotExist:
-        return JsonResponse({'error': 'Item not found in wishlist.'}, status=404)
+        return JsonResponse({
+            'message': 'Item tidak ditemukan di wishlist.',
+            'status': 'error'
+        }, status=404)
+    except Exception as e:
+        return JsonResponse({
+            'message': f'Terjadi kesalahan: {str(e)}',
+            'status': 'error'
+        }, status=500)
+
+# @login_required
+# @csrf_exempt
+# def move_to_cart(request, wishlist_item_id):
+#     try:
+#         # Ambil wishlist item
+#         wishlist_item = get_object_or_404(Wishlist, id=wishlist_item_id, user=request.user)
+        
+#         # Cari atau buat Product yang sesuai dengan Katalog
+#         product, created = Product.objects.get_or_create(
+#             name=wishlist_item.product.name,
+#             defaults={
+#                 'store': Store.objects.first(),  # Sesuaikan dengan store yang sesuai
+#                 'description': wishlist_item.product.description,
+#                 'price': wishlist_item.product.price,
+#                 'original_price': wishlist_item.product.price,
+#                 'image': wishlist_item.product.image
+#             }
+#         )
+        
+#         # Tambahkan ke cart
+#         cart_item, created = CartItem.objects.get_or_create(
+#             user=request.user,
+#             product=product,
+#             defaults={'quantity': 1}
+#         )
+        
+#         if not created:
+#             cart_item.quantity += 1
+#             cart_item.save()
+        
+#         # Hapus dari wishlist
+#         wishlist_item.delete()
+        
+#         return JsonResponse({
+#             'message': 'Item berhasil dipindahkan ke keranjang.',
+#             'status': 'success'
+#         })
+        
+#     except Exception as e:
+#         print(f"Error detail: {str(e)}")
+#         return JsonResponse({
+#             'message': f'Terjadi kesalahan: {str(e)}',
+#             'status': 'error'
+#         }, status=500)
