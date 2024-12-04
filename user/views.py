@@ -4,6 +4,8 @@ from .models import UserProfile
 from .forms import UserProfileForm
 from authentication.models import User
 from cart_checkout.models import Order
+from django.http import JsonResponse
+from django.core import serializers
 
 @login_required
 def view_profile(request):
@@ -72,3 +74,11 @@ def checkout_history(request):
     orders = Order.objects.filter(user=request.user).select_related('address', 'shipping_method')
 
     return render(request, 'checkout_history.html', {'orders': orders})
+
+def show_json(request):
+    # Mengambil semua data dari model UserProfile
+    data = UserProfile.objects.all()
+    
+    # Serialisasi data ke dalam format JSON
+    serialized_data = serializers.serialize('json', data)
+    return JsonResponse(serialized_data, safe=False)

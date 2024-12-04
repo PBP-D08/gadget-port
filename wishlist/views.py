@@ -1,10 +1,11 @@
 import json
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.decorators import login_required
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import Wishlist
 from products.models import Katalog
+from django.core import serializers
 # from cart_checkout.models import CartItem
 # from cart_checkout.models import Product, Store, CartItem
 
@@ -89,6 +90,14 @@ def remove_from_wishlist(request, katalog_id):
             'message': f'Terjadi kesalahan: {str(e)}',
             'status': 'error'
         }, status=500)
+
+def show_json_wishlist(request):
+    # Ambil semua data Wishlist milik user yang sedang login
+    if request.user.is_authenticated:
+        data = Wishlist.objects.filter(user=request.user)
+        json_data = serializers.serialize("json", data)
+        return HttpResponse(json_data, content_type="application/json")
+    return JsonResponse({'error': 'User not authenticated'}, status=401)
 
 # @login_required
 # @csrf_exempt
