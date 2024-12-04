@@ -30,15 +30,14 @@
     }
 </style>
 <div class="container mx-auto p-4">
-    <div class="flex">
+    <div class="flex flex-col md:flex-row">
         <!-- Product Image -->
-        <div class="flex justify-center items-center w-[300px] h-[300px]">
+        <div class="flex justify-center items-center w-full md:w-[300px] h-[300px] mb-4 md:mb-0">
             <img alt="product image" class="object-contain w-full h-full" src="{{ product.image_link }}"/>
         </div>
 
-
         <!-- Product Details -->
-        <div class="w-1/2 pl-20 pr-10  ">
+        <div class="flex-1 pl-0 md:pl-20 pr-10">
             <h1 class="text-2xl font-semibold">
                 {{ product.name }}
             </h1>
@@ -53,12 +52,12 @@
                 <p>{{ product.spec|safe }}</p>
             </div>
         </div>
-
     </div>
 </div>
+
 <!-- Reviews Section -->
-<div class="mt-8 flex ">
-    <div class="w-1/4">
+<div class="mt-8 flex flex-col md:flex-row">
+    <div class="w-full md:w-1/4 mb-4 md:mb-0">
         <h2 class="text-lg font-bold">Rating</h2>
         <div class="text-6xl font-bold mt-2">
             {% if reviews %}
@@ -68,46 +67,46 @@
             {% endif %}
         </div>
         <div class="text-xl">/ 5.0</div>
-            <div class="mt-6">
-            </div>
+        <div class="mt-6">
+            <!-- Placeholder for any additional buttons or actions -->
         </div>
-        <div class="w-2/3 ml-6">
-            <div class="flex flex-col">
-                <h2 class="text-xl font-bold mb-4">Semua Ulasan</h2>
-                <div id="reviews" class="flex flex-col mt-5">
-                    {% if reviews %}
-                        {% for review in reviews %}
-                            <div class="user-review w-full max-w-3xl mx-0 mb-6">
-                                <div class="bg-white shadow-md rounded-lg p-6 flex flex-col space-y-4">
-                                    <div class="review-details flex items-center justify-between">
-                                        <div class="user flex items-center space-x-3">
-                                            <p class="text-lg font-semibold">{{ review.user.username }}</p>
-                                        </div>
-                                        <div class="rating flex items-center space-x-2">
-                                            <span class="text-gray-600">Rating:</span>
-                                            <span class="text-gray-800">{{ review.rating }}.0/5.0</span>
-                                        </div>
-                                        <div class="timestamp text-gray-500 text-sm">
-                                            {{ review.timestamp }}
-                                        </div>
+    </div>
+    <div class="w-full md:w-2/3 ml-0 md:ml-6">
+        <div class="flex flex-col">
+            <h2 class="text-xl font-bold mb-4">Semua Ulasan</h2>
+            <div id="reviews" class="flex flex-col mt-5">
+                {% if reviews %}
+                    {% for review in reviews %}
+                        <div class="user-review w-full max-w-3xl mx-0 mb-6">
+                            <div class="bg-white shadow-md rounded-lg p-6 flex flex-col space-y-4">
+                                <div class="review-details flex items-center justify-between">
+                                    <div class="user flex items-center space-x-3">
+                                        <p class="text-lg font-semibold">{{ review.user.username }}</p>
                                     </div>
-                                    <div class="review-text text-gray-700">
-                                        {{ review.review_text }}
+                                    <div class="rating flex items-center space-x-2">
+                                        <span class="text-gray-600">Rating:</span>
+                                        <span class="text-gray-800">{{ review.rating }}.0/5.0</span>
                                     </div>
-                                    <div class="flex space-x-2 mt-4">
-                                        <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg" onclick="deleteReview({{ review.id }})">Delete</button>
+                                    <div class="timestamp text-gray-500 text-sm">
+                                        {{ review.timestamp }}
                                     </div>
                                 </div>
+                                <div class="review-text text-gray-700">
+                                    {{ review.review_text }}
+                                </div>
+                                <div class="flex space-x-2 mt-4">
+                                    <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg" onclick="deleteReview({{ review.id }})">Delete</button>
+                                </div>
                             </div>
-                        {% endfor %}
-                    {% else %}
-                        <p class="text-gray-500">Belum ada ulasan.</p>
-                    {% endif %}
-                </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p class="text-gray-500">Belum ada ulasan.</p>
+                {% endif %}
             </div>
         </div>
     </div>
-</div> 
+</div>
 <script>
 function deleteReview(reviewId) {
     fetch(`/review/delete-review-admin/${reviewId}/`, { // Menggunakan reviewId di sini
