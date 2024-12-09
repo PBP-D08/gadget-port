@@ -84,25 +84,122 @@ def show_json(request):
     data = UserProfile.objects.select_related('user').values(
         'id', 
         'user_id',
-        'user__password',        # Menyertakan password
+        # 'user__password',        # Menyertakan password
         'user__last_login',      # Menyertakan last_login
-        'user__is_superuser',    # Menyertakan is_superuser
+        # 'user__is_superuser',    # Menyertakan is_superuser
         'user__username',        # Menyertakan username
         'user__first_name',      # Menyertakan first_name
-        'user__last_name',       # Menyertakan last_name
+        # 'user__last_name',       # Menyertakan last_name
         'user__email',           # Menyertakan email
         'user__bio',             # bio juga
-        'user__is_staff',        # Menyertakan is_staff
-        'user__is_active',       # Menyertakan is_active
-        'user__date_joined',     # Menyertakan date_joined
+        # 'user__is_staff',        # Menyertakan is_staff
+        # 'user__is_active',       # Menyertakan is_active
+        # 'user__date_joined',     # Menyertakan date_joined
         'user__full_name',       # Menyertakan full_name
         'user__role',            # Menyertakan role
         'user__alamat',          # Menyertakan alamat
-        'user__groups',          # Menyertakan groups
-        'user__user_permissions', # Menyertakan user_permissions
-        'parent_profile_id'      # Menyertakan parent_profile_id
+        # 'user__groups',          # Menyertakan groups
+        # 'user__user_permissions', # Menyertakan user_permissions
+        # 'parent_profile_id'      # Menyertakan parent_profile_id
     )
 
     # Mengembalikan data JSON
     return JsonResponse(list(data), safe=False, json_dumps_params={'indent': 4})
 
+@csrf_exempt
+@login_required
+def view_profile_flutter(request):
+    if request.method == 'GET':
+        # Get the user's profile
+        user_profile = UserProfile.objects.get(user=request.user)
+        
+        # Get the user's orders
+        orders = Order.objects.filter(user=request.user).select_related('address', 'shipping_method')
+
+        user_profile_data = {
+            'user_profile': {
+                'id': user_profile.id,
+                'user_id': user_profile.user.id,
+                'username': user_profile.user.username,
+                'first_name': user_profile.user.first_name,
+                'email': user_profile.user.email,
+                'bio': user_profile.user.bio,
+            },
+            'orders': list(orders.values())
+        }
+
+        return JsonResponse(user_profile_data, status=200)
+    else:
+        return JsonResponse({"status": "error", "message": "Invalid request method"}, status=400)
+    
+@csrf_exempt
+@login_required
+def edit_profile_flutter(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        user_profile = UserProfile.objects.get(user=request.user)
+        
+        # Assuming you're updating the user fields like username, email, etc.
+        user_profile.user.username = data.get('username', user_profile.user.username)
+        user_profile.user.email = data.get('email', user_profile.user.email)
+        user_profile.user.first_name = data.get('first_name', user_profile.user.first_name)
+        user_profile.user.save()
+
+        user_profile.save()
+
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error", "message": "Invalid request method"}, status=400)
+
+@csrf_exempt
+@login_required
+def add_bio_flutter(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        bio = data.get('bio', '')
+
+        user = request.user
+        user.bio = bio
+        user.save()
+
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error", "message": "Invalid request method"}, status=400)
+
+@csrf_exempt
+@login_required
+def edit_bio_flutter(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        bio = data.get('bio', '')
+
+        user = request.user
+        user.bio = bio
+        user.save()
+
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error", "message": "Invalid request method"}, status=400)
+
+@csrf_exempt
+@login_required
+def delete_bio_flutter(request):
+    if request.method == 'POST':
+        user = request.user
+        user.bio = ''
+        user.save()
+
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error", "message": "Invalid request method"}, status=400)
+
+@csrf_exempt
+@login_required
+def checkout_history_flutter(request):
+    if request.method == 'GET':
+        orders = Order.objects.filter(user=request.user).select_related('address', 'shipping_method')
+
+        orders_data = list(orders.values('id', 'status', 'total_price', 'shipping_method__name', 'address__city'))
+        return JsonResponse({"orders": orders_data}, status=200)
+    else:
+        return JsonResponse({"status": "error", "message": "Invalid request method"}, status=400)
