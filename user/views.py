@@ -6,6 +6,9 @@ from authentication.models import User
 from cart_checkout.models import Order
 from django.http import JsonResponse
 from django.core import serializers
+from django.views.decorators.csrf import csrf_exempt
+import json
+
 
 @login_required
 def view_profile(request):
