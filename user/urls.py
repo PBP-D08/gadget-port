@@ -10,5 +10,5 @@ urlpatterns = [
     path('profile/edit_bio/', edit_bio, name='edit_bio'),
     path('profile/delete_bio/', delete_bio, name='delete_bio'),  # Ensure this is defined
     path('profile/checkout_history/', checkout_history, name='checkout_history'),
-    path('json/', views.show_json, name='show_json'),
+    path('profile/json/', views.show_json, name='show_json'),
 ]

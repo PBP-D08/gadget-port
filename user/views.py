@@ -75,10 +75,34 @@ def checkout_history(request):
 
     return render(request, 'checkout_history.html', {'orders': orders})
 
+from django.http import JsonResponse
+from django.core import serializers
+from .models import UserProfile
+
 def show_json(request):
-    # Mengambil semua data dari model UserProfile
-    data = UserProfile.objects.all()
-    
-    # Serialisasi data ke dalam format JSON
-    serialized_data = serializers.serialize('json', data)
-    return JsonResponse(serialized_data, safe=False)
+    # Mengambil data dari UserProfile dan menyertakan semua field dari User
+    data = UserProfile.objects.select_related('user').values(
+        'id', 
+        'user_id',
+        'user__password',        # Menyertakan password
+        'user__last_login',      # Menyertakan last_login
+        'user__is_superuser',    # Menyertakan is_superuser
+        'user__username',        # Menyertakan username
+        'user__first_name',      # Menyertakan first_name
+        'user__last_name',       # Menyertakan last_name
+        'user__email',           # Menyertakan email
+        'user__bio',             # bio juga
+        'user__is_staff',        # Menyertakan is_staff
+        'user__is_active',       # Menyertakan is_active
+        'user__date_joined',     # Menyertakan date_joined
+        'user__full_name',       # Menyertakan full_name
+        'user__role',            # Menyertakan role
+        'user__alamat',          # Menyertakan alamat
+        'user__groups',          # Menyertakan groups
+        'user__user_permissions', # Menyertakan user_permissions
+        'parent_profile_id'      # Menyertakan parent_profile_id
+    )
+
+    # Mengembalikan data JSON
+    return JsonResponse(list(data), safe=False, json_dumps_params={'indent': 4})
+
