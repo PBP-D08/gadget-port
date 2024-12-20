@@ -37,12 +37,20 @@ def login_flutter(request):
                 # Login user
                 auth_login(request, user)
                 # Return JSON response on successful login
-                return JsonResponse({
-                    "username": user.username,
-                    "status": True,
-                    "message": "Login sukses!",
-                    # Tambahkan data tambahan jika diperlukan
-                }, status=200)
+                if user.is_admin :
+                    return JsonResponse({
+                        "username": user.username,
+                        "status": True,
+                        "message": "Login sukses!",
+                        "role" : 'admin'
+                    }, status=200)
+                else:
+                    return JsonResponse({
+                        "username": user.username,
+                        "status": True,
+                        "message": "Login sukses!",
+                        "role" : 'buyer'
+                    }, status=200)
             else:
                 # User account is inactive
                 return JsonResponse({
@@ -118,7 +126,7 @@ def register_flutter(request):
 
             return JsonResponse({
                 "username": user.username,
-                "status": True,
+                "status": 'success',
                 "message": "User created successfully!"
             }, status=200)
         
