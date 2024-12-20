@@ -23,4 +23,8 @@ urlpatterns = [
 
     path('user_product/<int:id>/', show_product_reviews, name='store_product_reviews'),
     path('admin_product/<int:id>/', show_product_admin, name='store_product_admin'),
+
+    path('add/<int:id>/', add_review_flutter, name='add_review_flutter'),
+    path('delete-flutter/<int:id>/', delete_review_flutter, name='delete_review_flutter'),
+    path('edit/<int:review_id>/', edit_review_flutter, name='edit_review_flutter')
 ]

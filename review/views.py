@@ -140,6 +140,66 @@ def edit_review(request, review_id):
     return JsonResponse({'error': 'Invalid request method'}, status=405)
 
 
+@csrf_exempt
+def add_review_flutter(request, id):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+
+        review = Review.objects.create(
+            user=request.user,
+            product=Katalog.objects.get(pk=data['id']),
+            rating= data['rating'],
+            review_text=data['review_message'],
+            timestamp=datetime.now()
+        )
+
+        review.save()
+
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)
+
+@csrf_exempt
+def delete_review_flutter(request, id):
+    if request.method == 'DELETE':
+        review = get_object_or_404(Review, id=id)
+        review.delete()
+        return JsonResponse({'message': 'Review deleted successfully!'}, status=200)
+    return JsonResponse({'error': 'Invalid request'}, status=400)
+
+@csrf_exempt
+def edit_review_flutter(request, review_id):
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+            review = Review.objects.get(pk=review_id)
+            
+            review.rating = int(data['rating'])
+            review.review_text = data['review_message']
+            print(review.rating, review.review_text)
+            review.save()
+            
+            return JsonResponse({"status": "success"}, status=200)
+        except Review.DoesNotExist:
+            return JsonResponse({"status": "error", "message": "Review not found"}, status=404)
+        except Exception as e:
+            return JsonResponse({"status": "error", "message": str(e)}, status=400)
+    
+    elif request.method == 'GET':
+        try:
+            review = Review.objects.get(pk=review_id)
+            return JsonResponse({
+                "status": "success",
+                "data": {
+                    "rating": review.rating,
+                    "review_message": review.review_text,
+                }
+            })
+        except Review.DoesNotExist:
+            return JsonResponse({"status": "error", "message": "Review not found"}, status=404)
+    
+    return JsonResponse({"status": "error", "message": "Invalid request method"}, status=401)
+
     
 def show_json(request):
     data = Review.objects.all()
@@ -166,3 +226,5 @@ def get_product_review_json(request, product_id):
             }
         })
     return JsonResponse(data, safe=False)
+
+

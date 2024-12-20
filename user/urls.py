@@ -1,10 +1,10 @@
 from django.urls import path
-from .views import (
-    view_profile, edit_profile, add_bio, edit_bio, delete_bio, checkout_history,
-    view_profile_flutter, edit_profile_flutter, add_bio_flutter, edit_bio_flutter, delete_bio_flutter, checkout_history_flutter,
-    show_json, show_json_flutter
-)
-from . import views
+# from .views import (
+#     view_profile, edit_profile, add_bio, edit_bio, delete_bio, checkout_history,
+#     view_profile_flutter, edit_profile_flutter, add_bio_flutter, edit_bio_flutter, delete_bio_flutter, checkout_history_flutter,
+#     show_json
+# )
+from .views import *
 
 app_name = 'user'
 
@@ -25,5 +25,5 @@ urlpatterns = [
     path('profile/edit_bio/', edit_bio_flutter, name='edit_bio_flutter'),
     path('profile/delete_bio/', delete_bio_flutter, name='delete_bio_flutter'),
     path('profile/checkout_history/', checkout_history_flutter, name='checkout_history_flutter'),
-    path('profile/json/', show_json_flutter, name='show_json_flutter'),
+    # path('profile/json/', show_json_flutter, name='show_json_flutter'),
 ]
