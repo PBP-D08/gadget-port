@@ -27,6 +27,7 @@ PRODUCTION = os.getenv("PRODUCTION", False)
 DEBUG = True
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "muhammad-farid31-gadgetport.pbp.cs.ui.ac.id"]
+CSRF_TRUSTED_ORIGINS = ["http://localhost","http://127.0.0.1","http://muhammad-farid31-thewaroenks.pbp.cs.ui.ac.id", "https://muhammad-farid31-thewaroenks.pbp.cs.ui.ac.id"]
 
 # Application definition
 
