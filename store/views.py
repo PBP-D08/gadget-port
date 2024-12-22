@@ -13,6 +13,8 @@ from django.http import HttpResponse, HttpResponseNotFound
 from products.models import Katalog
 from django.views.decorators.csrf import csrf_exempt
 from django.core.files.base import ContentFile
+from django.core.validators import URLValidator
+from django.core.exceptions import ValidationError
 
 @login_required(login_url="authentication:login")
 def list_store(request):
@@ -102,44 +104,59 @@ def get_store_json(request):
     return JsonResponse(data, safe=False)
 
 @csrf_exempt
+@login_required
 def add_store_flutter(request):
     if request.method == 'POST':
-        data = json.loads(request.body)
-
-         # Decode base64 menjadi file
-        logo_data = data.get("logo")
-        if not logo_data:
-            return JsonResponse({"status": "error", "message": "Logo is required"}, status=400)
-
         try:
-            format, imgstr = logo_data.split(';base64,')
-            ext = format.split('/')[-1]
-            logo_file = ContentFile(base64.b64decode(imgstr), name=f"logo.{ext}")
-        except Exception:
-            return JsonResponse({"status": "error", "message": "Invalid logo format"}, status=400)
-        
-        store = Store.objects.create(
-            user=request.user,
-            nama=data['nama'],
-            alamat=data['alamat'],
-            jam_buka=data['jam_buka'],
-            jam_tutup=data['jam_tutup'],
-            nomor_telepon=data['nomor_telepon'],
-            logo=logo_file,  # Pass the converted file
-        )
-
-        store.save()
-
-        return JsonResponse({
-            "status": "success",
-            "message": "Store created successfully"
-        }, status=200)
-        
-    
+            data = json.loads(request.body)
+            
+            # Validate logo URL
+            url_validator = URLValidator()
+            try:
+                url_validator(data.get('logo'))
+            except ValidationError:
+                return JsonResponse({
+                    'status': 'error',
+                    'message': 'Invalid logo URL'
+                }, status=400)
+            
+            # Create store object
+            store = Store.objects.create(
+                user=request.user,
+                nama=data.get('nama'),
+                alamat=data.get('alamat'),
+                nomor_telepon=data.get('nomor_telepon'),
+                jam_buka=data.get('jam_buka'),
+                jam_tutup=data.get('jam_tutup'),
+                logo=data.get('logo')
+            )
+            
+            return JsonResponse({
+                'status': 'success',
+                'message': 'Store created successfully',
+                'data': {
+                    'id': store.id,
+                    'nama': store.nama,
+                    'logo_url': store.logo
+                }
+            })
+            
+        except json.JSONDecodeError:
+            return JsonResponse({
+                'status': 'error',
+                'message': 'Invalid JSON data'
+            }, status=400)
+            
+        except Exception as e:
+            return JsonResponse({
+                'status': 'error',
+                'message': str(e)
+            }, status=500)
+            
     return JsonResponse({
-        "status": "error",
-        "message": "Invalid request method"
-    }, status=401)
+        'status': 'error',
+        'message': 'Method not allowed'
+    }, status=405)
 
 @csrf_exempt
 def edit_store_flutter(request, store_id):
