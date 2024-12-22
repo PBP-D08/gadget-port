@@ -166,3 +166,18 @@ def logout(request):
     response = redirect("main:show_main")
     response.delete_cookie('user_logged_in')
     return response
+
+
+def logout_flutter(request):
+    try:
+        logout(request)  # Logout pengguna saat ini
+        return JsonResponse({
+            'status': True,
+            'message': 'Logout successful',
+        }, status=200)
+    except Exception as e:
+        return JsonResponse({
+            'status': False,
+            'message': f'Error during logout: {str(e)}',
+        }, status=400)
+
