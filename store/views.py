@@ -188,3 +188,4 @@ def get_product_by_id(request, id):
     store = get_object_or_404(Store, id=id)
     products = Katalog.objects.filter(store=store)
     return HttpResponse(serializers.serialize("json", products), content_type="application/json")
+
