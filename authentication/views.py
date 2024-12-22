@@ -29,14 +29,12 @@ def login_flutter(request):
     if request.method == "POST":
         username = request.POST.get('username', '')
         password = request.POST.get('password', '')
-
         # Authenticate user
         user = authenticate(username=username, password=password)
-        # print(user.id)
         if user is not None:
             if user.is_active:
-                print(user.is_admin)
-                print(user.role)
+                # print(user.is_admin)
+                # print(user.role)
                                 # Login user
                 auth_login(request, user)
                 # Return JSON response on successful login
@@ -74,6 +72,7 @@ def login_flutter(request):
             "message": "Metode tidak didukung."
         }, status=405)
     
+
 @csrf_exempt
 def register_flutter(request):
     if request.method == 'POST':
@@ -82,7 +81,7 @@ def register_flutter(request):
             data = json.loads(request.body)
 
             # Extract fields
-            role = data.get('role', 'buyer')  # Default role is 'buyer'
+            role = data.get('role', 'buyer')
             username = data.get('username')
             full_name = data.get('full_name')
             email = data.get('email')
@@ -91,9 +90,20 @@ def register_flutter(request):
 
             # Validate required fields
             if not all([role, username, full_name, email, password1, password2]):
+                missing_fields = [field for field, value in {
+                    'role': role,
+                    'username': username,
+                    'full_name': full_name,
+                    'email': email,
+                    'password1': password1,
+                    'password2': password2
+                }.items() if not value]
+                
+                message = f"Missing fields: {', '.join(missing_fields)}"
+                print("Validation failed:", message)
                 return JsonResponse({
                     "status": False,
-                    "message": "All fields are required."
+                    "message": message
                 }, status=400)
 
             # Validate passwords
@@ -102,7 +112,7 @@ def register_flutter(request):
                     "status": False,
                     "message": "Passwords do not match."
                 }, status=400)
-
+            print(User.objects.filter(username=username).exists())
             # Check if the username is already taken
             if User.objects.filter(username=username).exists():
                 return JsonResponse({
