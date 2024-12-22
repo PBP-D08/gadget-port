@@ -29,10 +29,8 @@ def login_flutter(request):
     if request.method == "POST":
         username = request.POST.get('username', '')
         password = request.POST.get('password', '')
-
         # Authenticate user
         user = authenticate(username=username, password=password)
-        # print(user.id)
         if user is not None:
             if user.is_active:
                 print(user.is_admin)
@@ -73,6 +71,7 @@ def login_flutter(request):
             "status": False,
             "message": "Metode tidak didukung."
         }, status=405)
+    
     
 @csrf_exempt
 def register_flutter(request):
