@@ -32,24 +32,29 @@ def login_flutter(request):
 
         # Authenticate user
         user = authenticate(username=username, password=password)
+        print(user.id)
         if user is not None:
             if user.is_active:
-                # Login user
+                print(user.is_admin)
+                print(user.role)
+                                # Login user
                 auth_login(request, user)
                 # Return JSON response on successful login
-                if user.is_admin :
+                if user.role == 'admin' :
                     return JsonResponse({
                         "username": user.username,
                         "status": True,
                         "message": "Login sukses!",
-                        "role" : 'admin'
+                        "role" : 'admin',
+                        "userId" : user.id
                     }, status=200)
                 else:
                     return JsonResponse({
                         "username": user.username,
                         "status": True,
                         "message": "Login sukses!",
-                        "role" : 'buyer'
+                        "role" : 'buyer',
+                        "userId" : user.id
                     }, status=200)
             else:
                 # User account is inactive
