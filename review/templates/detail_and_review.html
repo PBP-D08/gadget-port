@@ -61,13 +61,13 @@
                         <input class="w-12 text-center" type="text" value="1" id="jumlah"/>
                         <button class="px-2 py-1 border-l hover:bg-gray-100" onclick="increment()">+</button>
                     </div>
-                    <a href="{% url 'cart_checkout:cart' %}">
+                    <a href="javascript:void(0);" class="cart-link" data-product-id="{{ product.id }}" data-url="{% url 'cart_checkout:add_to_cart' product.id %}">
                         <div class="flex justify-center text-gray-700 text-sm mt-4 p-4 w-full bg-[#6499E9] text-white py-3 rounded-lg hover:bg-blue-500">
                             <div class="flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
                                 </svg>
-                                <p class="text-white font-bold px-2 ">Keranjang</p>
+                                <p class="text-white font-bold px-2">Keranjang</p>
                             </div>
                         </div>
                     </a>
@@ -301,7 +301,6 @@ async function refreshReviews() {
 
 refreshReviews();
 
-       
     function showModal() {
         let review = document.getElementById("Review");
         review.classList.remove("hidden");
@@ -418,6 +417,68 @@ const starPercentageRounded = `${Math.round(starPercentage)}%`; // Persentase di
 const starsInner = ratingContainer.querySelector(".stars-inner");
 starsInner.style.width = starPercentageRounded;
 
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOM Loaded");
+    const cartLinks = document.querySelectorAll('.cart-link');
+    
+    cartLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log("Cart button clicked");
+            
+            const productId = this.getAttribute('data-product-id');
+            console.log("Product ID:", productId);
+            
+            const quantity = parseInt(document.getElementById('jumlah').value) || 1;
+            console.log("Quantity:", quantity);
+            
+            addToCart(productId, quantity);
+        });
+    });
+});
+
+function addToCart(productId, quantity) {
+    console.log(`Adding product ${productId} to cart with quantity ${quantity}`);
+    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+    // Data yang akan dikirim
+    const data = {
+        quantity: quantity
+    };
+    console.log("Sending data:", data);
+
+    fetch(`/cart/add-to-cart/${productId}/`, {
+        method: 'POST',
+        headers: {
+            'X-CSRFToken': csrftoken,
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        console.log("Response status:", response.status);
+        if (!response.ok) {
+            return response.json().then(data => {
+                throw new Error(data.message || 'Error adding to cart');
+            });
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log("Success response:", data);
+        if (data.status === 'success') {
+            alert('Produk berhasil ditambahkan ke keranjang!');
+            window.location.href = "/cart/";
+        } else {
+            alert(data.message || 'Error adding product to cart');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Error adding product to cart: ' + error.message);
+    });
+}
 
 </script>  
     

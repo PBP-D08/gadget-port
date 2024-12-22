@@ -32,7 +32,7 @@ def login_flutter(request):
 
         # Authenticate user
         user = authenticate(username=username, password=password)
-        print(user.id)
+        # print(user.id)
         if user is not None:
             if user.is_active:
                 print(user.is_admin)
