@@ -91,13 +91,11 @@ def remove_from_wishlist(request, katalog_id):
             'status': 'error'
         }, status=500)
 
-def show_json_wishlist(request):
+def show_json_wishlist(request, id):
     # Ambil semua data Wishlist milik user yang sedang login
-    if request.user.is_authenticated:
-        data = Wishlist.objects.filter(user=request.user)
-        json_data = serializers.serialize("json", data)
-        return HttpResponse(json_data, content_type="application/json")
-    return JsonResponse({'error': 'User not authenticated'}, status=401)
+    data = Wishlist.objects.filter(user=id)
+    json_data = serializers.serialize("json", data)
+    return HttpResponse(json_data, content_type="application/json")
 
 # @login_required
 # @csrf_exempt
