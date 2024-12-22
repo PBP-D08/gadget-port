@@ -11,10 +11,6 @@ from django.views.decorators.csrf import csrf_exempt
 from decimal import Decimal
 from django.core import serializers
 from django.http import HttpResponse
-# from rest_framework import viewsets, status
-# from rest_framework.response import Response
-# from rest_framework.decorators import action
-
 
 
 # class CartViewSet(viewsets.ModelViewSet):
