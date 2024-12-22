@@ -26,8 +26,8 @@ SECRET_KEY = 'django-insecure-5*vpiul9y1s8er)^@8p9a6k7!7-yl7oiofp6xqxlzwx1uq0smj
 PRODUCTION = os.getenv("PRODUCTION", False)
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "muhammad-farid31-gadgetport.pbp.cs.ui.ac.id"]
-CSRF_TRUSTED_ORIGINS = ["http://localhost","http://127.0.0.1","http://muhammad-farid31-gadgetport.pbp.cs.ui.ac.id", "https://muhammad-farid31-gadgetport.pbp.cs.ui.ac.id"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "muhammad-farid31-gadgetportd08.pbp.cs.ui.ac.id"]
+CSRF_TRUSTED_ORIGINS = ["http://localhost","http://127.0.0.1","http://muhammad-farid31-gadgetportd08.pbp.cs.ui.ac.id", "https://muhammad-farid31-gadgetportd08.pbp.cs.ui.ac.id"]
 
 # Application definition
 
