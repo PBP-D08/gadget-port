@@ -8,6 +8,8 @@ from django.http import JsonResponse
 from django.core import serializers
 from django.views.decorators.csrf import csrf_exempt
 import json
+from django.contrib.auth import logout
+
 
 
 @login_required
@@ -78,9 +80,6 @@ def checkout_history(request):
 
     return render(request, 'checkout_history.html', {'orders': orders})
 
-from django.http import JsonResponse
-from django.core import serializers
-from .models import UserProfile
 
 def show_json(request):
     # Mengambil data dari UserProfile dan menyertakan semua field dari User
@@ -110,99 +109,116 @@ def show_json(request):
     return JsonResponse(list(data), safe=False, json_dumps_params={'indent': 4})
 
 @csrf_exempt
-@login_required
-def view_profile_flutter(request):
-    if request.method == 'GET':
-        # Get the user's profile
-        user_profile = UserProfile.objects.get(user=request.user)
-        
-        # Get the user's orders
-        orders = Order.objects.filter(user=request.user).select_related('address', 'shipping_method')
+def edit_profile_json(request):
+    if request.method == 'POST':
+        try:
+            # Parsing data JSON dari request body
+            body = json.loads(request.body)
+            user_id = body.get('user_id')  # Ambil user_id dari request body
 
-        user_profile_data = {
-            'user_profile': {
-                'id': user_profile.id,
-                'user_id': user_profile.user.id,
-                'username': user_profile.user.username,
-                'first_name': user_profile.user.first_name,
-                'email': user_profile.user.email,
-                'bio': user_profile.user.bio,
-            },
-            'orders': list(orders.values())
-        }
+            if not user_id:
+                return JsonResponse({'error': 'User ID is required'}, status=400)
 
-        return JsonResponse(user_profile_data, status=200)
-    else:
-        return JsonResponse({"status": "error", "message": "Invalid request method"}, status=400)
+            # Update data UserProfile berdasarkan user_id
+            user_profile = get_object_or_404(UserProfile, user_id=user_id)
+            
+            # Update data user sesuai dengan data yang diterima
+            user_profile.user.full_name = body.get('user__full_name', user_profile.user.full_name)
+            user_profile.user.email = body.get('user__email', user_profile.user.email)
+            user_profile.user.alamat = body.get('user__alamat', user_profile.user.alamat)
+            user_profile.user.bio = body.get('user__bio', user_profile.user.bio)
+            
+            
+            # Simpan perubahan pada user
+            user_profile.user.save()
+
+            # Mengembalikan respon sukses
+            return JsonResponse({'message': 'Profile saved successfully'}, status=200)
+
+        except Exception as e:
+            # Menangani exception dan memberikan pesan error
+            return JsonResponse({'error': f'Error saving profile: {str(e)}'}, status=400)
     
-@csrf_exempt
+    else:
+        # Jika request bukan POST, kembalikan error method tidak valid
+        return JsonResponse({'error': 'Invalid request method'}, status=405)
+
 @login_required
-def edit_profile_flutter(request):
+@csrf_exempt
+def add_bio_json(request):
     if request.method == 'POST':
-        data = json.loads(request.body)
-        user_profile = UserProfile.objects.get(user=request.user)
-        
-        # Assuming you're updating the user fields like username, email, etc.
-        user_profile.user.username = data.get('username', user_profile.user.username)
-        user_profile.user.email = data.get('email', user_profile.user.email)
-        user_profile.user.first_name = data.get('first_name', user_profile.user.first_name)
-        user_profile.user.save()
+        try:
+            # Parsing data JSON dari request body
+            body = json.loads(request.body)
+            user_id = body.get('user_id')  # Ambil user_id dari request body
 
-        user_profile.save()
+            if not user_id:
+                return JsonResponse({'error': 'User ID is required'}, status=400)
 
-        return JsonResponse({"status": "success"}, status=200)
-    else:
-        return JsonResponse({"status": "error", "message": "Invalid request method"}, status=400)
+            # Update data UserProfile berdasarkan user_id
+            user_profile = get_object_or_404(UserProfile, user_id=user_id)
+
+            # Mengupdate bio di user
+            user_profile.user.bio = body.get('user__bio', user_profile.user.bio)
+
+            # Simpan perubahan pada user
+            user_profile.user.save()
+
+            # Mengembalikan respon sukses
+            return JsonResponse({'message': 'Bio added successfully'}, status=200)
+
+        except Exception as e:
+            # Menangani exception dan memberikan pesan error
+            return JsonResponse({'error': f'Error adding bio: {str(e)}'}, status=400)
+
+    return JsonResponse({"error": "Invalid request method"}, status=405)
 
 @csrf_exempt
-@login_required
-def add_bio_flutter(request):
+def edit_bio_json(request):
     if request.method == 'POST':
-        data = json.loads(request.body)
-        bio = data.get('bio', '')
+        try:
+            data = json.loads(request.body)
+            bio = data.get('bio', '')
 
-        user = request.user
-        user.bio = bio
-        user.save()
+            # Ambil user dari session
+            user = get_object_or_404(User, id=request.user.id)
+            user.bio = bio
+            user.save()
 
-        return JsonResponse({"status": "success"}, status=200)
-    else:
-        return JsonResponse({"status": "error", "message": "Invalid request method"}, status=400)
+            return JsonResponse({"message": "Bio updated successfully"}, status=200)
+        except Exception as e:
+            return JsonResponse({"error": str(e)}, status=400)
 
-@csrf_exempt
+    return JsonResponse({"error": "Invalid request method"}, status=405)
+
 @login_required
-def edit_bio_flutter(request):
+@csrf_exempt
+def delete_bio_json(request):
     if request.method == 'POST':
-        data = json.loads(request.body)
-        bio = data.get('bio', '')
+        try:
+            # Ambil user dari session
+            user = get_object_or_404(User, id=request.user.id)
+            user.bio = ''  # Menghapus bio
+            user.save()
 
-        user = request.user
-        user.bio = bio
-        user.save()
+            return JsonResponse({"message": "Bio deleted successfully"}, status=200)
+        except Exception as e:
+            return JsonResponse({"error": str(e)}, status=400)
 
-        return JsonResponse({"status": "success"}, status=200)
-    else:
-        return JsonResponse({"status": "error", "message": "Invalid request method"}, status=400)
+    return JsonResponse({"error": "Invalid request method"}, status=405)
 
-@csrf_exempt
+
 @login_required
-def delete_bio_flutter(request):
-    if request.method == 'POST':
-        user = request.user
-        user.bio = ''
-        user.save()
-
-        return JsonResponse({"status": "success"}, status=200)
-    else:
-        return JsonResponse({"status": "error", "message": "Invalid request method"}, status=400)
-
 @csrf_exempt
-@login_required
-def checkout_history_flutter(request):
-    if request.method == 'GET':
-        orders = Order.objects.filter(user=request.user).select_related('address', 'shipping_method')
-
-        orders_data = list(orders.values('id', 'status', 'total_price', 'shipping_method__name', 'address__city'))
-        return JsonResponse({"orders": orders_data}, status=200)
-    else:
-        return JsonResponse({"status": "error", "message": "Invalid request method"}, status=400)
+def logout_flutter(request):
+    try:
+        logout(request)  # Logout pengguna saat ini
+        return JsonResponse({
+            'status': True,
+            'message': 'Logout successful',
+        }, status=200)
+    except Exception as e:
+        return JsonResponse({
+            'status': False,
+            'message': f'Error during logout: {str(e)}',
+        }, status=400)

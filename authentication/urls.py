@@ -8,6 +8,7 @@ urlpatterns = [
     path('logout/', logout, name='logout'),
     path('register/', register, name='register'),
     path('login_flutter/', login_flutter, name='login_flutter'),
-    path('reg_flutter/', register_flutter, name='reg_flutter')
+    path('reg_flutter/', register_flutter, name='reg_flutter'),
+    path('api/logout/json', logout, name='logout'),
 
 ]
