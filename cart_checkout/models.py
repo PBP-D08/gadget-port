@@ -1,5 +1,6 @@
 from django.db import models
 from authentication.models import User
+from review.models import Katalog
 
 # ============================================================
 #                            Cart
@@ -26,7 +27,7 @@ class Product(models.Model):
 
 class CartItem(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    product = models.ForeignKey(Katalog, on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)
     selected = models.BooleanField(default=True)
 
