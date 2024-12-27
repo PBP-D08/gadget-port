@@ -1,5 +1,3 @@
-import base64
-import datetime
 import json
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
@@ -7,12 +5,10 @@ from django.http import HttpResponseRedirect, JsonResponse
 from django.urls import reverse
 from .forms import StoreForm
 from .models import Store
-from authentication.models import User
 from django.core import serializers
 from django.http import HttpResponse, HttpResponseNotFound
 from products.models import Katalog
 from django.views.decorators.csrf import csrf_exempt
-from django.core.files.base import ContentFile
 from django.core.validators import URLValidator
 from django.core.exceptions import ValidationError
 
@@ -96,7 +92,7 @@ def get_store_json(request):
                 "nama": store.nama or "Unknown Store",
                 "alamat": store.alamat or "No address available",
                 "nomor_telepon": store.nomor_telepon or "",
-                "logo": request.build_absolute_uri(store.logo.url) if store.logo else "",
+                "logo": store.logo if store.logo else "",
                 "jam_buka": str(store.jam_buka) if store.jam_buka else "00:00:00",
                 "jam_tutup": str(store.jam_tutup) if store.jam_tutup else "00:00:00",
             },          
